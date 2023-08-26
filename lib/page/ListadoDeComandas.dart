@@ -1,0 +1,757 @@
+import 'dart:convert';
+import 'dart:js_interop';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_application_1/page/printDoc.dart';
+import 'package:intl/intl.dart';
+import 'package:quickalert/models/quickalert_type.dart';
+import 'package:quickalert/widgets/quickalert_dialog.dart';
+import 'globals.dart' as globals;
+import 'package:flutter/services.dart';
+import 'package:flutter_application_1/page/firesbase_service.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+class Agencia {
+  String agencia;
+  Agencia({required this.agencia});
+  Map<String, dynamic> toJson() => {"agencia": agencia};
+}
+
+class ListadoDeComandas extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _ListadoDeComandasState();
+  }
+}
+
+List<String> options = [
+  'Todo',
+  'central',
+  'sucursal 1',
+  'Baja',
+  'Merendar',
+  'Reposicion'
+];
+
+class _ListadoDeComandasState extends State<ListadoDeComandas> {
+  late TextEditingController controller;
+  TextEditingController agenciaField = TextEditingController();
+  TextEditingController nombreClienteField = TextEditingController();
+  TextEditingController numeroDeMesaField = TextEditingController();
+  TextEditingController horaField = TextEditingController();
+  TextEditingController codigoComandaField = TextEditingController();
+  TextEditingController numeroComandaField = TextEditingController();
+  TextEditingController statusField = TextEditingController();
+  TextEditingController totalConsumoField = TextEditingController();
+  TextEditingController descuentoField = TextEditingController();
+  double totalConsumo = 0;
+  double descuento = 0;
+  String currentOption = options[0];
+  TextEditingController dateInput = TextEditingController();
+  bool? check3 = false;
+  int seleccionarOpcion = 1;
+  bool confirmarcobro = false;
+
+  void showAlert(QuickAlertType quickAlertType) {
+    QuickAlert.show(context: context, type: quickAlertType);
+  }
+
+  @override
+  void initState() {
+    dateInput.text = ""; //set the initial value of text field
+    descuentoField.text = '0';
+    super.initState();
+    controller = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(title: Text('Listado de Comandas  -  Coffeina')),
+        body: Padding(
+          padding: EdgeInsets.all(15),
+          //  height: MediaQuery.of(context).size.width / 3,
+
+          child: Column(children: [
+            /*    SizedBox(
+            height: 60,
+            width: double.infinity,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (ctx,Index){
+                return Container(
+                  margin: EdgeInsets.all(5),
+                  width: 80,
+                  height: 45,
+                  decoration: BoxDecoration(color: Colors.grey),
+                )
+              },
+            )
+          ),*/
+            TextField(
+              controller: dateInput,
+              //editing controller of this TextField
+              decoration: InputDecoration(
+                  icon: Icon(Icons.calendar_today), //icon of text field
+                  labelText: "Enter Date" //label text of field
+                  ),
+              readOnly: true,
+              //set it true, so that user will not able to edit text
+              onTap: () async {
+                DateTime? pickedDate = await showDatePicker(
+                    context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(1950),
+                    //DateTime.now() - not to allow to choose before today.
+                    lastDate: DateTime(2100));
+
+                if (pickedDate != null) {
+                  print(
+                      pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
+                  String formattedDate =
+                      DateFormat('yyyy-MM-dd').format(pickedDate);
+                  globals.formattedDateGlobal = formattedDate;
+                  print(
+                      formattedDate); //formatted date output using intl package =>  2021-03-16
+
+                  setState(() {
+                    dateInput.text =
+                        formattedDate; //set output date to TextField value.
+                  });
+                } else {}
+              },
+            ),
+            TextField(
+              // controller: nombreClienteField,
+              decoration: InputDecoration(
+                  hintText: 'Fecha: ' + globals.formattedDateGlobal,
+                  enabled: false,
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)))),
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Expanded(
+                  child: Container(
+                width: double.infinity,
+                child: RadioListTile(
+                  title: const Text('Todo'),
+                  value: options[0],
+                  groupValue: currentOption,
+                  onChanged: (value) {
+                    setState(() {
+                      currentOption = value.toString();
+                      seleccionarOpcion = 1;
+                      print(check3);
+                    });
+                  },
+                ),
+              )),
+              Expanded(
+                  child: Container(
+                      width: double.infinity,
+                      child: CheckboxListTile(
+                        value: check3,
+                        controlAffinity:
+                            ListTileControlAffinity.leading, //checkbox at left
+                        onChanged: (bool? value) {
+                          setState(() {
+                            check3 = value;
+                            print(seleccionarOpcion);
+                            print(check3);
+                          });
+                        },
+                        title: Text("Cobrados?"),
+                      )))
+            ]),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Expanded(
+                  child: Container(
+                      width: double.infinity,
+                      child: RadioListTile(
+                        title: const Text('central'),
+                        value: options[1],
+                        groupValue: currentOption,
+                        onChanged: (value) {
+                          setState(() {
+                            currentOption = value.toString();
+                            seleccionarOpcion = 2;
+                            print(check3);
+                          });
+                        },
+                      ))),
+              Expanded(
+                  child: Container(
+                      width: double.infinity,
+                      child: RadioListTile(
+                        title: const Text('Baja'),
+                        value: options[3],
+                        groupValue: currentOption,
+                        onChanged: (value) {
+                          setState(() {
+                            currentOption = value.toString();
+                            seleccionarOpcion = 4;
+                            print(check3);
+                          });
+                        },
+                      ))),
+              Expanded(
+                  child: Container(
+                      width: double.infinity,
+                      child: RadioListTile(
+                        title: const Text('Reponer'),
+                        value: options[5],
+                        groupValue: currentOption,
+                        onChanged: (value) {
+                          setState(() {
+                            currentOption = value.toString();
+                            seleccionarOpcion = 6;
+                            print(check3);
+                          });
+                        },
+                      ))),
+            ]),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Expanded(
+                  child: Container(
+                width: double.infinity,
+                child: RadioListTile(
+                  title: const Text('sucursal 1'),
+                  value: options[2],
+                  groupValue: currentOption,
+                  onChanged: (value) {
+                    setState(() {
+                      currentOption = value.toString();
+                      seleccionarOpcion = 3;
+                      print(check3);
+                    });
+                  },
+                ),
+              )),
+              Expanded(
+                  child: Container(
+                width: double.infinity,
+                child: RadioListTile(
+                  title: const Text('Merendar'),
+                  value: options[4],
+                  groupValue: currentOption,
+                  onChanged: (value) {
+                    setState(() {
+                      currentOption = value.toString();
+                      seleccionarOpcion = 5;
+                      print(check3);
+                    });
+                  },
+                ),
+              ))
+            ]),
+            FutureBuilder(
+                future: getComandas(currentOption, globals.formattedDateGlobal,
+                    seleccionarOpcion, check3!),
+                builder: ((context, snapshop) {
+                  if (snapshop.hasData) {
+                    globals.inventarioNumeroComanda = [];
+                    globals.inventarioNombreCliente = [];
+                    globals.inventarioCreationDate = [];
+                    globals.inventarioAgencia = [];
+                    globals.inventarioNumeroMesa = [];
+                    globals.inventarioHora = [];
+                    globals.inventarioCodigoComanda = [];
+                    globals.inventarioTotalConsumo = [];
+                    globals.inventarioStatus = [];
+                    globals.inventarioDescuento = [];
+                    String jsonstringmap = json.encode(snapshop.data);
+                    snapshop.data?.forEach((item) {
+                      globals.inventarioNumeroComanda
+                          .add(item['numeroComanda']);
+                      globals.inventarioNombreCliente
+                          .add(item['nombreCliente']);
+                      globals.inventarioCreationDate.add(item['creacionDate']);
+                      globals.inventarioAgencia.add(item['agencia']);
+                      globals.inventarioNumeroMesa.add(item['mesa']);
+                      globals.inventarioHora.add(item['creacionTime']);
+                      globals.inventarioCodigoComanda
+                          .add(item['codigoComanda']);
+                      globals.inventarioTotalConsumo.add(item['totalConsumo']);
+                      globals.inventarioStatus.add(item['status']);
+                      globals.inventarioDescuento.add(item['descuento']);
+                    });
+                  }
+
+                  return globals.formattedDateGlobal.isEmpty || dateInput == ''
+                      ? Text("No hay comandas", style: TextStyle(fontSize: 22))
+                      : Expanded(
+                          child: ListView.builder(
+                          itemCount: globals.inventarioNumeroComanda.length,
+                          itemBuilder: (context, index) =>
+                              getRowInventario(index),
+                        ));
+                })),
+          ]),
+        ),
+        floatingActionButton:
+            Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+          FloatingActionButton(
+            tooltip: 'Impresion',
+            child: Icon(Icons.print),
+            onPressed: () {
+              if (globals.inventarioNumeroComanda.isNotEmpty) {
+                printDoc4(
+                    globals.formattedDateGlobal,
+                    globals.inventarioNumeroComanda,
+                    globals.inventarioTotalConsumo,
+                    globals.inventarioCreationDate,
+                    globals.inventarioHora,
+                    globals.inventarioStatus,
+                    globals.inventarioDescuento,
+                    globals.inventarioAgencia);
+              } else {
+                showAlert(QuickAlertType.warning);
+              }
+
+              setState(() {});
+              /*   Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Dashboard()));*/
+            },
+          ),
+        ]));
+  }
+
+  Widget getRowInventario(int index) {
+    return Card(
+      child: ListTile(
+        leading: CircleAvatar(
+          backgroundColor:
+              index % 2 == 0 ? Colors.deepPurpleAccent : Colors.purple,
+          foregroundColor: Colors.white,
+          child: Text(
+            globals.inventarioNumeroComanda[index].toString(),
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ),
+        title: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Text(
+            'Nro. Comanda: ' +
+                globals.inventarioNumeroComanda[index].toString() +
+                ' -> Status: ' +
+                globals.inventarioStatus[index], //.item,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          Text(
+            'Cliente: ' + globals.inventarioNombreCliente[index], //.item,
+          ),
+          Text(
+            'Hora: ' + globals.inventarioHora[index], //.item,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          Text(
+            'Agencia: ' + globals.inventarioAgencia[index], //.item,
+          ),
+          globals.inventarioDescuento[index] != 0
+              ? Row(children: [
+                  Text(
+                      'Total ' +
+                          (globals.inventarioTotalConsumo[index] -
+                                  globals.inventarioDescuento[index])
+                              .toStringAsFixed(2) +
+                          ' Bs.', //.item,
+                      style: TextStyle(fontWeight: FontWeight.bold)),
+                  Text(
+                    '   -> Desc: ' +
+                        globals.inventarioDescuento[index].toStringAsFixed(2) +
+                        ' Bs.', //.item,
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  )
+                ])
+              : Text(
+                  'Total: ' +
+                      (globals.inventarioTotalConsumo[index])
+                          .toStringAsFixed(2) +
+                      ' Bs.', //.item,
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+        ]),
+        trailing: SizedBox(
+          width: 70,
+          child: Row(
+            children: [
+              InkWell(
+                  onTap: (() {
+                    final cantidadModifica = openDialog(
+                        globals.inventarioAgencia[index],
+                        globals.inventarioNumeroComanda[index].toString(),
+                        globals.inventarioNombreCliente[index],
+                        globals.inventarioNumeroMesa[index].toString(),
+                        globals.inventarioHora[index],
+                        globals.inventarioCodigoComanda[index],
+                        globals.inventarioTotalConsumo[index].toString(),
+                        globals.inventarioStatus[index],
+                        globals.inventarioDescuento[index].toString(),
+                        globals.inventarioCreationDate[index]);
+                  }),
+                  child: Icon(Icons.flatware)),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future<String?> openDialog(
+          String agenciaNombre,
+          String numeroComanda,
+          String nombreCliente,
+          String numeroMesa,
+          String hora,
+          String codigoComanda,
+          String totalConsumo,
+          String status,
+          String descuento1,
+          String fecha) =>
+      showDialog<String>(
+          context: context,
+          builder: (context) => DraggableScrollableSheet(
+                initialChildSize: 0.9,
+                minChildSize: 0.5,
+                maxChildSize: 1,
+                builder: (context, controller) => Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(20))),
+                  child: Material(
+                      child: ListView(children: [
+                    Text(
+                      ' -->Numero de Comanda: ' + numeroComanda,
+                      style:
+                          TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+                    ),
+                    /*  SizedBox(height: 10),
+                    TextField(
+                      controller: codigoComandaField,
+                      decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.radio_button_checked),
+                          hintText: 'Codigo Comanda: ' + codigoComanda,
+                          enabled: false,
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)))),
+                    ),
+                                      SizedBox(height: 10),
+                    TextField(
+                      controller: numeroComandaField,
+                      decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.article),
+                          hintText: 'Numero de Comanda: ' + numeroComanda,
+                          enabled: false,
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)))),
+                    ),*/
+                    SizedBox(height: 10),
+                    TextField(
+                      controller: agenciaField,
+                      decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.home),
+                          hintText: 'Agencia: ' + agenciaNombre,
+                          enabled: false,
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)))),
+                    ),
+                    SizedBox(height: 10),
+                    TextField(
+                      controller: nombreClienteField,
+                      decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.person),
+                          hintText: 'Nombre: ' + nombreCliente,
+                          enabled: false,
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)))),
+                    ),
+                    SizedBox(height: 10),
+                    TextField(
+                      controller: numeroDeMesaField,
+                      decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.table_bar),
+                          hintText: 'Nro. de Mesa: ' + numeroMesa,
+                          enabled: false,
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)))),
+                    ),
+                    SizedBox(height: 10),
+                    TextField(
+                      controller: horaField,
+                      decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.alarm),
+                          hintText: "Hora: " + hora,
+                          enabled: false,
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)))),
+                    ),
+                    SizedBox(height: 10),
+                    TextField(
+                      controller: statusField,
+                      decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.fiber_smart_record),
+                          hintText: "Status: " + status,
+                          enabled: false,
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)))),
+                    ),
+                    FutureBuilder(
+                        future: getAComanda(codigoComanda),
+                        builder: ((context, snapshop) {
+                          if (snapshop.hasData) {
+                            globals.listaItemDeUnaComanda = [];
+                            globals.listaCantidadDeUnaComanda = [];
+                            globals.listaPrecioDeUnaComanda = [];
+                            String jsonstringmap = json.encode(snapshop.data);
+                            snapshop.data?.forEach((item) {
+                              globals.listaItemDeUnaComanda.add(item['item']);
+                              globals.listaCantidadDeUnaComanda
+                                  .add(item['cantidad']);
+                              globals.listaPrecioDeUnaComanda
+                                  .add(item['precio']);
+                            });
+                          }
+                          return ListView.builder(
+                            scrollDirection: Axis.vertical,
+                            shrinkWrap: true,
+                            itemCount: globals.listaItemDeUnaComanda.length,
+                            itemBuilder: (context, index) =>
+                                getRowOfAComanda(index),
+                          );
+                          //  );
+                        })),
+                    SizedBox(height: 10),
+                    status == 'No Cobrado'
+                        ? Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                                Text(
+                                  'Inserte Descuento -> ',
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                                SizedBox(
+                                    width: 250,
+                                    child: TextField(
+                                      controller: descuentoField,
+                                      autofocus: true,
+                                      decoration: InputDecoration(
+                                          prefixIcon: Icon(Icons.attach_money),
+                                          // hintText: "Inserte Descuento",
+                                          enabled: true,
+                                          border: OutlineInputBorder(
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(10)))),
+                                    )),
+                              ])
+                        : descuento1 != '0'
+                            ? TextField(
+                                // controller: descuentoField,
+                                decoration: InputDecoration(
+                                    prefixIcon: Icon(Icons.attach_money),
+                                    hintText:
+                                        'Descuento: ' + descuento1 + ' Bs.',
+                                    enabled: false,
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(10)))),
+                              )
+                            : SizedBox(height: 10),
+                    TextField(
+                      controller: totalConsumoField,
+                      decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.attach_money),
+                          hintText: "TOTAL : " +
+                              (double.parse(totalConsumo) -
+                                      double.parse(descuento1))
+                                  .toStringAsFixed(2) +
+                              ' Bs.',
+                          enabled: false,
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)))),
+                    ),
+                    SizedBox(height: 10),
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      Column(children: [
+                        ElevatedButton(
+                            child: Text('Cobrar'),
+                            onPressed: status == 'No Cobrado'
+                                ? () {
+                                    showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return Container(
+                                              child: AlertDialog(
+                                            title: Text('Confirmar Cobro ?'),
+                                            content: /* descuentoField.text.isEmpty
+                                                ? Text('Consumo Total -> ' +
+                                                    ((double.parse(
+                                                            totalConsumo)))
+                                                        .toString() +
+                                                    ' Bs.')
+                                                : */
+                                                Text('Consumo Total -> ' +
+                                                    ((double.parse(
+                                                                totalConsumo) -
+                                                            double.parse(
+                                                                descuentoField
+                                                                    .text)))
+                                                        .toString() +
+                                                    ' Bs.'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () {
+                                                  confirmarcobro = false;
+                                                  Navigator.pop(context);
+                                                  setState(() {});
+                                                },
+                                                child: Text('No'),
+                                              ),
+                                              TextButton(
+                                                onPressed: () async {
+                                                  confirmarcobro = true;
+                                                  // descuento =
+                                                  //   descuentoField.text='';
+                                                  final status =
+                                                      await updateStatusCommanda(
+                                                          codigoComanda,
+                                                          'Cobrado',
+                                                          double.parse(
+                                                              descuentoField
+                                                                  .text));
+                                                  Navigator.pop(context);
+                                                  Navigator.pop(context);
+                                                  descuentoField.text = '0';
+                                                  setState(() {});
+                                                },
+                                                child: Text('Si'),
+                                              ),
+                                            ],
+                                          ));
+                                        });
+                                  }
+                                : null),
+                      ]),
+                      SizedBox(width: 10),
+                      ElevatedButton(
+                          child: Text('Volver Atras'),
+                          onPressed: () {
+                            Navigator.pop(context);
+                            setState(() {});
+                          }),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      ElevatedButton(
+                        child: Text('Print'),
+                        onPressed: () {
+                          var user = jsonEncode(globals.comandaLista);
+                          String user1 = user;
+                          var ab = json.decode(user1).toList();
+                          print('ab');
+                          print(ab);
+                          print(globals.listaItemDeUnaComanda);
+                          print(globals.listaCantidadDeUnaComanda);
+                          print(globals.listaPrecioDeUnaComanda);
+                          if (status == 'Cobrado') {
+                            printDoc2(
+                                int.parse(numeroComanda),
+                                nombreCliente,
+                                int.parse(numeroMesa),
+                                agenciaNombre,
+                                globals.listaItemDeUnaComanda,
+                                globals.listaCantidadDeUnaComanda,
+                                globals.listaPrecioDeUnaComanda,
+                                fecha,
+                                double.parse(totalConsumo),
+                                descuento1,
+                                2);
+                          } else {
+                            printDoc2(
+                                int.parse(numeroComanda),
+                                nombreCliente,
+                                int.parse(numeroMesa),
+                                agenciaNombre,
+                                globals.listaItemDeUnaComanda,
+                                globals.listaCantidadDeUnaComanda,
+                                globals.listaPrecioDeUnaComanda,
+                                fecha,
+                                double.parse(totalConsumo),
+                                descuentoField.text,
+                                2);
+                          }
+                          //  globals.totalConsumo);
+                        },
+                      )
+                    ]),
+                  ])),
+                ),
+              ));
+
+  Widget getRowOfAComanda(int index) {
+    return Card(
+      child: ListTile(
+        leading: CircleAvatar(
+          backgroundColor:
+              index % 2 == 0 ? Colors.deepPurpleAccent : Colors.purple,
+          foregroundColor: Colors.white,
+          child: Text(
+            globals.listaItemDeUnaComanda[index][0], //item[0],
+            ///////      pedido[index].item[0],
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Item: ' + globals.listaItemDeUnaComanda[index],
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            Text(
+              'Cantidad: ' +
+                  globals.listaCantidadDeUnaComanda[index].toString() +
+                  ' --> Precio Unitario: ' +
+                  globals.listaPrecioDeUnaComanda[index].toStringAsFixed(2) +
+                  ' Bs.',
+            ),
+            Text(
+              'Total del Item: ' +
+                  (globals.listaPrecioDeUnaComanda[index] *
+                          globals.listaCantidadDeUnaComanda[index])
+                      .toStringAsFixed(2) +
+                  ' Bs.',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
+        /*  trailing: SizedBox(
+        width: 70,
+        child: Row(
+          children: [
+            InkWell(
+                onTap: (() {
+                  setState(() {
+                    ///////               pedido.removeAt(index);
+                  });
+                }),
+                child: Icon(Icons.delete)),
+          ],
+        ),
+      ),*/
+      ),
+    );
+  }
+}
