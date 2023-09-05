@@ -54,9 +54,10 @@ class _ListadoAllState extends State<ListadoAll> {
   int seleccionarOpcion = 1;
   int sumaCantidadConsumida = 0;
   double sumaTotalConsumida = 0;
+  List elements = [];
 
   void showAlert(QuickAlertType quickAlertType) {
-    QuickAlert.show(context: context, type: quickAlertType);
+    QuickAlert.show(context: context, type: quickAlertType, width: 100);
   }
 
   @override
@@ -87,7 +88,14 @@ class _ListadoAllState extends State<ListadoAll> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Listado Detallado por Item  -  Coffeina')),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(30.0),
+        child: AppBar(
+            title: Text(
+          'Listado Detallado por Item  -  Coffeina',
+          style: TextStyle(color: Colors.black, fontSize: 10),
+        )),
+      ),
       body: Padding(
         padding: EdgeInsets.all(15),
         //  height: MediaQuery.of(context).size.width / 3,
@@ -97,9 +105,12 @@ class _ListadoAllState extends State<ListadoAll> {
             controller: dateInput,
             //editing controller of this TextField
             decoration: InputDecoration(
-                icon: Icon(Icons.calendar_today), //icon of text field
-                labelText: "Enter Date" //label text of field
-                ),
+              isDense: true, // Added this
+              contentPadding: EdgeInsets.all(8),
+              icon: Icon(Icons.calendar_today), //icon of text field
+              labelText: "Ingrese Fecha", //label text of field
+              hintStyle: TextStyle(fontSize: 10),
+            ),
             readOnly: true,
             //set it true, so that user will not able to edit text
             onTap: () async {
@@ -127,7 +138,10 @@ class _ListadoAllState extends State<ListadoAll> {
           TextField(
             // controller: nombreClienteField,
             decoration: InputDecoration(
+                isDense: true, // Added this
+                contentPadding: EdgeInsets.all(8),
                 hintText: 'Fecha: ' + globals.formattedDateGlobalListado,
+                hintStyle: TextStyle(fontSize: 10),
                 enabled: false,
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10)))),
@@ -152,38 +166,50 @@ class _ListadoAllState extends State<ListadoAll> {
             ]),*/
           Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
             Expanded(
-                child: Container(
-                    width: double.infinity,
-                    child: RadioListTile(
-                      title: const Text('central'),
-                      value: options[1],
-                      groupValue: currentOption,
-                      onChanged: (value) {
-                        setState(() {
-                          currentOption = value.toString();
-                          seleccionarOpcion = 2;
-                          //           print(check3);
-                        });
-                      },
-                    ))),
+                child: SizedBox(
+                    width: 10,
+                    height: 30,
+                    child: Container(
+                        width: double.infinity,
+                        child: RadioListTile(
+                          title: const Text(
+                            'central',
+                            style: TextStyle(color: Colors.black, fontSize: 10),
+                          ),
+                          value: options[1],
+                          groupValue: currentOption,
+                          onChanged: (value) {
+                            setState(() {
+                              currentOption = value.toString();
+                              seleccionarOpcion = 2;
+                              //           print(check3);
+                            });
+                          },
+                        )))),
           ]),
           Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
             Expanded(
-                child: Container(
-              width: double.infinity,
-              child: RadioListTile(
-                title: const Text('sucursal 1'),
-                value: options[2],
-                groupValue: currentOption,
-                onChanged: (value) {
-                  setState(() {
-                    currentOption = value.toString();
-                    seleccionarOpcion = 3;
-                    //             print(check3);
-                  });
-                },
-              ),
-            )),
+                child: SizedBox(
+                    width: 10,
+                    height: 30,
+                    child: Container(
+                      width: double.infinity,
+                      child: RadioListTile(
+                        title: const Text(
+                          'sucursal 1',
+                          style: TextStyle(color: Colors.black, fontSize: 10),
+                        ),
+                        value: options[2],
+                        groupValue: currentOption,
+                        onChanged: (value) {
+                          setState(() {
+                            currentOption = value.toString();
+                            seleccionarOpcion = 3;
+                            //             print(check3);
+                          });
+                        },
+                      ),
+                    ))),
           ]),
           FutureBuilder(
               future: getAllProducts(currentOption, seleccionarOpcion, check3!),
@@ -200,19 +226,19 @@ class _ListadoAllState extends State<ListadoAll> {
                     globals.ListaDeProductosCantidad.add(item['cantidad']);
                   });
                 }
-                return globals.formattedDateGlobalListado.isEmpty ||
+                return /*globals.formattedDateGlobalListado.isEmpty ||
                         dateInput == ''
-                    ? Text("No hay Productos", style: TextStyle(fontSize: 22))
-                    : Expanded(
+                    ? Text("No hay Productos", style: TextStyle(fontSize: 15))
+                    :*/
+                    Expanded(
                         child: ListView.builder(
-                        itemCount: globals.ListaDeProductosItem.length,
-                        itemBuilder: (context, index) =>
-                            getRowInventario(index),
-                      ));
+                  itemCount: globals.ListaDeProductosItem.length,
+                  itemBuilder: (context, index) => getRowInventario(index),
+                ));
               })),
         ]),
       ),
-      /*      floatingActionButton:
+      /*  floatingActionButton:
             Column(mainAxisAlignment: MainAxisAlignment.end, children: [
           FloatingActionButton(
             tooltip: 'Impresion',
@@ -226,15 +252,15 @@ class _ListadoAllState extends State<ListadoAll> {
                 String cadena = globals.listaDeComandasDetalle.toString();
                 print('cadenaaaaaaaaaaaaaaaaaaaa');
                 print(cadena);
-             /*   printDoc8(
+                printDoc8(
                     globals.formattedDateGlobalListado,
                     globals.ListaDeProductosItem,
                     globals.LsitaDeProductosAgencia,
                     globals.ListaDeProductosCantidad,
                     globals.listaDeComandasDetalle,
-                    cadena);*/
-                //  globals.listaDeComandasDetalle,
-                // globals.ListaDeTotalConsumido);
+                    cadena,
+                    //  globals.listaDeComandasDetalle);
+                    globals.ListaDeTotalConsumido);
               } else {
                 showAlert(QuickAlertType.warning);
               }
@@ -264,15 +290,16 @@ class _ListadoAllState extends State<ListadoAll> {
         title: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(
             'Item: ' + globals.ListaDeProductosItem[index].toString(),
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
           ),
           Text(
             'Cantidad en Stock: ' +
                 globals.ListaDeProductosCantidad[index].toString(), //.item,
+            style: TextStyle(fontSize: 10),
           ),
           Text(
             'Agencia: ' + globals.LsitaDeProductosAgencia[index], //.item,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
           ),
           FutureBuilder(
               future: getAComandaFromProductName(
@@ -294,9 +321,6 @@ class _ListadoAllState extends State<ListadoAll> {
                   sumaTotalConsumida = 0;
                   // final jsonstringmap = json.decode(snapshop1.data as String);
                   snapshop1.data?.forEach((item1) {
-                    //  print('snapshop1.data');
-                    //  print(snapshop1.data);
-                    //    print(jsonstringmap['precio']);
                     globals.listaItemDeUnaComanda.add(item1['item']);
                     globals.listaCantidadDeUnaComanda.add(item1['cantidad']);
                     globals.listaPrecioDeUnaComanda.add(item1['precio']);
@@ -319,10 +343,8 @@ class _ListadoAllState extends State<ListadoAll> {
                     ]);
                   }*/
                   globals.ListaDeTotalConsumido.add(sumaCantidadConsumida);
-                  print('ListaDeTotalConsumido');
-                  print(globals.ListaDeTotalConsumido);
-                  print('sumaCantidadConsumida');
-                  print(globals.listaDeComandasDetalle);
+                  print('listaItemDeUnaComanda');
+                  print(globals.listaItemDeUnaComanda);
                 }
 
                 return globals.listaItemDeUnaComanda.isNull ||
@@ -338,6 +360,7 @@ class _ListadoAllState extends State<ListadoAll> {
                             'Cantidad Consumida: ' +
                                 sumaCantidadConsumida.toString(), //.item,
                             style: TextStyle(
+                                fontSize: 10,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.deepPurpleAccent),
                           ),
@@ -346,6 +369,7 @@ class _ListadoAllState extends State<ListadoAll> {
                                 sumaTotalConsumida.toString() +
                                 ' Bs.', //.item,
                             style: TextStyle(
+                                fontSize: 10,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.deepPurpleAccent),
                           ),
@@ -354,17 +378,18 @@ class _ListadoAllState extends State<ListadoAll> {
                                 globals.ListaDeNumeroComandaEnComanda
                                     .toString(), //.item,
                             style: TextStyle(
+                                fontSize: 10,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.green),
                           ),
-                          ListView.builder(
+                          /*         ListView.builder(
                             scrollDirection: Axis.vertical,
                             shrinkWrap: true,
                             itemCount:
                                 globals.ListaDeNumeroComandaEnComanda.length,
                             itemBuilder: (context, index) =>
                                 getRowOfAComanda(index),
-                          )
+                          )*/
                         ]));
                 /*       ListView.builder(
                   scrollDirection: Axis.vertical,
@@ -388,7 +413,7 @@ class _ListadoAllState extends State<ListadoAll> {
           child: Text(
             globals.ListaDeNumeroComandaEnComanda[index].toString(),
             ///////      pedido[index].item[0],
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
           ),
         ),
         title: Column(
@@ -397,7 +422,7 @@ class _ListadoAllState extends State<ListadoAll> {
             Text(
               'Nro Comanda: ' +
                   globals.ListaDeNumeroComandaEnComanda[index].toString(),
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
             ),
             Text(
               'Cantidad: ' +
@@ -405,13 +430,15 @@ class _ListadoAllState extends State<ListadoAll> {
             ),
             Text(
               'Mesa: ' + (globals.ListaDeMesaEnComanda[index]).toString(),
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
             ),
             Text(
               'Hora: ' + globals.ListaDeHoraEnComanda[index].toString(),
+              style: TextStyle(fontSize: 10),
             ),
             Text(
               'Item: ' + globals.listaItemDeUnaComanda[index].toString(),
+              style: TextStyle(fontSize: 10),
             ),
           ],
         ),

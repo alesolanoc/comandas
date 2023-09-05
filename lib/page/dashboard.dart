@@ -74,8 +74,9 @@ class _DashboardState extends State<Dashboard> {
   String? productoo;
   String numeroComandaContr = '0';
 
-  void showAlert(QuickAlertType quickAlertType) {
-    QuickAlert.show(context: context, type: quickAlertType);
+  void showAlert(QuickAlertType quickAlertType, String mensaje) {
+    QuickAlert.show(
+        context: context, type: quickAlertType, text: mensaje, width: 100);
   }
 
   populate(String AgenciaSelec) async {
@@ -101,12 +102,19 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Comanda Nro.--> ' + numeroComandaContr)),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(30.0),
+          child: AppBar(
+              title: Text(
+            'Comanda Nro.--> ' + numeroComandaContr,
+            style: TextStyle(color: Colors.black, fontSize: 12),
+          )),
+        ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              SizedBox(height: 10),
+              // SizedBox(height: 10),
               FutureBuilder(
                   future: getAgencias(),
                   builder: ((context, snapshop) {
@@ -119,23 +127,32 @@ class _DashboardState extends State<Dashboard> {
                       newAgenciaList = globals.newAgenciaList;
                     }
                     return DropdownButtonFormField(
+                        borderRadius: BorderRadius.circular(20),
                         decoration: InputDecoration(
+                          isDense: true, // Added this
+                          contentPadding: EdgeInsets.all(8),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide:
                                 BorderSide(width: 3, color: Colors.grey),
                           ),
                         ),
-                        hint: Text('Seleccione Agencia para Comandas'),
+                        hint: Text(
+                          'Seleccione Agencia para Comandas',
+                          style: TextStyle(
+                              color: Colors.black, fontSize: 10, height: 2.0),
+                        ),
                         isExpanded: true,
                         menuMaxHeight: 350,
                         iconSize: 36,
-                        style: TextStyle(color: Colors.black, fontSize: 22),
+                        style: TextStyle(
+                            color: Colors.black, fontSize: 10, height: 2.0),
                         items: globals.newAgenciaList
                             .map((item) => DropdownMenuItem<String>(
                                   value: item,
                                   child: Text(item,
-                                      style: TextStyle(fontSize: 16)),
+                                      style:
+                                          TextStyle(fontSize: 10, height: 2.0)),
                                 ))
                             .toList(),
                         onChanged: pedido.isNotEmpty
@@ -161,11 +178,15 @@ class _DashboardState extends State<Dashboard> {
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)))),
             ),*/
-              SizedBox(height: 10),
+              //      SizedBox(height: 10),
               TextField(
+                style: TextStyle(fontSize: 10.0, height: 2.5),
                 controller: mesaController,
                 decoration: InputDecoration(
+                    isDense: true, // Added this
+                    contentPadding: EdgeInsets.all(8),
                     hintText: "Numero de Mesa",
+                    hintStyle: TextStyle(fontSize: 10),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)))),
                 keyboardType: TextInputType.number,
@@ -173,9 +194,9 @@ class _DashboardState extends State<Dashboard> {
                   FilteringTextInputFormatter.digitsOnly
                 ],
               ),
-              SizedBox(height: 10),
+              //    SizedBox(height: 10),
 
-              SizedBox(height: 10),
+              //   SizedBox(height: 10),
               FutureBuilder(
                   future: getProductos(globals.agenciaSeleccionada),
                   builder: ((context, snapshop) {
@@ -191,24 +212,30 @@ class _DashboardState extends State<Dashboard> {
                       newListPrecio = globals.newListPrecio;
                     }
                     return DropdownButtonFormField(
+                        borderRadius: BorderRadius.circular(20),
                         decoration: InputDecoration(
+                          isDense: true, // Added this
+                          contentPadding: EdgeInsets.all(8),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide:
                                 BorderSide(width: 3, color: Colors.grey),
                           ),
                         ),
-                        hint: Text('Seleccione un Producto'),
+                        hint: Text(
+                          'Seleccione un Producto',
+                          style: TextStyle(color: Colors.black, fontSize: 10),
+                        ),
                         isExpanded: true,
                         menuMaxHeight: 350,
                         iconSize: 36,
                         value: productoo,
-                        style: TextStyle(color: Colors.black, fontSize: 22),
+                        style: TextStyle(color: Colors.black, fontSize: 10),
                         items: globals.newList
                             .map((item) => DropdownMenuItem<String>(
                                   value: item,
                                   child: Text(item,
-                                      style: TextStyle(fontSize: 16)),
+                                      style: TextStyle(fontSize: 10)),
                                 ))
                             .toList(),
                         onChanged: disableDropdown
@@ -219,11 +246,15 @@ class _DashboardState extends State<Dashboard> {
                                 });
                               });
                   })),
-              SizedBox(height: 10),
+              //    SizedBox(height: 10),
               TextField(
+                style: TextStyle(fontSize: 10.0, height: 2.5),
                 controller: cantidadController,
                 decoration: InputDecoration(
+                    isDense: true, // Added this
+                    contentPadding: EdgeInsets.all(8),
                     hintText: "Inserte Cantidad",
+                    hintStyle: TextStyle(fontSize: 10),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)))),
                 keyboardType: TextInputType.number,
@@ -231,12 +262,30 @@ class _DashboardState extends State<Dashboard> {
                   FilteringTextInputFormatter.digitsOnly
                 ],
               ),
-              SizedBox(height: 10),
+              //    SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Expanded(
+                  Center(
+                    /*          child: SizedBox(
+                    height: 35, //height of button
+                    width: 35, //width of button*/
+
                     child: ElevatedButton(
+                        /* style: ElevatedButton.styleFrom(
+                                    fixedSize: const Size(150, 35),
+                            primary:
+                                Colors.redAccent, //background color of button
+                            side: BorderSide(
+                                width: 1,
+                                color: Colors.brown), //border width and color
+                            elevation: 1, //elevation of button
+                            shape: RoundedRectangleBorder(
+                                //to set border radius to button
+                                borderRadius: BorderRadius.circular(30)),
+                            padding: EdgeInsets.all(
+                                20) //content padding inside button
+                            ),*/
                         onPressed: () async {
                           if (cantidadController.text.isNotEmpty) {
                             int totalComandas = await collectionSumValue();
@@ -286,21 +335,23 @@ class _DashboardState extends State<Dashboard> {
                               });
                             }
                           } else {
-                            showAlert(QuickAlertType.error);
+                            showAlert(
+                                QuickAlertType.error, 'Debe armar la Comanda.');
                           }
                         },
-                        child: Text('Armar la Comanda')),
-                  )
+                        child: Text('Armar la Comanda',
+                            style: TextStyle(fontSize: 10))),
+                  ) //)
                 ],
               ),
-              SizedBox(height: 10),
+              //       SizedBox(height: 10),
               Text(
                 '---> TOTAL A CONSUMIR: ${_totalConsumo.toStringAsFixed(2)} Bs.',
-                style: TextStyle(fontSize: 25),
+                style: TextStyle(fontSize: 15),
               ),
-              SizedBox(height: 20),
+              //     SizedBox(height: 20),
               pedido.isEmpty
-                  ? Text("comanda vacia", style: TextStyle(fontSize: 22))
+                  ? Text("comanda vacia", style: TextStyle(fontSize: 15))
                   : Expanded(
                       child: ListView.builder(
                       itemCount: pedido.length,
@@ -339,9 +390,9 @@ class _DashboardState extends State<Dashboard> {
                     1);
                 _totalConsumo = 0;
 
-                showAlert(QuickAlertType.success);
+                //    showAlert(QuickAlertType.success);
               } else {
-                showAlert(QuickAlertType.error);
+                showAlert(QuickAlertType.error, 'Debe armar la Comanda.');
               }
               globals.comandaLista = [];
               globals.nombreCliente = "";
@@ -366,7 +417,47 @@ class _DashboardState extends State<Dashboard> {
             tooltip: 'Limpiar Comanda',
             child: Icon(Icons.remove),
             onPressed: () {
-              globals.comandaLista = [];
+              showDialog(
+                  context: context,
+                  builder: (context) {
+                    return Container(
+                        child: AlertDialog(
+                      title: Text('Confirmar Limpieza de Comanda ?'),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                            setState(() {});
+                          },
+                          child: Text('No'),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            globals.comandaLista = [];
+                            globals.nombreCliente = "";
+                            collectionSum();
+                            globals.bandera = 1;
+                            itemController.text = '';
+                            cantidadController.text = '';
+                            mesaController.text = '';
+                            nombreclienteController.text = '';
+                            numeroComandaController.text = '';
+                            pedido.clear();
+                            pedido = [];
+                            _totalConsumo = 0;
+
+                            Navigator.pop(context);
+                            setState(() {
+                              productoo = null;
+                            });
+                          },
+                          child: Text('Si'),
+                        ),
+                      ],
+                    ));
+                  });
+
+/*              globals.comandaLista = [];
               globals.nombreCliente = "";
               collectionSum();
               globals.bandera = 1;
@@ -380,7 +471,7 @@ class _DashboardState extends State<Dashboard> {
               _totalConsumo = 0;
               setState(() {
                 productoo = null;
-              });
+              });*/
               /*   Navigator.push(
               context, MaterialPageRoute(builder: (context) => Dashboard()));*/
             },
@@ -453,10 +544,10 @@ class _DashboardState extends State<Dashboard> {
                 pedido.clear();
                 pedido = [];
                 if (merienda) {
-                  showAlert(QuickAlertType.success);
+                  //        showAlert(QuickAlertType.success);
                 }
               } else {
-                showAlert(QuickAlertType.error);
+                showAlert(QuickAlertType.error, 'Debe armar la Comanda.');
               }
               setState(() {
                 productoo = null;
@@ -523,10 +614,10 @@ class _DashboardState extends State<Dashboard> {
                     1);*/
                 _totalConsumo = 0;
                 if (baja) {
-                  showAlert(QuickAlertType.success);
+                  //     showAlert(QuickAlertType.success);
                 }
               } else {
-                showAlert(QuickAlertType.error);
+                showAlert(QuickAlertType.error, 'Debe armar la Comanda.');
               }
               globals.comandaLista = [];
               globals.nombreCliente = "";
@@ -581,7 +672,7 @@ class _DashboardState extends State<Dashboard> {
                                   globals.totalConsumo,
                                   'Reposicion');
                               Navigator.pop(context);
-                              showAlert(QuickAlertType.success);
+                              //        showAlert(QuickAlertType.success);
                               setState(() {});
                             },
                             child: Text('Si'),
@@ -603,10 +694,10 @@ class _DashboardState extends State<Dashboard> {
                     1);*/
                 _totalConsumo = 0;
                 if (reposicion) {
-                  showAlert(QuickAlertType.success);
+                  //        showAlert(QuickAlertType.success);
                 }
               } else {
-                showAlert(QuickAlertType.error);
+                showAlert(QuickAlertType.error, 'Debe armar la Comanda.');
               }
               globals.comandaLista = [];
               globals.nombreCliente = "";
@@ -637,7 +728,7 @@ class _DashboardState extends State<Dashboard> {
           foregroundColor: Colors.white,
           child: Text(
             pedido[index].item[0],
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
           ),
         ),
         title: Column(
@@ -645,18 +736,19 @@ class _DashboardState extends State<Dashboard> {
           children: [
             Text(
               pedido[index].item,
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
             ),
             Text(
+                style: TextStyle(fontSize: 10),
                 'Cantidad: ${pedido[index].cantidad}  -->  Precio Unitario: ${pedido[index].precio} Bs.'),
             Text(
               'Total del Item: ${(int.parse(pedido[index].cantidad) * double.parse(pedido[index].precio)).toStringAsFixed(2)} Bs.',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
             ),
           ],
         ),
         trailing: SizedBox(
-          width: 70,
+          width: 90,
           child: Row(
             children: [
               /*             InkWell(

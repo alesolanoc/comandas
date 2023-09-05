@@ -96,6 +96,7 @@ Future<List> getProductos(String agencia) async {
   CollectionReference collectionReferenceComanda = db.collection('productos');
   QuerySnapshot queryProductos = await collectionReferenceComanda
       .where('agencia', isEqualTo: agencia)
+      .orderBy('item')
       .get();
   queryProductos.docs.forEach((documento) {
     //print(documento.data());
@@ -242,6 +243,38 @@ Future<int> collectionSumValue() async {
   return globals.countComandas;
 }
 
+Future<List> getAComandaFromNumero(int codigoComanda) async {
+  List comanda = [];
+  CollectionReference collectionReferenceComanda =
+      db.collection('comandaCabecera');
+  QuerySnapshot querycomandas = await collectionReferenceComanda
+      .where('numeroComanda', isEqualTo: codigoComanda)
+      .where('status', isEqualTo: 'No Cobrado')
+      .get();
+  querycomandas.docs.forEach((documento) {
+    comanda.add(documento.data());
+  });
+  //print('comanda');
+  //print(comanda);
+  //print(comanda);
+  return comanda;
+}
+
+Future<List> getAComandaFromNumero1(int codigoComanda) async {
+  List comanda = [];
+  CollectionReference collectionReferenceComanda = db.collection('comanda');
+  QuerySnapshot querycomandas = await collectionReferenceComanda
+      .where('numeroComanda', isEqualTo: codigoComanda)
+      .get();
+  querycomandas.docs.forEach((documento) {
+    comanda.add(documento.data());
+  });
+  //print('comanda');
+  //print(comanda);
+  //print(comanda);
+  return comanda;
+}
+
 Future<List> getAComanda(String codigoComanda) async {
   List comanda = [];
   CollectionReference collectionReferenceComanda = db.collection('comanda');
@@ -375,6 +408,113 @@ Future<void> addComanda(
   });
 }
 
+Future<void> aupdateComanda(
+    List<dynamic> comandaListaAGrabar,
+    String nombreCliente,
+    int mesa,
+    int numeroComanda,
+    String agencia,
+    int countcomanda,
+    double totalConsumo,
+    String status) async {
+  List<dynamic> data = comandaListaAGrabar;
+  String codigoComanda = '';
+  String creacionDate = '';
+  String creacionTime = '';
+  var user = jsonEncode(data);
+  String user1 = user;
+  // getLastComanda();
+  DateTime current_date = DateTime.now();
+  String dateStr = current_date.toString();
+  var ab = json.decode(user1).toList();
+  int i = 0;
+  int elementCantidad = 0;
+
+  String cdate = DateFormat("yyyy-MM-dd").format(DateTime.now());
+  String tdata = DateFormat("HH:mm:ss").format(DateTime.now());
+
+  List productos = [];
+  int ii = 0;
+  CollectionReference collectionReferenceProductos =
+      db.collection('comandaCabecera');
+  QuerySnapshot queryProductos = await collectionReferenceProductos
+      .where('numeroComanda', isEqualTo: numeroComanda)
+      .get();
+  queryProductos.docs.forEach((documento) async {
+    String iD = documento.id;
+    productos.add(documento.data());
+    var user = jsonEncode(productos);
+    String user1 = user;
+    var ab = json.decode(user1).toList();
+    String agencia = ab[ii]['agencia'];
+    codigoComanda = ab[ii]['codigoComanda'];
+    creacionDate = ab[ii]['creacionDate'];
+    creacionTime = ab[ii]['creacionTime'];
+    //int mesa = ab[i]['mesa'];
+    String nombreCliente = ab[ii]['nombreCliente'];
+    int numeroComanda = ab[ii]['numeroComanda'];
+    //double totalConsumo = ab[ii]['totalConsumo'];
+    String status = ab[ii]['status'];
+    ;
+    double descuento = ab[ii]['descuento'];
+    ;
+    ii = ii + 1;
+    await db.collection('comandaCabecera').doc(iD).set({
+      'agencia': agencia,
+      'codigoComanda': codigoComanda,
+      'creacionDate': creacionDate,
+      'creacionTime': creacionTime,
+      'mesa': mesa,
+      'nombreCliente': nombreCliente,
+      'numeroComanda': numeroComanda,
+      'totalConsumo': totalConsumo,
+      'status': status,
+      'descuento': descuento
+    });
+  });
+
+  /* getLastComanda();
+  collectionSum();
+  db.collection("comandaCabecera").add({
+    'agencia': agencia,
+    'nombreCliente': nombreCliente,
+    'mesa': mesa,
+    'numeroComanda': globals.countComandas, //numeroComanda,
+    'codigoComanda': dateStr,
+    'creacionDate': cdate,
+    'creacionTime': tdata,
+    'totalConsumo': totalConsumo,
+    'status': status,
+    'descuento': 0
+  });*/
+  print('numeroDEDEComanda');
+  print(numeroComanda);
+  print('abababab');
+  print(ab);
+  ab.forEach((item) {
+    elementCantidad = int.parse(ab[i]['cantidad']);
+    print('ab[i][');
+    print(ab[i]['item']);
+    print(agencia);
+    print(nombreCliente);
+    db.collection("comanda").add({
+      'agencia': agencia,
+      'nombreCliente': nombreCliente,
+      'mesa': mesa,
+      'numeroComanda': numeroComanda, //numeroComanda,
+      'item': ab[i]['item'],
+      'cantidad': elementCantidad,
+      'precio': double.parse(ab[i]['precio']),
+      'codigoComanda': codigoComanda,
+      'creacionDate': creacionDate,
+      'creacionTime': creacionTime
+    });
+    updateProduct(
+        agencia, ab[i]['item'], elementCantidad, double.parse(ab[i]['precio']));
+    i = i + 1;
+  });
+}
+
 Future<void> updateProduct(
     String agencia, String producto, int newCantidad, double precio) async {
   List productos = [];
@@ -400,6 +540,47 @@ Future<void> updateProduct(
     String creacionDate = ab[i]['creacionDate'];
     String creacionTime = ab[i]['creacionTime'];
     cantidad = cantidad - newCantidad;
+    i = i + 1;
+    await db.collection('productos').doc(iD).set({
+      'agencia': agencia,
+      'item': item,
+      'cantidad': cantidad,
+      'precio': preciop,
+      'codigoProducto': codigoProducto,
+      'creacionDate': creacionDate,
+      'creacionTime': creacionTime,
+      'lastUpdate': dateStr
+    });
+  });
+
+  // await db.collection('productos').doc(uid).set();
+}
+
+Future<void> updateProductMasCantidad(
+    String agencia, String producto, int newCantidad, double precio) async {
+  List productos = [];
+  int i = 0;
+  DateTime current_date = DateTime.now();
+  String dateStr = current_date.toString();
+  CollectionReference collectionReferenceProductos = db.collection('productos');
+  QuerySnapshot queryProductos = await collectionReferenceProductos
+      .where('agencia', isEqualTo: agencia)
+      .where('item', isEqualTo: producto)
+      .get();
+  queryProductos.docs.forEach((documento) async {
+    String iD = documento.id;
+    productos.add(documento.data());
+    var user = jsonEncode(productos);
+    String user1 = user;
+    var ab = json.decode(user1).toList();
+    int cantidad = ab[i]['cantidad'];
+    String item = ab[i]['item'];
+    String agencia = ab[i]['agencia'];
+    double preciop = ab[i]['precio'];
+    String codigoProducto = ab[i]['codigoProducto'];
+    String creacionDate = ab[i]['creacionDate'];
+    String creacionTime = ab[i]['creacionTime'];
+    cantidad = cantidad + newCantidad;
     i = i + 1;
     await db.collection('productos').doc(iD).set({
       'agencia': agencia,
@@ -589,6 +770,24 @@ Future<void> addProducto(
   });
 }
 
+Future<void> addProductos(String producto, int cantidad, String agencia,
+    double precio, int value) async {
+  DateTime current_date = DateTime.now();
+  String dateStr = current_date.toString();
+  String cdate = DateFormat("yyyy-MM-dd").format(DateTime.now());
+  String tdata = DateFormat("HH:mm:ss").format(DateTime.now());
+  db.collection("productos").add({
+    'agencia': agencia,
+    'item': producto,
+    'cantidad': cantidad,
+    'precio': precio,
+    'codigoProducto': dateStr + value.toString(),
+    'creacionDate': tdata,
+    'creacionTime': cdate,
+    'lastUpdate': dateStr
+  });
+}
+
 Future<void> updateStatusCommanda(
     String codigoComanda, String statuss, double descuentoo) async {
   List productos = [];
@@ -737,6 +936,19 @@ Future<void> deleteGasto(String uid) async {
   // CollectionReference collectionReferenceComanda = db.collection('gastos');
 
   await db.collection('gastos').doc(uid).delete();
+}
+
+Future<void> deleteComanda(int numeroDeComanda) async {
+  CollectionReference collectionReferenceProductos = db.collection('comanda');
+  QuerySnapshot queryProductos = await collectionReferenceProductos
+      .where('numeroComanda', isEqualTo: numeroDeComanda)
+      .get();
+  queryProductos.docs.forEach((documento) {
+    updateProductMasCantidad(documento['agencia'], documento['item'],
+        documento['cantidad'], documento['precio']);
+    //  agencia, ab[i]['item'], elementCantidad, double.parse(ab[i]['precio']));
+    documento.reference.delete();
+  });
 }
 
 Future<void> updateStatusGasto(String codigoGasto) async {

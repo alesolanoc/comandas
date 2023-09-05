@@ -42,7 +42,7 @@ class _ConfiguracionState extends State<Configuracion> {
   bool loading = true;
 
   void showAlert(QuickAlertType quickAlertType) {
-    QuickAlert.show(context: context, type: quickAlertType);
+    QuickAlert.show(context: context, type: quickAlertType, width: 100);
   }
 
   List<DateTime> getDaysInBetween(DateTime startDate, DateTime endDate) {
@@ -93,7 +93,14 @@ class _ConfiguracionState extends State<Configuracion> {
   Widget build(BuildContext context) {
     String? _selectedVal1;
     return Scaffold(
-        appBar: AppBar(title: Text('Estadisticas  -  Coffeina')),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(30.0),
+          child: AppBar(
+              title: Text(
+            'Estadisticas  -  Coffeina',
+            style: TextStyle(color: Colors.black, fontSize: 10),
+          )),
+        ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -110,13 +117,20 @@ class _ConfiguracionState extends State<Configuracion> {
                       // newAgenciaList = globals.newAgenciaList;
                     }
                     return DropdownButtonFormField(
+                      borderRadius: BorderRadius.circular(20),
                       decoration: InputDecoration(
+                        isDense: true, // Added this
+                        contentPadding: EdgeInsets.all(8),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                           borderSide: BorderSide(width: 3, color: Colors.grey),
                         ),
                       ),
-                      hint: Text('Seleccione Agencia'),
+                      hint: Text(
+                        'Seleccione Agencia',
+                        style: TextStyle(
+                            color: Colors.black, fontSize: 10, height: 2.0),
+                      ),
                       isExpanded: true,
                       menuMaxHeight: 350,
                       iconSize: 36,
@@ -125,7 +139,7 @@ class _ConfiguracionState extends State<Configuracion> {
                           .map((item) => DropdownMenuItem<String>(
                                 value: item,
                                 child:
-                                    Text(item, style: TextStyle(fontSize: 16)),
+                                    Text(item, style: TextStyle(fontSize: 10)),
                               ))
                           .toList(),
                       onChanged: (item) => setState(
@@ -136,9 +150,15 @@ class _ConfiguracionState extends State<Configuracion> {
                 controller: dateInputInicial,
                 //editing controller of this TextField
                 decoration: InputDecoration(
-                    icon: Icon(Icons.calendar_today), //icon of text field
-                    labelText: "Ingrese Fecha Inicial" //label text of field
-                    ),
+                  isDense: true, // Added this
+                  contentPadding: EdgeInsets.all(8),
+                  icon: Icon(Icons.calendar_today), //icon of text field
+                  labelText: "Ingrese Fecha Inicial",
+                  labelStyle: TextStyle(
+                      color: Colors.black,
+                      fontStyle: FontStyle.italic,
+                      fontSize: 10), //label text of field
+                ),
                 readOnly: true,
                 //set it true, so that user will not able to edit text
                 onTap: () async {
@@ -170,9 +190,15 @@ class _ConfiguracionState extends State<Configuracion> {
                 controller: dateInputFinal,
                 //editing controller of this TextField
                 decoration: InputDecoration(
-                    icon: Icon(Icons.calendar_today), //icon of text field
-                    labelText: "Ingrese Fecha Final" //label text of field
-                    ),
+                  isDense: true, // Added this
+                  contentPadding: EdgeInsets.all(8),
+                  icon: Icon(Icons.calendar_today), //icon of text field
+                  labelText: "Ingrese Fecha Final",
+                  labelStyle: TextStyle(
+                      color: Colors.black,
+                      fontStyle: FontStyle.italic,
+                      fontSize: 10), //la //label text of field
+                ),
                 readOnly: true,
                 //set it true, so that user will not able to edit text
                 onTap: () async {
@@ -259,7 +285,7 @@ class _ConfiguracionState extends State<Configuracion> {
                 },
               ),
               Text("Ingresos-> " + globals.agenciaSeleccionadaParaVer1,
-                  style: TextStyle(fontSize: 22)),
+                  style: TextStyle(fontSize: 18)),
               /*      FutureBuilder<String>(
               future: getData(),
               builder: (context, snapshot) {
@@ -456,7 +482,7 @@ class _ConfiguracionState extends State<Configuracion> {
                 foregroundColor: Colors.white,
                 child: Text(
                   globals.dayss[index][8] + globals.dayss[index][9],
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
                 ),
               ),
               title: Column(
@@ -464,11 +490,15 @@ class _ConfiguracionState extends State<Configuracion> {
                 children: [
                   Text(
                     'Fecha: ' + globals.dayss[index].toString(), //.item,
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
                   ),
-                  Text('Total Ingreso: ' +
-                      globals.dayss[index + 1].toStringAsFixed(2) +
-                      ' Bs.')
+                  Text(
+                      'Total Ingreso: ' +
+                          globals.dayss[index + 1].toStringAsFixed(2) +
+                          ' Bs.',
+                      style: TextStyle(
+                        fontSize: 10,
+                      ))
                 ],
               ),
             ),

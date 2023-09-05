@@ -53,14 +53,15 @@ buildPrintableData(
                 ),
               ],
             ),
-            pw.SizedBox(height: 10.00),
+            pw.SizedBox(height: 20.00),
             pw.Container(
               //  color: const PdfColor(0.5, 1, 0.5, 0.7),
               width: double.infinity,
-              height: 10.00,
+              height: 20.00,
               //     child: pw.Center(
               child: pw.Text(
                 "Numero de Mesa -> " + numeroMesa.toString(),
+                style: pw.TextStyle(fontSize: 15),
                 /* style: pw.TextStyle(
                     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                     fontSize: 20.00,
@@ -71,58 +72,60 @@ buildPrintableData(
             pw.Container(
               // color: const PdfColor(0.5, 1, 0.5, 0.7),
               width: double.infinity,
-              height: 10.00,
+              height: 20.00,
               //    child: pw.Center(
               child: pw.Text(
-                "Nombre del Cliente -> " + nombreCliente.toString(),
-                /*  style: pw.TextStyle(
+                  "Nombre del Cliente -> " + nombreCliente.toString(),
+                  style: pw.TextStyle(fontSize: 15)
+                  /*  style: pw.TextStyle(
                     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                     fontSize: 20.00,
                     fontWeight: pw.FontWeight.bold),*/
-              ),
+                  ),
               //    ),
             ),
             pw.Container(
               // color: const PdfColor(0.5, 1, 0.5, 0.7),
               width: double.infinity,
-              height: 10.00,
+              height: 20.00,
               //       child: pw.Center(
-              child: pw.Text(
-                "Sucursal -> " + sucursal.toString(),
-                /*       style: pw.TextStyle(
+              child: pw.Text("Sucursal -> " + sucursal.toString(),
+                  style: pw.TextStyle(fontSize: 15)
+                  /*       style: pw.TextStyle(
                     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                     fontSize: 20.00,
                     fontWeight: pw.FontWeight.bold),*/
-              ),
+                  ),
               //    ),
             ),
             pw.Container(
               // color: const PdfColor(0.5, 1, 0.5, 0.7),
               width: double.infinity,
-              height: 10.00,
+              height: 20.00,
               //        child: pw.Center(
-              child: pw.Text(
-                "Fecha -> " + DateTime.now().toString(),
-                /*  style: pw.TextStyle(
+              child: pw.Text("Fecha -> " + DateTime.now().toString(),
+                  style: pw.TextStyle(fontSize: 15)
+                  /*  style: pw.TextStyle(
                     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                     fontSize: 20.00,
                     fontWeight: pw.FontWeight.bold),*/
-              ),
+                  ),
               //        ),
             ),
-            pw.SizedBox(height: 10.00),
+            pw.SizedBox(height: 20.00),
             pw.Container(
               // color: const PdfColor(0.5, 1, 0.5, 0.7),
               width: double.infinity,
-              height: 10.00,
+              height: 20.00,
               //        child: pw.Center(
               child: pw.Text(
-                'Nro.  Item                                                        Cantidad       Precio/U       Precio/T',
-                /*  style: pw.TextStyle(
+                  'Nro.  Item                                         Cantidad  Precio/U  Precio/T',
+                  style: pw.TextStyle(fontSize: 15)
+                  /*  style: pw.TextStyle(
                     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                     fontSize: 20.00,
                     fontWeight: pw.FontWeight.bold),*/
-              ),
+                  ),
               //        ),
             ),
             for (var i = 0; i < comandaLista.length; i++)
@@ -138,21 +141,27 @@ buildPrintableData(
                 pw.TableRow(
                   children: [
                     pw.Container(
-                      child: pw.Text((i + 1).toString()),
+                      child: pw.Text((i + 1).toString(),
+                          style: pw.TextStyle(fontSize: 15)),
                     ),
                     pw.Container(
-                      child: pw.Text(comandaLista[i]['item']),
+                      child: pw.Text(comandaLista[i]['item'],
+                          style: pw.TextStyle(fontSize: 15)),
                     ),
                     pw.Container(
-                      child: pw.Text(comandaLista[i]['cantidad']),
+                      child: pw.Text(comandaLista[i]['cantidad'],
+                          style: pw.TextStyle(fontSize: 15)),
                     ),
                     pw.Container(
-                      child: pw.Text(comandaLista[i]['precio']),
+                      child: pw.Text(comandaLista[i]['precio'],
+                          style: pw.TextStyle(fontSize: 15)),
                     ),
                     pw.Container(
-                      child: pw.Text((double.parse(comandaLista[i]['precio']) *
-                              double.parse(comandaLista[i]['cantidad']))
-                          .toStringAsFixed(2)),
+                      child: pw.Text(
+                          (double.parse(comandaLista[i]['precio']) *
+                                  double.parse(comandaLista[i]['cantidad']))
+                              .toStringAsFixed(2),
+                          style: pw.TextStyle(fontSize: 15)),
                     ),
                   ],
                 )
@@ -170,7 +179,7 @@ buildPrintableData(
                       style: pw.TextStyle(
                         fontSize: 22.00,
                         fontWeight: pw.FontWeight.bold,
-                        color: const PdfColor(0.2, 0.6, 0.2, 0.7),
+                        //      color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                       ),
                     ),
                   ],
@@ -258,10 +267,11 @@ buildPrintableData1(
             pw.Container(
               //  color: const PdfColor(0.5, 1, 0.5, 0.7),
               width: double.infinity,
-              height: 10.00,
+              height: 20.00,
               //     child: pw.Center(
               child: pw.Text(
                 "Numero de Mesa -> " + numeroMesa.toString(),
+                style: pw.TextStyle(fontSize: 15),
                 /* style: pw.TextStyle(
                     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                     fontSize: 20.00,
@@ -272,10 +282,11 @@ buildPrintableData1(
             pw.Container(
               // color: const PdfColor(0.5, 1, 0.5, 0.7),
               width: double.infinity,
-              height: 10.00,
+              height: 20.00,
               //    child: pw.Center(
               child: pw.Text(
                 "Nombre del Cliente -> " + nombreCliente.toString(),
+                style: pw.TextStyle(fontSize: 15),
                 /*  style: pw.TextStyle(
                     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                     fontSize: 20.00,
@@ -286,10 +297,11 @@ buildPrintableData1(
             pw.Container(
               // color: const PdfColor(0.5, 1, 0.5, 0.7),
               width: double.infinity,
-              height: 10.00,
+              height: 20.00,
               //       child: pw.Center(
               child: pw.Text(
                 "Sucursal -> " + sucursal.toString(),
+                style: pw.TextStyle(fontSize: 15),
                 /*       style: pw.TextStyle(
                     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                     fontSize: 20.00,
@@ -300,10 +312,11 @@ buildPrintableData1(
             pw.Container(
               // color: const PdfColor(0.5, 1, 0.5, 0.7),
               width: double.infinity,
-              height: 10.00,
+              height: 20.00,
               //        child: pw.Center(
               child: pw.Text(
                 "Fecha -> " + DateTime.now().toString(),
+                style: pw.TextStyle(fontSize: 15),
                 /*  style: pw.TextStyle(
                     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                     fontSize: 20.00,
@@ -315,10 +328,11 @@ buildPrintableData1(
             pw.Container(
               // color: const PdfColor(0.5, 1, 0.5, 0.7),
               width: double.infinity,
-              height: 10.00,
+              height: 20.00,
               //        child: pw.Center(
               child: pw.Text(
-                'Nro.  Item                                                        Cantidad       Precio/U       Precio/T',
+                'Nro.  Item                                         Cantidad  Precio/U  Precio/T',
+                style: pw.TextStyle(fontSize: 15),
                 /*  style: pw.TextStyle(
                     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                     fontSize: 20.00,
@@ -339,20 +353,35 @@ buildPrintableData1(
                 pw.TableRow(
                   children: [
                     pw.Container(
-                      child: pw.Text((i + 1).toString()),
+                      child: pw.Text(
+                        (i + 1).toString(),
+                        style: pw.TextStyle(fontSize: 15),
+                      ),
                     ),
                     pw.Container(
-                      child: pw.Text(comandaLista[i]),
+                      child: pw.Text(
+                        comandaLista[i],
+                        style: pw.TextStyle(fontSize: 15),
+                      ),
                     ),
                     pw.Container(
-                      child: pw.Text(comandaLista1[i].toStringAsFixed(2)),
+                      child: pw.Text(
+                        comandaLista1[i].toStringAsFixed(2),
+                        style: pw.TextStyle(fontSize: 15),
+                      ),
                     ),
                     pw.Container(
-                      child: pw.Text(comandaLista2[i].toStringAsFixed(2)),
+                      child: pw.Text(
+                        comandaLista2[i].toStringAsFixed(2),
+                        style: pw.TextStyle(fontSize: 15),
+                      ),
                     ),
                     pw.Container(
-                      child: pw.Text((comandaLista1[i] * (comandaLista2[i]))
-                          .toStringAsFixed(2)),
+                      child: pw.Text(
+                        (comandaLista1[i] * (comandaLista2[i]))
+                            .toStringAsFixed(2),
+                        style: pw.TextStyle(fontSize: 15),
+                      ),
                     ),
                   ],
                 )
@@ -370,7 +399,7 @@ buildPrintableData1(
                       style: pw.TextStyle(
                         fontSize: 15.00,
                         fontWeight: pw.FontWeight.bold,
-                        color: const PdfColor(0.2, 0.6, 0.2, 0.7),
+                        //     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                       ),
                     ),
                   ],
@@ -392,7 +421,7 @@ buildPrintableData1(
                       style: pw.TextStyle(
                         fontSize: 22.00,
                         fontWeight: pw.FontWeight.bold,
-                        color: const PdfColor(0.2, 0.6, 0.2, 0.7),
+                        //   color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                       ),
                     ),
                   ],
@@ -1006,8 +1035,8 @@ buildPrintableData8(
         List LsitaDeProductosAgencia,
         List ListaDeProductosCantidad,
         List<List> listaDeComandasDetalle,
-        String cadena) =>
-    // List ListaDeTotalConsumido) =>
+        String cadena,
+        List ListaDeTotalConsumido) =>
     pw.Padding(
       padding: const pw.EdgeInsets.all(25.00),
       child: pw.Column(children: [
@@ -1073,13 +1102,13 @@ buildPrintableData8(
                         : pw.Container(
                             child: pw.Text('1'),
                           ),
-                    /*     ListaDeTotalConsumido[i] == '0'
+                    ListaDeTotalConsumido[i] == '0'
                         ? pw.Container(
                             child: pw.Text('0'),
                           )
                         : pw.Container(
                             child: pw.Text(ListaDeTotalConsumido[i].toString()),
-                          ),*/
+                          ),
 
                     /*   pw.Column(children: [
                       for (var j = 0; j < listaDeComandasDetalle[i].length; j++)

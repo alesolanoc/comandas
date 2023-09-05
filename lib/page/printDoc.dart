@@ -225,9 +225,8 @@ Future<void> printDoc8(
     List LsitaDeProductosAgencia,
     List ListaDeProductosCantidad,
     List<List> listaDeComandasDetalle,
-    String cadena
-    //  List ListaDeTotalConsumido
-    ) async {
+    String cadena,
+    List ListaDeTotalConsumido) async {
 /*  final image = await imageFromAssetBundle(
     '',
   );*/
@@ -242,8 +241,8 @@ Future<void> printDoc8(
             LsitaDeProductosAgencia,
             ListaDeProductosCantidad,
             listaDeComandasDetalle,
-            cadena);
-        //   ListaDeTotalConsumido);
+            cadena,
+            ListaDeTotalConsumido);
       }));
   await Printing.layoutPdf(
       onLayout: (PdfPageFormat format) async => doc.save());

@@ -48,7 +48,7 @@ class _GastosState extends State<Gastos> {
   int selecetdIndex = -1;
 
   void showAlert(QuickAlertType quickAlertType) {
-    QuickAlert.show(context: context, type: quickAlertType);
+    QuickAlert.show(context: context, type: quickAlertType, width: 100);
   }
 
   @override
@@ -69,7 +69,14 @@ class _GastosState extends State<Gastos> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Ingresar Gastos  -  Coffeina')),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(30.0),
+          child: AppBar(
+              title: Text(
+            'Ingresar Gastos  -  Coffeina',
+            style: TextStyle(color: Colors.black, fontSize: 10),
+          )),
+        ),
         body: Padding(
           padding: EdgeInsets.all(15),
           child: Column(
@@ -78,9 +85,15 @@ class _GastosState extends State<Gastos> {
                 controller: dateInput,
                 //editing controller of this TextField
                 decoration: InputDecoration(
-                    icon: Icon(Icons.calendar_today), //icon of text field
-                    labelText: "Enter Date" //label text of field
-                    ),
+                  isDense: true, // Added this
+                  contentPadding: EdgeInsets.all(8),
+                  icon: Icon(Icons.calendar_today), //icon of text field
+                  labelText: "Ingrese Fecha",
+                  labelStyle: TextStyle(
+                      color: Colors.black,
+                      fontStyle: FontStyle.italic,
+                      fontSize: 10), //label text of field
+                ),
                 readOnly: true,
                 onTap: () async {
                   DateTime? pickedDate = await showDatePicker(
@@ -107,25 +120,37 @@ class _GastosState extends State<Gastos> {
                 },
               ),
               TextField(
+                style: TextStyle(color: Colors.black, fontSize: 10),
                 decoration: InputDecoration(
+                    isDense: true, // Added this
+                    contentPadding: EdgeInsets.all(8),
                     hintText: 'Fecha: ' + globals.formattedDateGlobal,
+                    hintStyle: TextStyle(fontSize: 10),
                     enabled: false,
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)))),
               ),
               SizedBox(height: 10),
               TextField(
+                style: TextStyle(fontSize: 10.0, height: 2.5),
                 controller: conceptoGastpField,
                 decoration: InputDecoration(
+                    isDense: true, // Added this
+                    contentPadding: EdgeInsets.all(8),
                     hintText: "Concepto del Gasto",
+                    hintStyle: TextStyle(fontSize: 10),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)))),
               ),
               SizedBox(height: 10),
               TextField(
+                style: TextStyle(fontSize: 10.0, height: 2.5),
                 controller: montodelGastoField,
                 decoration: InputDecoration(
+                    isDense: true, // Added this
+                    contentPadding: EdgeInsets.all(8),
                     hintText: "Monto del Gasto",
+                    hintStyle: TextStyle(fontSize: 10),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)))),
                 keyboardType: TextInputType.number,
@@ -139,6 +164,20 @@ class _GastosState extends State<Gastos> {
                 children: [
                   Expanded(
                     child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            fixedSize: const Size(150, 35),
+                            primary:
+                                Colors.redAccent, //background color of button
+                            side: BorderSide(
+                                width: 1,
+                                color: Colors.brown), //border width and color
+                            elevation: 1, //elevation of button
+                            shape: RoundedRectangleBorder(
+                                //to set border radius to button
+                                borderRadius: BorderRadius.circular(30)),
+                            padding: EdgeInsets.all(
+                                20) //content padding inside button
+                            ),
                         onPressed: () {
                           print(conceptoGastpField.text);
                           print(montodelGastoField.text);
@@ -188,12 +227,12 @@ class _GastosState extends State<Gastos> {
               SizedBox(height: 10),
               Text(
                 '---> TOTAL EGRESOS: ${_totalConsumo.toStringAsFixed(2)} Bs.',
-                style: TextStyle(fontSize: 25),
+                style: TextStyle(fontSize: 15),
               ),
               SizedBox(height: 20),
               itemgastos.length == 0
                   ? Text("Boleta de Gastos Vacia",
-                      style: TextStyle(fontSize: 22))
+                      style: TextStyle(fontSize: 12))
                   : Expanded(
                       child: ListView.builder(
                       itemCount: itemgastos.length,
@@ -256,7 +295,7 @@ class _GastosState extends State<Gastos> {
           foregroundColor: Colors.white,
           child: Text(
             itemgastos[index].item[0],
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
           ),
         ),
         title: Column(
@@ -264,13 +303,16 @@ class _GastosState extends State<Gastos> {
           children: [
             Text(
               itemgastos[index].item,
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
             ),
-            Text('Gasto: ${itemgastos[index].gasto} Bs.'),
+            Text('Gasto: ${itemgastos[index].gasto} Bs.',
+                style: TextStyle(
+                  fontSize: 10,
+                )),
           ],
         ),
         trailing: SizedBox(
-          width: 70,
+          width: 120,
           child: Row(
             children: [
               InkWell(

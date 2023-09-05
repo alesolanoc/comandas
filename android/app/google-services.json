@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "233925994799",
-    "project_id": "flutter-coffeina",
-    "storage_bucket": "flutter-coffeina.appspot.com"
+    "project_number": "139447114651",
+    "project_id": "coffeina1-a5b31",
+    "storage_bucket": "coffeina1-a5b31.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:233925994799:android:61faf2681ece33843119da",
+        "mobilesdk_app_id": "1:139447114651:android:752b2138e77c8f79a25f3e",
         "android_client_info": {
           "package_name": "com.example.flutter_application_1"
         }
       },
       "oauth_client": [
         {
-          "client_id": "233925994799-vt4ltmlmboe3u8b755cie8tp2rclfdi6.apps.googleusercontent.com",
+          "client_id": "139447114651-bc6008gl3vcqsfrs35ftce3v64vsmdjh.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCCJXG1AabxVlyUKe7drCJQZUqTJdzm_cE"
+          "current_key": "AIzaSyAPELsh0Oi3_RsLQO0sKFcJB9rhZ0a8HbU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "233925994799-vt4ltmlmboe3u8b755cie8tp2rclfdi6.apps.googleusercontent.com",
+              "client_id": "139447114651-bc6008gl3vcqsfrs35ftce3v64vsmdjh.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

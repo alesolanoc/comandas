@@ -1,0 +1,3882 @@
+[
+ {
+   "item": "Jugo de Limon con Agua",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 1,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Limon con Leche",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 2,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Papaya con Agua",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 3,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Papaya con Leche",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 4,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Platano con Agua",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 5,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Platano con Leche",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 6,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Frutilla con Agua",
+   "precio": 13,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 7,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Frutilla con Leche",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 8,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Durazno con Agua",
+   "precio": 13,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 9,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de durazno con Leche",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 10,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Pina con Agua",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 11,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Pina con Leche",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 12,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Mango con Agua",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 13,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Mango con Leche",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 14,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Sandia con Agua",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 15,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Sandia con Leche",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 16,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Tumbo con Agua",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 17,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de tumbo con Leche",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 18,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Copoazu con Agua",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 19,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Copoazu con Leche",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 20,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Mora con Agua",
+   "precio": 13,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 21,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Mora con Leche",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 22,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Manzana con Agua",
+   "precio": 11,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 23,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Manzana con Leche",
+   "precio": 13,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 24,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Ajonjoli con Agua",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 25,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Ajonjoli con Leche",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 26,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Linaza con Agua",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 27,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Linaza con Leche",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 28,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Coco para jugo",
+   "precio": 3,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 29,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Almendra para jugo",
+   "precio": 3,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 30,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Nuez para jugo",
+   "precio": 3,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 31,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Hierba Buena para jugo",
+   "precio": 3,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 32,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Jugo con Yogurt",
+   "precio": 4,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 33,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Waffle de Miel y Mantequilla",
+   "precio": 18,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 34,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Waffle de Chocolate y Crema",
+   "precio": 20,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 35,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Waffle de Chocolate Helado y Crema",
+   "precio": 23,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 36,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Waffle de Chocolate Fruta y Crema",
+   "precio": 25,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 37,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Waffle Helado Fruta y Crema",
+   "precio": 28,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 38,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Sandwich de Queso",
+   "precio": 8,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 39,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Sandwich de Jamon",
+   "precio": 8,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 40,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Sandwich Jamon con Queso",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 41,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Sandwich Italiano",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 42,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Sandwich de Atun",
+   "precio": 19,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 43,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Queso para Sandwich",
+   "precio": 2,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 44,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Jamon para Sandwich",
+   "precio": 2,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 45,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frappeino Clasico",
+   "precio": 25,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 46,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frappeino Choco Dark",
+   "precio": 27,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 47,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frappeino Manjar",
+   "precio": 27,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 48,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frappeino Oreo",
+   "precio": 29,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 49,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frappeino MJM",
+   "precio": 30,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 50,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frappeino Coffeina",
+   "precio": 30,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 51,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Helado Vienesa",
+   "precio": 25,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 52,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Helado Sunday",
+   "precio": 25,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 53,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Porcion de Helado",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 54,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Clasico sin Crema",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 55,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Clasico con Crema",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 56,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Vainilla sin Crema",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 57,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Vainilla con Crema",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 58,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Manjar sin Crema",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 59,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Manjar con Crema",
+   "precio": 17,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 60,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Frutilla sin Crema",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 61,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Frutilla con Crema",
+   "precio": 17,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 62,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Menta sin Crema",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 63,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Menta con Crema",
+   "precio": 18,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 64,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Mocca sin Crema",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 65,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Mocca con Crema",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 66,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Mocca Menta sin Crema",
+   "precio": 18,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 67,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Mocca Menta con Crema",
+   "precio": 20,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 68,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Mocca White sin Crema",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 69,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Mocca White con Crema",
+   "precio": 17,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 70,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccion Coco sin Crema",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 71,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccion Coco con Crema",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 72,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Baileys sin Crema",
+   "precio": 18,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 73,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccion Baileys con Crema",
+   "precio": 20,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 74,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccion Latte sin Crema",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 75,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Chocolate Caliente sin Café sin Crema",
+   "precio": 13,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 76,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Chocolate Caliente sin Café con Crema",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 77,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Submarino sin Café sin Crema",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 78,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Submarino sin Café con Crema",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 79,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Extracto de Café para Capuccino",
+   "precio": 3,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 80,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Menta para Capuccino",
+   "precio": 3,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 81,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Baileys para Capuccino",
+   "precio": 5,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 82,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Ice Tea",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 83,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Frio",
+   "precio": 13,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 84,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Latte Frio",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 85,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frapuccino Clasico",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 86,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frapuccino Mocca",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 87,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frapuccino Vainilla",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 88,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frapuccino Condensada",
+   "precio": 17,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 89,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frapuccino Oreo",
+   "precio": 17,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 90,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frapuccino Menta",
+   "precio": 18,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 91,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frapuccino Baileys",
+   "precio": 20,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 92,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frapuccino OnlyChocol",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 93,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frozzenlemon Frutilla",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 94,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frozzenlemon Chocolate",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 95,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frozzenlemon Condensada",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 96,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frozzenlemon Manjar",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 97,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Milkshake con Café",
+   "precio": 20,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 98,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Milkshake con Frutilla",
+   "precio": 21,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 99,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Milkshake con Vainilla",
+   "precio": 21,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 100,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Milkshake con Manjar",
+   "precio": 21,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 101,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Milkshake con Oreo",
+   "precio": 21,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 102,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Milkshake con MJM",
+   "precio": 28,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 103,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Milkshake con Baileys",
+   "precio": 25,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 104,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Milkshake con Nutella",
+   "precio": 28,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 105,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Desayunos - Americano",
+   "precio": 50,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 106,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Desayunos - Small",
+   "precio": 30,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 107,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Desayunos - Porcions de Tostadas",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 108,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Omelette + Café + 2 Tostadas + Jamon",
+   "precio": 22,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 109,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Omelette + Café + 2 Tostadas + Queso",
+   "precio": 22,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 110,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Omelette + Café + 2 Tostadas + Jamon con Queso",
+   "precio": 26,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 111,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Empanada",
+   "precio": 4,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 112,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Cunape",
+   "precio": 4,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 113,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Croasan de Queso",
+   "precio": 5,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 114,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Croasan de Jamon y Queso",
+   "precio": 6,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 115,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Rollitos de Canela",
+   "precio": 6,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 116,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Cuernitos",
+   "precio": 6,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 117,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Alfajores",
+   "precio": 3.5,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 118,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Galletas",
+   "precio": 2.5,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 119,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Donuts",
+   "precio": 4,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 120,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Huminta a la Olla",
+   "precio": 9,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 121,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Huminta al Horno",
+   "precio": 9,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 122,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Pastel de Choclo",
+   "precio": 9,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 123,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Chesscake de Maracuya",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 124,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Chesscake de Oreo",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 125,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Chesscake de Frutos Rojos",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 126,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Pie de Limon",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 127,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Pie de Limon Mini",
+   "precio": 9,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 128,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Torta de Mocca",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 129,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Torta de Nuez",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 130,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Torta 3 Leches",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 131,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Torta Redvelvet",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 132,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Torta de Zanahoria",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 133,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Torta de Chocolate",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 134,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Bombitas",
+   "precio": 7,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 135,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Éclair",
+   "precio": 7,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 136,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Brazo Gitano",
+   "precio": 5,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 137,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso ",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 138,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Doppio",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 139,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Macciato",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 140,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Cortado",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 141,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Cream",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 142,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Bombon",
+   "precio": 13,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 143,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Mocca",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 144,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Nutella",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 145,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Baileys",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 146,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Menta",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 147,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Lungo",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 148,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Americano ",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 149,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Macciato Largo",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 150,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Americano Doppio",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 151,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Americano Crema",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 152,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Americano Mocca",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 153,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Americano Bombon",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 154,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Americano Menta",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 155,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Americano Baileys",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 156,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Americano Nutella",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 157,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café cortado",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 158,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Shot de Café",
+   "precio": 3,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 159,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Crema para Café",
+   "precio": 3,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 160,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Licor de Menta para Café",
+   "precio": 3,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 161,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Licor de Baileys para Café",
+   "precio": 5,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 162,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Coca cola 300 ml",
+   "precio": 4,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 163,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "coca cola 500 ml",
+   "precio": 7,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 164,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Coca cola Zero 500 ml",
+   "precio": 7,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 165,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Fanta 300 Ml",
+   "precio": 4,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 166,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Fanta 500 ml",
+   "precio": 7,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 167,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Agua sin Gas 600 ml",
+   "precio": 6,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 168,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Agua sin Gas 990 ml",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 169,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Agua con Gas 600 ml",
+   "precio": 7,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 170,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "PoweAde  990 ml",
+   "precio": 11,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 171,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Cerveza Corona",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 172,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Cerveza Huari Miel",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 173,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Cerveza Huari Lager en Lata",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 174,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Cerveza Stella Arois Negra en Lata",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 175,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Vaso de Whisky Red Label",
+   "precio": 35,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 176,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Vaso de Whisky Black Label",
+   "precio": 40,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 177,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Vaso de Licor Baileys",
+   "precio": 35,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 178,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Doble - Whisky Red Label",
+   "precio": 50,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 179,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Doble - Whisky Black Label",
+   "precio": 60,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 180,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Doble - Licor Baileys",
+   "precio": 50,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 181,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Crepes Dulce de Chocolate",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 182,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Crepes dulce de Manjar",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 183,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Crepes Dulce de Frutilla",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 184,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Crepes Dulce Mixto",
+   "precio": 18,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 185,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Crepes Salado de Jamon",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 186,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Crepes Salado de Queso",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 187,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Crepes Salado Jamon con Queso",
+   "precio": 18,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 188,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Grano 250 gr",
+   "precio": 35,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 189,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Grano 500 gr",
+   "precio": 60,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 190,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Promocion Huminta Olla + Café",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 191,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Promocion Huminta Horno + Café",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 192,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Promocion Pastel de Choclo + Café",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 193,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Envase",
+   "precio": 1,
+   "cantidad": 1000,
+   "agencia": "central",
+   "codigoProducto": 194,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Limon con Agua",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 195,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Limon con Leche",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 196,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Papaya con Agua",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 197,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Papaya con Leche",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 198,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Platano con Agua",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 199,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Platano con Leche",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 200,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Frutilla con Agua",
+   "precio": 13,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 201,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Frutilla con Leche",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 202,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Durazno con Agua",
+   "precio": 13,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 203,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de durazno con Leche",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 204,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Pina con Agua",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 205,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Pina con Leche",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 206,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Mango con Agua",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 207,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Mango con Leche",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 208,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Sandia con Agua",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 209,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Sandia con Leche",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 210,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Tumbo con Agua",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 211,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de tumbo con Leche",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 212,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Copoazu con Agua",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 213,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Copoazu con Leche",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 214,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Mora con Agua",
+   "precio": 13,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 215,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Mora con Leche",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 216,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Manzana con Agua",
+   "precio": 11,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 217,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Manzana con Leche",
+   "precio": 13,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 218,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Ajonjoli con Agua",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 219,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Ajonjoli con Leche",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 220,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Linaza con Agua",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 221,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Jugo de Linaza con Leche",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 222,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Coco para jugo",
+   "precio": 3,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 223,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Almendra para jugo",
+   "precio": 3,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 224,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Nuez para jugo",
+   "precio": 3,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 225,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Hierba Buena para jugo",
+   "precio": 3,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 226,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Jugo con Yogurt",
+   "precio": 4,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 227,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Waffle de Miel y Mantequilla",
+   "precio": 18,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 228,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Waffle de Chocolate y Crema",
+   "precio": 20,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 229,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Waffle de Chocolate Helado y Crema",
+   "precio": 23,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 230,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Waffle de Chocolate Fruta y Crema",
+   "precio": 25,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 231,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Waffle Helado Fruta y Crema",
+   "precio": 28,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 232,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Sandwich de Queso",
+   "precio": 8,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 233,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Sandwich de Jamon",
+   "precio": 8,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 234,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Sandwich Jamon con Queso",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 235,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Sandwich Italiano",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 236,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Sandwich de Atun",
+   "precio": 19,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 237,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Queso para Sandwich",
+   "precio": 2,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 238,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Jamon para Sandwich",
+   "precio": 2,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 239,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frappeino Clasico",
+   "precio": 25,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 240,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frappeino Choco Dark",
+   "precio": 27,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 241,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frappeino Manjar",
+   "precio": 27,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 242,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frappeino Oreo",
+   "precio": 29,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 243,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frappeino MJM",
+   "precio": 30,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 244,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frappeino Coffeina",
+   "precio": 30,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 245,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Helado Vienesa",
+   "precio": 25,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 246,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Helado Sunday",
+   "precio": 25,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 247,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Porcion de Helado",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 248,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Clasico sin Crema",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 249,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Clasico con Crema",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 250,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Vainilla sin Crema",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 251,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Vainilla con Crema",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 252,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Manjar sin Crema",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 253,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Manjar con Crema",
+   "precio": 17,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 254,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Frutilla sin Crema",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 255,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Frutilla con Crema",
+   "precio": 17,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 256,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Menta sin Crema",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 257,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Menta con Crema",
+   "precio": 18,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 258,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Mocca sin Crema",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 259,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Mocca con Crema",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 260,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Mocca Menta sin Crema",
+   "precio": 18,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 261,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Mocca Menta con Crema",
+   "precio": 20,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 262,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Mocca White sin Crema",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 263,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Mocca White con Crema",
+   "precio": 17,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 264,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccion Coco sin Crema",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 265,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccion Coco con Crema",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 266,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccino Baileys sin Crema",
+   "precio": 18,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 267,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccion Baileys con Crema",
+   "precio": 20,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 268,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Capuccion Latte sin Crema",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 269,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Chocolate Caliente sin Café sin Crema",
+   "precio": 13,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 270,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Chocolate Caliente sin Café con Crema",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 271,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Submarino sin Café sin Crema",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 272,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Submarino sin Café con Crema",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 273,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Extracto de Café para Capuccino",
+   "precio": 3,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 274,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Menta para Capuccino",
+   "precio": 3,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 275,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Baileys para Capuccino",
+   "precio": 5,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 276,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Ice Tea",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 277,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Frio",
+   "precio": 13,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 278,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Latte Frio",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 279,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frapuccino Clasico",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 280,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frapuccino Mocca",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 281,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frapuccino Vainilla",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 282,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frapuccino Condensada",
+   "precio": 17,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 283,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frapuccino Oreo",
+   "precio": 17,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 284,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frapuccino Menta",
+   "precio": 18,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 285,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frapuccino Baileys",
+   "precio": 20,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 286,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frapuccino OnlyChocol",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 287,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frozzenlemon Frutilla",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 288,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frozzenlemon Chocolate",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 289,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frozzenlemon Condensada",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 290,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Frozzenlemon Manjar",
+   "precio": 16,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 291,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Milkshake con Café",
+   "precio": 20,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 292,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Milkshake con Frutilla",
+   "precio": 21,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 293,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Milkshake con Vainilla",
+   "precio": 21,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 294,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Milkshake con Manjar",
+   "precio": 21,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 295,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Milkshake con Oreo",
+   "precio": 21,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 296,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Milkshake con MJM",
+   "precio": 28,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 297,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Milkshake con Baileys",
+   "precio": 25,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 298,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Milkshake con Nutella",
+   "precio": 28,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 299,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Desayunos - Americano",
+   "precio": 50,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 300,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Desayunos - Small",
+   "precio": 30,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 301,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Desayunos - Porcions de Tostadas",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 302,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Omelette + Café + 2 Tostadas + Jamon",
+   "precio": 22,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 303,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Omelette + Café + 2 Tostadas + Queso",
+   "precio": 22,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 304,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Omelette + Café + 2 Tostadas + Jamon con Queso",
+   "precio": 26,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 305,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Empanada",
+   "precio": 4,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 306,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Cunape",
+   "precio": 4,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 307,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Croasan de Queso",
+   "precio": 5,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 308,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Croasan de Jamon y Queso",
+   "precio": 6,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 309,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Rollitos de Canela",
+   "precio": 6,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 310,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Cuernitos",
+   "precio": 6,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 311,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Alfajores",
+   "precio": 3.5,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 312,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Galletas",
+   "precio": 2.5,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 313,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Donuts",
+   "precio": 4,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 314,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Huminta a la Olla",
+   "precio": 9,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 315,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Huminta al Horno",
+   "precio": 9,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 316,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Pastel de Choclo",
+   "precio": 9,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 317,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Chesscake de Maracuya",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 318,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Chesscake de Oreo",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 319,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Chesscake de Frutos Rojos",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 320,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Pie de Limon",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 321,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Pie de Limon Mini",
+   "precio": 9,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 322,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Torta de Mocca",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 323,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Torta de Nuez",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 324,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Torta 3 Leches",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 325,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Torta Redvelvet",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 326,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Torta de Zanahoria",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 327,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Torta de Chocolate",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 328,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Bombitas",
+   "precio": 7,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 329,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Éclair",
+   "precio": 7,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 330,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Brazo Gitano",
+   "precio": 5,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 331,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso ",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 332,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Doppio",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 333,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Macciato",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 334,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Cortado",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 335,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Cream",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 336,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Bombon",
+   "precio": 13,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 337,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Mocca",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 338,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Nutella",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 339,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Baileys",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 340,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Menta",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 341,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Espresso Lungo",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 342,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Americano ",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 343,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Macciato Largo",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 344,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Americano Doppio",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 345,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Americano Crema",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 346,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Americano Mocca",
+   "precio": 14,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 347,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Americano Bombon",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 348,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Americano Menta",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 349,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Americano Baileys",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 350,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Americano Nutella",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 351,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café cortado",
+   "precio": 12,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 352,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Shot de Café",
+   "precio": 3,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 353,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Crema para Café",
+   "precio": 3,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 354,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Licor de Menta para Café",
+   "precio": 3,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 355,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Extra - Licor de Baileys para Café",
+   "precio": 5,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 356,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Coca cola 300 ml",
+   "precio": 4,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 357,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "coca cola 500 ml",
+   "precio": 7,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 358,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Coca cola Zero 500 ml",
+   "precio": 7,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 359,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Fanta 300 Ml",
+   "precio": 4,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 360,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Fanta 500 ml",
+   "precio": 7,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 361,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Agua sin Gas 600 ml",
+   "precio": 6,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 362,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Agua sin Gas 990 ml",
+   "precio": 10,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 363,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Agua con Gas 600 ml",
+   "precio": 7,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 364,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "PoweAde  990 ml",
+   "precio": 11,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 365,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Cerveza Corona",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 366,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Cerveza Huari Miel",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 367,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Cerveza Huari Lager en Lata",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 368,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Cerveza Stella Arois Negra en Lata",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 369,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Vaso de Whisky Red Label",
+   "precio": 35,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 370,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Vaso de Whisky Black Label",
+   "precio": 40,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 371,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Vaso de Licor Baileys",
+   "precio": 35,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 372,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Doble - Whisky Red Label",
+   "precio": 50,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 373,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Doble - Whisky Black Label",
+   "precio": 60,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 374,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Doble - Licor Baileys",
+   "precio": 50,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 375,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Crepes Dulce de Chocolate",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 376,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Crepes dulce de Manjar",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 377,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Crepes Dulce de Frutilla",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 378,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Crepes Dulce Mixto",
+   "precio": 18,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 379,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Crepes Salado de Jamon",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 380,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Crepes Salado de Queso",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 381,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Crepes Salado Jamon con Queso",
+   "precio": 18,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 382,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Grano 250 gr",
+   "precio": 35,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 383,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Café Grano 500 gr",
+   "precio": 60,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 384,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Promocion Huminta Olla + Café",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 385,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Promocion Huminta Horno + Café",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 386,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Promocion Pastel de Choclo + Café",
+   "precio": 15,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 387,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ },
+ {
+   "item": "Envase",
+   "precio": 1,
+   "cantidad": 1000,
+   "agencia": "sucursal 1",
+   "codigoProducto": 388,
+   "creacionDate": "13:03:14",
+   "creacionTime": "8/29/2023",
+   "lastUpdate": "03:25.0"
+ }
+]

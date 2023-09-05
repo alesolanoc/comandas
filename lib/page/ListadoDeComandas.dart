@@ -44,6 +44,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
   TextEditingController statusField = TextEditingController();
   TextEditingController totalConsumoField = TextEditingController();
   TextEditingController descuentoField = TextEditingController();
+  TextEditingController cantidadField = TextEditingController();
   double totalConsumo = 0;
   double descuento = 0;
   String currentOption = options[0];
@@ -53,7 +54,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
   bool confirmarcobro = false;
 
   void showAlert(QuickAlertType quickAlertType) {
-    QuickAlert.show(context: context, type: quickAlertType);
+    QuickAlert.show(context: context, type: quickAlertType, width: 100);
   }
 
   @override
@@ -73,7 +74,14 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Listado de Comandas  -  Coffeina')),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(30.0),
+          child: AppBar(
+              title: Text(
+            'Listado de Comandas  -  Coffeina',
+            style: TextStyle(color: Colors.black, fontSize: 10),
+          )),
+        ),
         body: Padding(
           padding: EdgeInsets.all(15),
           //  height: MediaQuery.of(context).size.width / 3,
@@ -98,6 +106,8 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
               controller: dateInput,
               //editing controller of this TextField
               decoration: InputDecoration(
+                  isDense: true, // Added this
+                  contentPadding: EdgeInsets.all(8),
                   icon: Icon(Icons.calendar_today), //icon of text field
                   labelText: "Enter Date" //label text of field
                   ),
@@ -130,6 +140,8 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
             TextField(
               // controller: nombreClienteField,
               decoration: InputDecoration(
+                  isDense: true, // Added this
+                  contentPadding: EdgeInsets.all(8),
                   hintText: 'Fecha: ' + globals.formattedDateGlobal,
                   enabled: false,
                   border: OutlineInputBorder(
@@ -137,118 +149,176 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
             ),
             Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
               Expanded(
-                  child: Container(
-                width: double.infinity,
-                child: RadioListTile(
-                  title: const Text('Todo'),
-                  value: options[0],
-                  groupValue: currentOption,
-                  onChanged: (value) {
-                    setState(() {
-                      currentOption = value.toString();
-                      seleccionarOpcion = 1;
-                      print(check3);
-                    });
-                  },
-                ),
-              )),
+                  child: SizedBox(
+                      width: 10,
+                      height: 30,
+                      child: Container(
+                        width: double.infinity,
+                        child: RadioListTile(
+                          title: const Text(
+                            'Todo',
+                            style: TextStyle(color: Colors.black, fontSize: 10),
+                          ),
+                          value: options[0],
+                          materialTapTargetSize:
+                              MaterialTapTargetSize.shrinkWrap,
+                          groupValue: currentOption,
+                          onChanged: (value) {
+                            setState(() {
+                              currentOption = value.toString();
+                              seleccionarOpcion = 1;
+                              print(check3);
+                            });
+                          },
+                        ),
+                      ))),
               Expanded(
-                  child: Container(
-                      width: double.infinity,
-                      child: CheckboxListTile(
-                        value: check3,
-                        controlAffinity:
-                            ListTileControlAffinity.leading, //checkbox at left
-                        onChanged: (bool? value) {
-                          setState(() {
-                            check3 = value;
-                            print(seleccionarOpcion);
-                            print(check3);
-                          });
-                        },
-                        title: Text("Cobrados?"),
+                  child: SizedBox(
+                      width: 10,
+                      height: 30,
+                      child: Container(
+                          width: double.infinity,
+                          child: CheckboxListTile(
+                            value: check3,
+                            controlAffinity: ListTileControlAffinity
+                                .leading, //checkbox at left
+                            onChanged: (bool? value) {
+                              setState(() {
+                                check3 = value;
+                                print(seleccionarOpcion);
+                                print(check3);
+                              });
+                            },
+                            title: Text(
+                              "Cobrados?",
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 10),
+                            ),
+                          ))))
+            ]),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Expanded(
+                  child: SizedBox(
+                      width: 10,
+                      height: 30,
+                      child: Container(
+                          width: double.infinity,
+                          child: RadioListTile(
+                            title: const Text(
+                              'central',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 10),
+                            ),
+                            value: options[1],
+                            //    materialTapTargetSize:
+                            //       MaterialTapTargetSize.shrinkWrap,
+                            groupValue: currentOption,
+                            onChanged: (value) {
+                              setState(() {
+                                currentOption = value.toString();
+                                seleccionarOpcion = 2;
+                                print(check3);
+                              });
+                            },
+                          )))),
+              Expanded(
+                  child: SizedBox(
+                      width: 10,
+                      height: 30,
+                      child: Container(
+                          width: double.infinity,
+                          child: RadioListTile(
+                            title: const Text(
+                              'Baja',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 10),
+                            ),
+                            value: options[3],
+                            materialTapTargetSize:
+                                MaterialTapTargetSize.shrinkWrap,
+                            groupValue: currentOption,
+                            onChanged: (value) {
+                              setState(() {
+                                currentOption = value.toString();
+                                seleccionarOpcion = 4;
+                                print(check3);
+                              });
+                            },
+                          )))),
+              Expanded(
+                  child: SizedBox(
+                      width: 10,
+                      height: 30,
+                      child: Container(
+                          width: double.infinity,
+                          child: RadioListTile(
+                            title: const Text(
+                              'Reponer',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 10),
+                            ),
+                            value: options[5],
+                            materialTapTargetSize:
+                                MaterialTapTargetSize.shrinkWrap,
+                            groupValue: currentOption,
+                            onChanged: (value) {
+                              setState(() {
+                                currentOption = value.toString();
+                                seleccionarOpcion = 6;
+                                print(check3);
+                              });
+                            },
+                          )))),
+            ]),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Expanded(
+                  child: SizedBox(
+                      width: 10,
+                      height: 30,
+                      child: Container(
+                        width: double.infinity,
+                        child: RadioListTile(
+                          title: const Text(
+                            'sucursal 1',
+                            style: TextStyle(color: Colors.black, fontSize: 10),
+                          ),
+                          value: options[2],
+                          materialTapTargetSize:
+                              MaterialTapTargetSize.shrinkWrap,
+                          groupValue: currentOption,
+                          onChanged: (value) {
+                            setState(() {
+                              currentOption = value.toString();
+                              seleccionarOpcion = 3;
+                              print(check3);
+                            });
+                          },
+                        ),
+                      ))),
+              Expanded(
+                  child: SizedBox(
+                      width: 10,
+                      height: 30,
+                      child: Container(
+                        width: double.infinity,
+                        child: RadioListTile(
+                          title: const Text(
+                            'Merendar',
+                            style: TextStyle(color: Colors.black, fontSize: 10),
+                          ),
+                          value: options[4],
+                          materialTapTargetSize:
+                              MaterialTapTargetSize.shrinkWrap,
+                          groupValue: currentOption,
+                          onChanged: (value) {
+                            setState(() {
+                              currentOption = value.toString();
+                              seleccionarOpcion = 5;
+                              print(check3);
+                            });
+                          },
+                        ),
                       )))
-            ]),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              Expanded(
-                  child: Container(
-                      width: double.infinity,
-                      child: RadioListTile(
-                        title: const Text('central'),
-                        value: options[1],
-                        groupValue: currentOption,
-                        onChanged: (value) {
-                          setState(() {
-                            currentOption = value.toString();
-                            seleccionarOpcion = 2;
-                            print(check3);
-                          });
-                        },
-                      ))),
-              Expanded(
-                  child: Container(
-                      width: double.infinity,
-                      child: RadioListTile(
-                        title: const Text('Baja'),
-                        value: options[3],
-                        groupValue: currentOption,
-                        onChanged: (value) {
-                          setState(() {
-                            currentOption = value.toString();
-                            seleccionarOpcion = 4;
-                            print(check3);
-                          });
-                        },
-                      ))),
-              Expanded(
-                  child: Container(
-                      width: double.infinity,
-                      child: RadioListTile(
-                        title: const Text('Reponer'),
-                        value: options[5],
-                        groupValue: currentOption,
-                        onChanged: (value) {
-                          setState(() {
-                            currentOption = value.toString();
-                            seleccionarOpcion = 6;
-                            print(check3);
-                          });
-                        },
-                      ))),
-            ]),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              Expanded(
-                  child: Container(
-                width: double.infinity,
-                child: RadioListTile(
-                  title: const Text('sucursal 1'),
-                  value: options[2],
-                  groupValue: currentOption,
-                  onChanged: (value) {
-                    setState(() {
-                      currentOption = value.toString();
-                      seleccionarOpcion = 3;
-                      print(check3);
-                    });
-                  },
-                ),
-              )),
-              Expanded(
-                  child: Container(
-                width: double.infinity,
-                child: RadioListTile(
-                  title: const Text('Merendar'),
-                  value: options[4],
-                  groupValue: currentOption,
-                  onChanged: (value) {
-                    setState(() {
-                      currentOption = value.toString();
-                      seleccionarOpcion = 5;
-                      print(check3);
-                    });
-                  },
-                ),
-              ))
             ]),
             FutureBuilder(
                 future: getComandas(currentOption, globals.formattedDateGlobal,
@@ -284,7 +354,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                   }
 
                   return globals.formattedDateGlobal.isEmpty || dateInput == ''
-                      ? Text("No hay comandas", style: TextStyle(fontSize: 22))
+                      ? Text("No hay comandas", style: TextStyle(fontSize: 15))
                       : Expanded(
                           child: ListView.builder(
                           itemCount: globals.inventarioNumeroComanda.length,
@@ -340,17 +410,19 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                 globals.inventarioNumeroComanda[index].toString() +
                 ' -> Status: ' +
                 globals.inventarioStatus[index], //.item,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
           ),
           Text(
-            'Cliente: ' + globals.inventarioNombreCliente[index], //.item,
+            'Cliente: ' + globals.inventarioNombreCliente[index],
+            style: TextStyle(fontSize: 10), //.item,
           ),
           Text(
             'Hora: ' + globals.inventarioHora[index], //.item,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
           ),
           Text(
-            'Agencia: ' + globals.inventarioAgencia[index], //.item,
+            'Agencia: ' + globals.inventarioAgencia[index],
+            style: TextStyle(fontSize: 10), //.item,
           ),
           globals.inventarioDescuento[index] != 0
               ? Row(children: [
@@ -360,12 +432,13 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                                   globals.inventarioDescuento[index])
                               .toStringAsFixed(2) +
                           ' Bs.', //.item,
-                      style: TextStyle(fontWeight: FontWeight.bold)),
+                      style:
+                          TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
                   Text(
                     '   -> Desc: ' +
                         globals.inventarioDescuento[index].toStringAsFixed(2) +
                         ' Bs.', //.item,
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
                   )
                 ])
               : Text(
@@ -373,10 +446,10 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                       (globals.inventarioTotalConsumo[index])
                           .toStringAsFixed(2) +
                       ' Bs.', //.item,
-                  style: TextStyle(fontWeight: FontWeight.bold)),
+                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
         ]),
         trailing: SizedBox(
-          width: 70,
+          width: 80,
           child: Row(
             children: [
               InkWell(
@@ -394,6 +467,23 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                         globals.inventarioCreationDate[index]);
                   }),
                   child: Icon(Icons.flatware)),
+/*              check3 == false
+                  ? InkWell(
+                      onTap: (() {
+                        final cantidadModifica = openDialog1(
+                            globals.inventarioAgencia[index],
+                            globals.inventarioNumeroComanda[index].toString(),
+                            globals.inventarioNombreCliente[index],
+                            globals.inventarioNumeroMesa[index].toString(),
+                            globals.inventarioHora[index],
+                            globals.inventarioCodigoComanda[index],
+                            globals.inventarioTotalConsumo[index].toString(),
+                            globals.inventarioStatus[index],
+                            globals.inventarioDescuento[index].toString(),
+                            globals.inventarioCreationDate[index]);
+                      }),
+                      child: Icon(Icons.update))
+                  : Center()*/
             ],
           ),
         ),
@@ -425,12 +515,12 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                           BorderRadius.vertical(top: Radius.circular(20))),
                   child: Material(
                       child: ListView(children: [
-                    Text(
+                    /*         Text(
                       ' -->Numero de Comanda: ' + numeroComanda,
                       style:
-                          TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-                    ),
-                    /*  SizedBox(height: 10),
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                    ),*/
+                    /*   SizedBox(height: 10),
                     TextField(
                       controller: codigoComandaField,
                       decoration: InputDecoration(
@@ -440,8 +530,8 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                           border: OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)))),
-                    ),
-                                      SizedBox(height: 10),
+                    ),*/
+                    SizedBox(height: 10),
                     TextField(
                       controller: numeroComandaField,
                       decoration: InputDecoration(
@@ -451,11 +541,13 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                           border: OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)))),
-                    ),*/
-                    SizedBox(height: 10),
+                    ),
+                    //  SizedBox(height: 10),
                     TextField(
                       controller: agenciaField,
                       decoration: InputDecoration(
+                          isDense: true, // Added this
+                          contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.home),
                           hintText: 'Agencia: ' + agenciaNombre,
                           enabled: false,
@@ -463,10 +555,12 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)))),
                     ),
-                    SizedBox(height: 10),
+                    //   SizedBox(height: 10),
                     TextField(
                       controller: nombreClienteField,
                       decoration: InputDecoration(
+                          isDense: true, // Added this
+                          contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.person),
                           hintText: 'Nombre: ' + nombreCliente,
                           enabled: false,
@@ -474,10 +568,12 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)))),
                     ),
-                    SizedBox(height: 10),
+                    //       SizedBox(height: 10),
                     TextField(
                       controller: numeroDeMesaField,
                       decoration: InputDecoration(
+                          isDense: true, // Added this
+                          contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.table_bar),
                           hintText: 'Nro. de Mesa: ' + numeroMesa,
                           enabled: false,
@@ -485,10 +581,12 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)))),
                     ),
-                    SizedBox(height: 10),
+                    //   SizedBox(height: 10),
                     TextField(
                       controller: horaField,
                       decoration: InputDecoration(
+                          isDense: true, // Added this
+                          contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.alarm),
                           hintText: "Hora: " + hora,
                           enabled: false,
@@ -496,10 +594,12 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(10)))),
                     ),
-                    SizedBox(height: 10),
+                    //  SizedBox(height: 10),
                     TextField(
                       controller: statusField,
                       decoration: InputDecoration(
+                          isDense: true, // Added this
+                          contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.fiber_smart_record),
                           hintText: "Status: " + status,
                           enabled: false,
@@ -539,7 +639,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                             children: [
                                 Text(
                                   'Inserte Descuento -> ',
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 15),
                                 ),
                                 SizedBox(
                                     width: 250,
@@ -547,6 +647,8 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                                       controller: descuentoField,
                                       autofocus: true,
                                       decoration: InputDecoration(
+                                          isDense: true, // Added this
+                                          contentPadding: EdgeInsets.all(8),
                                           prefixIcon: Icon(Icons.attach_money),
                                           // hintText: "Inserte Descuento",
                                           enabled: true,
@@ -559,6 +661,8 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                             ? TextField(
                                 // controller: descuentoField,
                                 decoration: InputDecoration(
+                                    isDense: true, // Added this
+                                    contentPadding: EdgeInsets.all(8),
                                     prefixIcon: Icon(Icons.attach_money),
                                     hintText:
                                         'Descuento: ' + descuento1 + ' Bs.',
@@ -571,6 +675,8 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                     TextField(
                       controller: totalConsumoField,
                       decoration: InputDecoration(
+                          isDense: true, // Added this
+                          contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.attach_money),
                           hintText: "TOTAL : " +
                               (double.parse(totalConsumo) -
@@ -586,6 +692,21 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                       Column(children: [
                         ElevatedButton(
+                            /*   style: ElevatedButton.styleFrom(
+                                fixedSize: const Size(100, 37),
+                                primary: Colors
+                                    .redAccent, //background color of button
+                                side: BorderSide(
+                                    width: 1,
+                                    color:
+                                        Colors.brown), //border width and color
+                                elevation: 1, //elevation of button
+                                shape: RoundedRectangleBorder(
+                                    //to set border radius to button
+                                    borderRadius: BorderRadius.circular(30)),
+                                padding: EdgeInsets.all(
+                                    20) //content padding inside button
+                                ),*/
                             child: Text('Cobrar'),
                             onPressed: status == 'No Cobrado'
                                 ? () {
@@ -646,6 +767,20 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                       ]),
                       SizedBox(width: 10),
                       ElevatedButton(
+                          /*  style: ElevatedButton.styleFrom(
+                              fixedSize: const Size(120, 37),
+                              primary:
+                                  Colors.redAccent, //background color of button
+                              side: BorderSide(
+                                  width: 1,
+                                  color: Colors.brown), //border width and color
+                              elevation: 1, //elevation of button
+                              shape: RoundedRectangleBorder(
+                                  //to set border radius to button
+                                  borderRadius: BorderRadius.circular(30)),
+                              padding: EdgeInsets.all(
+                                  20) //content padding inside button
+                              ),*/
                           child: Text('Volver Atras'),
                           onPressed: () {
                             Navigator.pop(context);
@@ -655,6 +790,20 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                         width: 10,
                       ),
                       ElevatedButton(
+                        /*    style: ElevatedButton.styleFrom(
+                            fixedSize: const Size(100, 37),
+                            primary:
+                                Colors.redAccent, //background color of button
+                            side: BorderSide(
+                                width: 1,
+                                color: Colors.brown), //border width and color
+                            elevation: 1, //elevation of button
+                            shape: RoundedRectangleBorder(
+                                //to set border radius to button
+                                borderRadius: BorderRadius.circular(30)),
+                            padding: EdgeInsets.all(
+                                20) //content padding inside button
+                            ),*/
                         child: Text('Print'),
                         onPressed: () {
                           var user = jsonEncode(globals.comandaLista);
@@ -710,7 +859,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
           child: Text(
             globals.listaItemDeUnaComanda[index][0], //item[0],
             ///////      pedido[index].item[0],
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
           ),
         ),
         title: Column(
@@ -718,7 +867,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
           children: [
             Text(
               'Item: ' + globals.listaItemDeUnaComanda[index],
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
             ),
             Text(
               'Cantidad: ' +
@@ -726,6 +875,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                   ' --> Precio Unitario: ' +
                   globals.listaPrecioDeUnaComanda[index].toStringAsFixed(2) +
                   ' Bs.',
+              style: TextStyle(fontSize: 10),
             ),
             Text(
               'Total del Item: ' +
@@ -733,24 +883,24 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                           globals.listaCantidadDeUnaComanda[index])
                       .toStringAsFixed(2) +
                   ' Bs.',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
             ),
           ],
         ),
-        /*  trailing: SizedBox(
-        width: 70,
-        child: Row(
-          children: [
-            InkWell(
-                onTap: (() {
-                  setState(() {
-                    ///////               pedido.removeAt(index);
-                  });
-                }),
-                child: Icon(Icons.delete)),
-          ],
+        trailing: SizedBox(
+          width: 70,
+          child: Row(
+            children: [
+              InkWell(
+                  onTap: (() {
+                    setState(() {
+                      ///////               pedido.removeAt(index);
+                    });
+                  }),
+                  child: Icon(Icons.delete)),
+            ],
+          ),
         ),
-      ),*/
       ),
     );
   }

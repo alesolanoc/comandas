@@ -37,7 +37,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_typeahead: ^4.6.2
-  firebase_core: ^2.15.0
+  firebase_core: ^2.15.1
   cloud_firestore: ^4.8.4
   snippet_coder_utils: ^1.0.8
   fl_chart: ^0.55.1
@@ -66,14 +66,14 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
 
-  # The following line ensures that the Material Icons font is
+  # The following line ensures tht the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-# assets:
-#    - images/
+assets:
+     - assets/coffeina-inventario.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

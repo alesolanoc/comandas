@@ -54,7 +54,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
   int seleccionarOpcion = 1;
 
   void showAlert(QuickAlertType quickAlertType) {
-    QuickAlert.show(context: context, type: quickAlertType);
+    QuickAlert.show(context: context, type: quickAlertType, width: 100);
   }
 
   @override
@@ -74,8 +74,14 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar:
-            AppBar(title: Text('Listado Detallado de Comandas  -  Coffeina')),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(30.0),
+          child: AppBar(
+              title: Text(
+            'Listado Detallado de Comandas  -  Coffeina',
+            style: TextStyle(color: Colors.black, fontSize: 10),
+          )),
+        ),
         body: Padding(
           padding: EdgeInsets.all(15),
           //  height: MediaQuery.of(context).size.width / 3,
@@ -85,9 +91,15 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
               controller: dateInput,
               //editing controller of this TextField
               decoration: InputDecoration(
-                  icon: Icon(Icons.calendar_today), //icon of text field
-                  labelText: "Enter Date" //label text of field
-                  ),
+                isDense: true, // Added this
+                contentPadding: EdgeInsets.all(8),
+                icon: Icon(Icons.calendar_today), //icon of text field
+                labelText: "Ingrese Fecha",
+                labelStyle: TextStyle(
+                    color: Colors.black,
+                    fontStyle: FontStyle.italic,
+                    fontSize: 10), //label text of field
+              ),
               readOnly: true,
               //set it true, so that user will not able to edit text
               onTap: () async {
@@ -115,125 +127,174 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
             TextField(
               // controller: nombreClienteField,
               decoration: InputDecoration(
+                  isDense: true, // Added this
+                  contentPadding: EdgeInsets.all(8),
                   hintText: 'Fecha: ' + globals.formattedDateGlobal,
+                  hintStyle: TextStyle(fontSize: 10),
                   enabled: false,
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)))),
             ),
             Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
               Expanded(
-                  child: Container(
-                width: double.infinity,
-                child: RadioListTile(
-                  title: const Text('Todo'),
-                  value: options[0],
-                  groupValue: currentOption,
-                  onChanged: (value) {
-                    setState(() {
-                      currentOption = value.toString();
-                      seleccionarOpcion = 1;
-                      print(check3);
-                    });
-                  },
-                ),
+                  child: SizedBox(
+                width: 10,
+                height: 30,
+                child: Container(
+                    width: double.infinity,
+                    child: RadioListTile(
+                      title: const Text(
+                        'Todo',
+                        style: TextStyle(color: Colors.black, fontSize: 10),
+                      ),
+                      value: options[0],
+                      groupValue: currentOption,
+                      onChanged: (value) {
+                        setState(() {
+                          currentOption = value.toString();
+                          seleccionarOpcion = 1;
+                          print(check3);
+                        });
+                      },
+                    )),
               )),
               Expanded(
-                  child: Container(
-                      width: double.infinity,
-                      child: CheckboxListTile(
-                        value: check3,
-                        controlAffinity:
-                            ListTileControlAffinity.leading, //checkbox at left
-                        onChanged: (bool? value) {
-                          setState(() {
-                            check3 = value;
-                            print(seleccionarOpcion);
-                            print(check3);
-                          });
-                        },
-                        title: Text("Cobrados?"),
+                  child: SizedBox(
+                      width: 10,
+                      height: 30,
+                      child: Container(
+                          width: double.infinity,
+                          child: CheckboxListTile(
+                            value: check3,
+                            controlAffinity: ListTileControlAffinity
+                                .leading, //checkbox at left
+                            onChanged: (bool? value) {
+                              setState(() {
+                                check3 = value;
+                                print(seleccionarOpcion);
+                                print(check3);
+                              });
+                            },
+                            title: Text(
+                              "Cobrados?",
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 10),
+                            ),
+                          ))))
+            ]),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Expanded(
+                  child: SizedBox(
+                      width: 10,
+                      height: 30,
+                      child: Container(
+                          width: double.infinity,
+                          child: RadioListTile(
+                            title: const Text(
+                              'central',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 10),
+                            ),
+                            value: options[1],
+                            groupValue: currentOption,
+                            onChanged: (value) {
+                              setState(() {
+                                currentOption = value.toString();
+                                seleccionarOpcion = 2;
+                                print(check3);
+                              });
+                            },
+                          )))),
+              Expanded(
+                  child: SizedBox(
+                      width: 10,
+                      height: 30,
+                      child: Container(
+                          width: double.infinity,
+                          child: RadioListTile(
+                            title: const Text(
+                              'Baja',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 10),
+                            ),
+                            value: options[3],
+                            groupValue: currentOption,
+                            onChanged: (value) {
+                              setState(() {
+                                currentOption = value.toString();
+                                seleccionarOpcion = 4;
+                                print(check3);
+                              });
+                            },
+                          )))),
+              Expanded(
+                  child: SizedBox(
+                      width: 10,
+                      height: 30,
+                      child: Container(
+                          width: double.infinity,
+                          child: RadioListTile(
+                            title: const Text(
+                              'Reponer',
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 10),
+                            ),
+                            value: options[5],
+                            groupValue: currentOption,
+                            onChanged: (value) {
+                              setState(() {
+                                currentOption = value.toString();
+                                seleccionarOpcion = 6;
+                                print(check3);
+                              });
+                            },
+                          )))),
+            ]),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Expanded(
+                  child: SizedBox(
+                      width: 10,
+                      height: 30,
+                      child: Container(
+                        width: double.infinity,
+                        child: RadioListTile(
+                          title: const Text(
+                            'sucursal 1',
+                            style: TextStyle(color: Colors.black, fontSize: 10),
+                          ),
+                          value: options[2],
+                          groupValue: currentOption,
+                          onChanged: (value) {
+                            setState(() {
+                              currentOption = value.toString();
+                              seleccionarOpcion = 3;
+                              print(check3);
+                            });
+                          },
+                        ),
+                      ))),
+              Expanded(
+                  child: SizedBox(
+                      width: 10,
+                      height: 30,
+                      child: Container(
+                        width: double.infinity,
+                        child: RadioListTile(
+                          title: const Text(
+                            'Merendar',
+                            style: TextStyle(color: Colors.black, fontSize: 10),
+                          ),
+                          value: options[4],
+                          groupValue: currentOption,
+                          onChanged: (value) {
+                            setState(() {
+                              currentOption = value.toString();
+                              seleccionarOpcion = 5;
+                              print(check3);
+                            });
+                          },
+                        ),
                       )))
-            ]),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              Expanded(
-                  child: Container(
-                      width: double.infinity,
-                      child: RadioListTile(
-                        title: const Text('central'),
-                        value: options[1],
-                        groupValue: currentOption,
-                        onChanged: (value) {
-                          setState(() {
-                            currentOption = value.toString();
-                            seleccionarOpcion = 2;
-                            print(check3);
-                          });
-                        },
-                      ))),
-              Expanded(
-                  child: Container(
-                      width: double.infinity,
-                      child: RadioListTile(
-                        title: const Text('Baja'),
-                        value: options[3],
-                        groupValue: currentOption,
-                        onChanged: (value) {
-                          setState(() {
-                            currentOption = value.toString();
-                            seleccionarOpcion = 4;
-                            print(check3);
-                          });
-                        },
-                      ))),
-              Expanded(
-                  child: Container(
-                      width: double.infinity,
-                      child: RadioListTile(
-                        title: const Text('Reponer'),
-                        value: options[5],
-                        groupValue: currentOption,
-                        onChanged: (value) {
-                          setState(() {
-                            currentOption = value.toString();
-                            seleccionarOpcion = 6;
-                            print(check3);
-                          });
-                        },
-                      ))),
-            ]),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              Expanded(
-                  child: Container(
-                width: double.infinity,
-                child: RadioListTile(
-                  title: const Text('sucursal 1'),
-                  value: options[2],
-                  groupValue: currentOption,
-                  onChanged: (value) {
-                    setState(() {
-                      currentOption = value.toString();
-                      seleccionarOpcion = 3;
-                      print(check3);
-                    });
-                  },
-                ),
-              )),
-              Expanded(
-                  child: Container(
-                width: double.infinity,
-                child: RadioListTile(
-                  title: const Text('Merendar'),
-                  value: options[4],
-                  groupValue: currentOption,
-                  onChanged: (value) {
-                    setState(() {
-                      currentOption = value.toString();
-                      seleccionarOpcion = 5;
-                      print(check3);
-                    });
-                  },
-                ),
-              ))
             ]),
             FutureBuilder(
                 future: getComandas(currentOption, globals.formattedDateGlobal,
@@ -271,7 +332,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                   }
 
                   return globals.formattedDateGlobal.isEmpty || dateInput == ''
-                      ? Text("No hay comandas", style: TextStyle(fontSize: 22))
+                      ? Text("No hay comandas", style: TextStyle(fontSize: 15))
                       : Expanded(
                           child: ListView.builder(
                           itemCount: globals.inventarioNumeroComanda.length,
@@ -332,18 +393,18 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                 globals.inventarioNumeroComanda[index].toString() +
                 ' -> Status: ' +
                 globals.inventarioStatus[index], //.item,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
           ),
-          Text(
-            'Cliente: ' + globals.inventarioNombreCliente[index], //.item,
-          ),
+          Text('Cliente: ' + globals.inventarioNombreCliente[index],
+              style: TextStyle(fontSize: 10) //.item,
+              ),
           Text(
             'Hora: ' + globals.inventarioHora[index], //.item,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
           ),
-          Text(
-            'Agencia: ' + globals.inventarioAgencia[index], //.item,
-          ),
+          Text('Agencia: ' + globals.inventarioAgencia[index],
+              style: TextStyle(fontSize: 10) //.item,
+              ),
           FutureBuilder(
               future: getAComanda(globals.inventarioCodigoComanda[index]),
               builder: ((context, snapshop1) {
@@ -386,12 +447,13 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                                   globals.inventarioDescuento[index])
                               .toStringAsFixed(2) +
                           ' Bs.', //.item,
-                      style: TextStyle(fontWeight: FontWeight.bold)),
+                      style:
+                          TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
                   Text(
                     '   -> Desc: ' +
                         globals.inventarioDescuento[index].toStringAsFixed(2) +
                         ' Bs.', //.item,
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
                   )
                 ])
               : Text(
@@ -399,7 +461,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                       (globals.inventarioTotalConsumo[index])
                           .toStringAsFixed(2) +
                       ' Bs.', //.item,
-                  style: TextStyle(fontWeight: FontWeight.bold)),
+                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
         ]),
         trailing: SizedBox(
           width: 70,
@@ -452,16 +514,19 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                   child: Material(
                       child: ListView(children: [
                     Text(
-                      ' -->Numero de Comanda: ' + numeroComanda,
+                      '----->Numero de Comanda: ' + numeroComanda,
                       style:
-                          TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 10),
                     TextField(
                       controller: agenciaField,
                       decoration: InputDecoration(
+                          isDense: true, // Added this
+                          contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.home),
                           hintText: 'Agencia: ' + agenciaNombre,
+                          hintStyle: TextStyle(fontSize: 10),
                           enabled: false,
                           border: OutlineInputBorder(
                               borderRadius:
@@ -471,8 +536,11 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                     TextField(
                       controller: nombreClienteField,
                       decoration: InputDecoration(
+                          isDense: true, // Added this
+                          contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.person),
                           hintText: 'Nombre: ' + nombreCliente,
+                          hintStyle: TextStyle(fontSize: 10),
                           enabled: false,
                           border: OutlineInputBorder(
                               borderRadius:
@@ -482,8 +550,11 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                     TextField(
                       controller: numeroDeMesaField,
                       decoration: InputDecoration(
+                          isDense: true, // Added this
+                          contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.table_bar),
                           hintText: 'Nro. de Mesa: ' + numeroMesa,
+                          hintStyle: TextStyle(fontSize: 10),
                           enabled: false,
                           border: OutlineInputBorder(
                               borderRadius:
@@ -493,8 +564,11 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                     TextField(
                       controller: horaField,
                       decoration: InputDecoration(
+                          isDense: true, // Added this
+                          contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.alarm),
                           hintText: "Hora: " + hora,
+                          hintStyle: TextStyle(fontSize: 10),
                           enabled: false,
                           border: OutlineInputBorder(
                               borderRadius:
@@ -504,8 +578,11 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                     TextField(
                       controller: statusField,
                       decoration: InputDecoration(
+                          isDense: true, // Added this
+                          contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.fiber_smart_record),
                           hintText: "Status: " + status,
+                          hintStyle: TextStyle(fontSize: 10),
                           enabled: false,
                           border: OutlineInputBorder(
                               borderRadius:
@@ -543,7 +620,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                             children: [
                                 Text(
                                   'Inserte Descuento -> ',
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 10),
                                 ),
                                 SizedBox(
                                     width: 250,
@@ -551,6 +628,8 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                                       controller: descuentoField,
                                       autofocus: true,
                                       decoration: InputDecoration(
+                                          isDense: true, // Added this
+                                          contentPadding: EdgeInsets.all(8),
                                           prefixIcon: Icon(Icons.attach_money),
                                           // hintText: "Inserte Descuento",
                                           enabled: true,
@@ -563,9 +642,12 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                             ? TextField(
                                 // controller: descuentoField,
                                 decoration: InputDecoration(
+                                    isDense: true, // Added this
+                                    contentPadding: EdgeInsets.all(8),
                                     prefixIcon: Icon(Icons.attach_money),
                                     hintText:
                                         'Descuento: ' + descuento1 + ' Bs.',
+                                    hintStyle: TextStyle(fontSize: 10),
                                     enabled: false,
                                     border: OutlineInputBorder(
                                         borderRadius: BorderRadius.all(
@@ -575,12 +657,15 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                     TextField(
                       controller: totalConsumoField,
                       decoration: InputDecoration(
+                          isDense: true, // Added this
+                          contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.attach_money),
                           hintText: "TOTAL : " +
                               (double.parse(totalConsumo) -
                                       double.parse(descuento1))
                                   .toStringAsFixed(2) +
                               ' Bs.',
+                          hintStyle: TextStyle(fontSize: 10),
                           enabled: false,
                           border: OutlineInputBorder(
                               borderRadius:
@@ -590,6 +675,21 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                       Column(children: [
                         ElevatedButton(
+                            /*  style: ElevatedButton.styleFrom(
+                                fixedSize: const Size(100, 37),
+                                primary: Colors
+                                    .redAccent, //background color of button
+                                side: BorderSide(
+                                    width: 1,
+                                    color:
+                                        Colors.brown), //border width and color
+                                elevation: 1, //elevation of button
+                                shape: RoundedRectangleBorder(
+                                    //to set border radius to button
+                                    borderRadius: BorderRadius.circular(30)),
+                                padding: EdgeInsets.all(
+                                    20) //content padding inside button
+                                ),*/
                             child: Text('Cobrar'),
                             onPressed: status == 'No Cobrado'
                                 ? () {
@@ -648,6 +748,20 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                       ]),
                       SizedBox(width: 10),
                       ElevatedButton(
+                          /*   style: ElevatedButton.styleFrom(
+                              fixedSize: const Size(120, 37),
+                              primary:
+                                  Colors.redAccent, //background color of button
+                              side: BorderSide(
+                                  width: 1,
+                                  color: Colors.brown), //border width and color
+                              elevation: 1, //elevation of button
+                              shape: RoundedRectangleBorder(
+                                  //to set border radius to button
+                                  borderRadius: BorderRadius.circular(30)),
+                              padding: EdgeInsets.all(
+                                  20) //content padding inside button
+                              ),*/
                           child: Text('Volver Atras'),
                           onPressed: () {
                             Navigator.pop(context);
@@ -657,6 +771,20 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                         width: 10,
                       ),
                       ElevatedButton(
+                        /*   style: ElevatedButton.styleFrom(
+                            fixedSize: const Size(100, 37),
+                            primary:
+                                Colors.redAccent, //background color of button
+                            side: BorderSide(
+                                width: 1,
+                                color: Colors.brown), //border width and color
+                            elevation: 1, //elevation of button
+                            shape: RoundedRectangleBorder(
+                                //to set border radius to button
+                                borderRadius: BorderRadius.circular(30)),
+                            padding: EdgeInsets.all(
+                                20) //content padding inside button
+                            ),*/
                         child: Text('Print'),
                         onPressed: () {
                           var user = jsonEncode(globals.comandaLista);
@@ -719,22 +847,22 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
           children: [
             Text(
               'Item: ' + globals.listaItemDeUnaComanda[index],
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
             ),
             Text(
-              'Cantidad: ' +
-                  globals.listaCantidadDeUnaComanda[index].toString() +
-                  ' --> Precio Unitario: ' +
-                  globals.listaPrecioDeUnaComanda[index].toStringAsFixed(2) +
-                  ' Bs.',
-            ),
+                'Cantidad: ' +
+                    globals.listaCantidadDeUnaComanda[index].toString() +
+                    ' --> Precio Unitario: ' +
+                    globals.listaPrecioDeUnaComanda[index].toStringAsFixed(2) +
+                    ' Bs.',
+                style: TextStyle(fontSize: 10)),
             Text(
               'Total del Item: ' +
                   (globals.listaPrecioDeUnaComanda[index] *
                           globals.listaCantidadDeUnaComanda[index])
                       .toStringAsFixed(2) +
                   ' Bs.',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
             ),
           ],
         ),

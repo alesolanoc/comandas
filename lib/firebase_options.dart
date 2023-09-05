@@ -44,39 +44,39 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyD_WFCMWyAvTWbvBYoPYWZyvIatrERfuLg',
-    appId: '1:233925994799:web:ab3b69353de092b43119da',
-    messagingSenderId: '233925994799',
-    projectId: 'flutter-coffeina',
-    authDomain: 'flutter-coffeina.firebaseapp.com',
-    storageBucket: 'flutter-coffeina.appspot.com',
+    apiKey: 'AIzaSyC0sFFu8OmZee-xw-D6-_WLDeZ1XVPBFoA',
+    appId: '1:139447114651:web:a53ad127f5b2743ca25f3e',
+    messagingSenderId: '139447114651',
+    projectId: 'coffeina1-a5b31',
+    authDomain: 'coffeina1-a5b31.firebaseapp.com',
+    storageBucket: 'coffeina1-a5b31.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCCJXG1AabxVlyUKe7drCJQZUqTJdzm_cE',
-    appId: '1:233925994799:android:61faf2681ece33843119da',
-    messagingSenderId: '233925994799',
-    projectId: 'flutter-coffeina',
-    storageBucket: 'flutter-coffeina.appspot.com',
+    apiKey: 'AIzaSyAPELsh0Oi3_RsLQO0sKFcJB9rhZ0a8HbU',
+    appId: '1:139447114651:android:752b2138e77c8f79a25f3e',
+    messagingSenderId: '139447114651',
+    projectId: 'coffeina1-a5b31',
+    storageBucket: 'coffeina1-a5b31.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDcfQYhVFh5ckUYq6fXp0sGircWrGZSrWA',
-    appId: '1:233925994799:ios:4968a2efde1e5e963119da',
-    messagingSenderId: '233925994799',
-    projectId: 'flutter-coffeina',
-    storageBucket: 'flutter-coffeina.appspot.com',
-    iosClientId: '233925994799-6a1tpna2d4qhi4h5qmdoudmfn5jlbepp.apps.googleusercontent.com',
+    apiKey: 'AIzaSyAODOqUfyivlygVhGWJCEgem6PwbzICbIs',
+    appId: '1:139447114651:ios:5177d6bd42669cc8a25f3e',
+    messagingSenderId: '139447114651',
+    projectId: 'coffeina1-a5b31',
+    storageBucket: 'coffeina1-a5b31.appspot.com',
+    iosClientId: '139447114651-dbflnued7lkptv87teg1vcbqpo342cpa.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterApplication1',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDcfQYhVFh5ckUYq6fXp0sGircWrGZSrWA',
-    appId: '1:233925994799:ios:8d883399532c511a3119da',
-    messagingSenderId: '233925994799',
-    projectId: 'flutter-coffeina',
-    storageBucket: 'flutter-coffeina.appspot.com',
-    iosClientId: '233925994799-e50gi7jj12baqbb1g8aig3ti0dlkil8s.apps.googleusercontent.com',
+    apiKey: 'AIzaSyAODOqUfyivlygVhGWJCEgem6PwbzICbIs',
+    appId: '1:139447114651:ios:d6aa7ed716f41c95a25f3e',
+    messagingSenderId: '139447114651',
+    projectId: 'coffeina1-a5b31',
+    storageBucket: 'coffeina1-a5b31.appspot.com',
+    iosClientId: '139447114651-j176rb1mpjhrm72d3bgg601ptshjlgs4.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterApplication1.RunnerTests',
   );
 }
