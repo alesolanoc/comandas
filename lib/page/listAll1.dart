@@ -19,10 +19,10 @@ class Agencia {
   Map<String, dynamic> toJson() => {"agencia": agencia};
 }
 
-class ListadoAll extends StatefulWidget {
+class ListadoAll1 extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _ListadoAllState();
+    return _ListadoAllState1();
   }
 }
 
@@ -35,7 +35,7 @@ List<String> options = [
   'Reposicion'
 ];
 
-class _ListadoAllState extends State<ListadoAll> {
+class _ListadoAllState1 extends State<ListadoAll1> {
   late TextEditingController controller;
   TextEditingController agenciaField = TextEditingController();
   TextEditingController nombreClienteField = TextEditingController();
@@ -56,6 +56,9 @@ class _ListadoAllState extends State<ListadoAll> {
   double sumaTotalConsumida = 0;
   List elements = [];
 
+  TextEditingController rango1Controller = TextEditingController();
+  TextEditingController rango2Controller = TextEditingController();
+
   void showAlert(QuickAlertType quickAlertType) {
     QuickAlert.show(context: context, type: quickAlertType, width: 100);
   }
@@ -73,6 +76,8 @@ class _ListadoAllState extends State<ListadoAll> {
     globals.ListaDeMesaEnComanda = [];
     globals.listaDeComandasDetalle = [];
     globals.formattedDateGlobalListado = '';
+    globals.rango1 = 0;
+    globals.rango2 = 0;
     // final jsonstringmap = json.decode(snaps
     dateInput.text = ""; //set the initial value of text field
     descuentoField.text = '0';
@@ -93,7 +98,7 @@ class _ListadoAllState extends State<ListadoAll> {
         preferredSize: Size.fromHeight(30.0),
         child: AppBar(
             title: Text(
-          'Listado Detallado por Item  -  Coffeina',
+          'Listado Detallado por Item A Faltar-  Coffeina',
           style: TextStyle(color: Colors.black, fontSize: 20),
         )),
       ),
@@ -102,7 +107,7 @@ class _ListadoAllState extends State<ListadoAll> {
         //  height: MediaQuery.of(context).size.width / 3,
 
         child: Column(children: [
-          TextField(
+          /*        TextField(
             controller: dateInput,
             //editing controller of this TextField
             decoration: InputDecoration(
@@ -146,6 +151,39 @@ class _ListadoAllState extends State<ListadoAll> {
                 enabled: false,
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(15)))),
+          ),*/
+          TextField(
+            style: TextStyle(fontSize: 15.0, height: 2.5),
+            controller: rango1Controller,
+            decoration: InputDecoration(
+                isDense: true, // Added this
+                contentPadding: EdgeInsets.all(8),
+                hintText: "Rango Minimo",
+                hintStyle: TextStyle(fontSize: 15),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(15)))),
+            keyboardType: TextInputType.number,
+            inputFormatters: [
+              FilteringTextInputFormatter.allow(RegExp(r'^-?\d{0,5}')),
+            ],
+            /*     inputFormatters: <TextInputFormatter>[
+              FilteringTextInputFormatter.digitsOnly
+            ],*/
+          ),
+          TextField(
+            style: TextStyle(fontSize: 15.0, height: 2.5),
+            controller: rango2Controller,
+            decoration: InputDecoration(
+                isDense: true, // Added this
+                contentPadding: EdgeInsets.all(8),
+                hintText: "Rango Maximo",
+                hintStyle: TextStyle(fontSize: 15),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(15)))),
+            keyboardType: TextInputType.number,
+            inputFormatters: [
+              FilteringTextInputFormatter.allow(RegExp(r'^-?\d{0,5}')),
+            ],
           ),
           /*   Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
               Expanded(
@@ -182,6 +220,14 @@ class _ListadoAllState extends State<ListadoAll> {
                     groupValue: currentOption,
                     onChanged: (value) {
                       setState(() {
+                        /*   if (rango1Controller.text.isEmpty) {
+                          rango1Controller.text = '0';
+                        }
+                          if (rango2Controller.text.isEmpty) {
+                          rango2Controller.text = '0';
+                        }*/
+                        globals.rango1 = int.parse(rango1Controller.text);
+                        globals.rango2 = int.parse(rango2Controller.text);
                         currentOption = value.toString();
                         seleccionarOpcion = 2;
                         print(check3);
@@ -189,7 +235,7 @@ class _ListadoAllState extends State<ListadoAll> {
                     },
                   )),
             )),
-            Expanded(
+            /*   Expanded(
                 child: SizedBox(
                     width: 10,
                     height: 30,
@@ -201,16 +247,22 @@ class _ListadoAllState extends State<ListadoAll> {
                               .leading, //checkbox at left
                           onChanged: (bool? value) {
                             setState(() {
+                              /*    if (rango1Controller.text.isEmpty) {
+                                rango1Controller.text = '0';
+                              }
+                                if (rango2Controller.text.isEmpty) {
+                                rango2Controller.text = '0';
+                              }*/
                               check3 = value;
                               print(seleccionarOpcion);
                               print(check3);
                             });
                           },
-                          title: Text(
+                          /*             title: Text(
                             "Detallado ?",
                             style: TextStyle(color: Colors.black, fontSize: 15),
-                          ),
-                        ))))
+                          ),*/
+                        ))))*/
           ]),
           /*      Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
             Expanded(
@@ -251,6 +303,14 @@ class _ListadoAllState extends State<ListadoAll> {
                         groupValue: currentOption,
                         onChanged: (value) {
                           setState(() {
+                            /*    if (rango1Controller.text.isEmpty) {
+                              rango1Controller.text = '0';
+                            }
+                                      if (rango2Controller.text.isEmpty) {
+                              rango2Controller.text = '0';
+                            }*/
+                            globals.rango1 = int.parse(rango1Controller.text);
+                            globals.rango2 = int.parse(rango2Controller.text);
                             currentOption = value.toString();
                             seleccionarOpcion = 3;
                             //             print(check3);
@@ -260,8 +320,8 @@ class _ListadoAllState extends State<ListadoAll> {
                     ))),
           ]),
           FutureBuilder(
-              future: getAllProducts(currentOption, seleccionarOpcion, check3!,
-                  globals.formattedDateGlobalListado),
+              future: getAllProductsFromRange(
+                  currentOption, 3, true, globals.rango1, globals.rango2),
               builder: ((context, snapshop) {
                 print(snapshop.hasData);
                 if (snapshop.hasData) {
@@ -271,10 +331,14 @@ class _ListadoAllState extends State<ListadoAll> {
                   globals.ListaDeTotalConsumido = [];
                   String jsonstringmap = json.encode(snapshop.data);
                   snapshop.data?.forEach((item) {
-                    print(item);
-                    globals.ListaDeProductosItem.add(item['item']);
-                    globals.LsitaDeProductosAgencia.add(item['agencia']);
-                    globals.ListaDeProductosCantidad.add(item['cantidad']);
+                    /*   print('item');
+                    print(item);*/
+                    if ((item['cantidad'] >= globals.rango1) &&
+                        (item['cantidad'] <= globals.rango2)) {
+                      globals.ListaDeProductosItem.add(item['item']);
+                      globals.LsitaDeProductosAgencia.add(item['agencia']);
+                      globals.ListaDeProductosCantidad.add(item['cantidad']);
+                    }
                   });
                 }
                 return /*globals.formattedDateGlobalListado.isEmpty ||
@@ -352,7 +416,7 @@ class _ListadoAllState extends State<ListadoAll> {
             'Agencia: ' + globals.LsitaDeProductosAgencia[index], //.item,
             style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
-          FutureBuilder(
+          /*      FutureBuilder(
               future: getAComandaFromProductName(
                   globals.formattedDateGlobalListado,
                   globals.LsitaDeProductosAgencia[index],
@@ -405,7 +469,8 @@ class _ListadoAllState extends State<ListadoAll> {
                         style: TextStyle(fontWeight: FontWeight.bold),
                       )
                     :*/
-                    Padding(
+                    Center();
+                /* Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(children: [
                           Text(
@@ -444,7 +509,7 @@ class _ListadoAllState extends State<ListadoAll> {
                                       getRowOfAComanda(index),
                                 )
                               : Center()
-                        ]));
+                        ]));*/
                 /*      ListView.builder(
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
@@ -452,7 +517,7 @@ class _ListadoAllState extends State<ListadoAll> {
                   itemBuilder: (context, index) => getRowOfAComanda(index),
                 );*/
                 //  );
-              })),
+              })),*/
         ]),
       ),
     );

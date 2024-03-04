@@ -34,6 +34,7 @@ class _InventarioState extends State<Inventario> {
     super.initState();
     controller = TextEditingController();
     controller1 = TextEditingController();
+    globals.agenciaSeleccionadaParaVer = '';
   }
 
   @override
@@ -52,7 +53,7 @@ class _InventarioState extends State<Inventario> {
           child: AppBar(
               title: Text(
             'Inventario  -  Coffeina',
-            style: TextStyle(color: Colors.black, fontSize: 10),
+            style: TextStyle(color: Colors.black, fontSize: 20),
           )),
         ),
         body: Padding(
@@ -76,7 +77,7 @@ class _InventarioState extends State<Inventario> {
                 "Inventario",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 10,
+                    fontSize: 15,
                     color: Colors.black),
               ),
               //     SizedBox(height: 10),
@@ -84,7 +85,7 @@ class _InventarioState extends State<Inventario> {
                 globals.agenciaSeleccionadaParaVer,
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 10,
+                    fontSize: 15,
                     color: Colors.black),
               ),
               //        SizedBox(height: 10),
@@ -105,13 +106,13 @@ class _InventarioState extends State<Inventario> {
                         isDense: true, // Added this
                         contentPadding: EdgeInsets.all(8),
                         enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide(width: 3, color: Colors.grey),
                         ),
                       ),
                       hint: Text(
                         'Seleccione Agencia',
-                        style: TextStyle(color: Colors.black, fontSize: 10),
+                        style: TextStyle(color: Colors.black, fontSize: 15),
                       ),
                       isExpanded: true,
                       menuMaxHeight: 350,
@@ -121,7 +122,7 @@ class _InventarioState extends State<Inventario> {
                           .map((item) => DropdownMenuItem<String>(
                                 value: item,
                                 child:
-                                    Text(item, style: TextStyle(fontSize: 10)),
+                                    Text(item, style: TextStyle(fontSize: 15)),
                               ))
                           .toList(),
                       onChanged: (item) => setState(
@@ -166,7 +167,7 @@ class _InventarioState extends State<Inventario> {
                     }
                     return globals.newListInventario.length == 0
                         ? Text("Inventario vacio",
-                            style: TextStyle(fontSize: 10))
+                            style: TextStyle(fontSize: 15))
                         : Expanded(
                             child: ListView.builder(
                             itemCount: globals.newListInventario.length,
@@ -190,9 +191,13 @@ class _InventarioState extends State<Inventario> {
                 print(nuevoProducto);
                 if (nuevoProducto != null) {
                   setState(() => this.nuevoProducto = nuevoProducto);
-                  addProducto(
-                      nuevoProducto, 0, globals.agenciaSeleccionadaParaVer, 0);
-                  showAlert(QuickAlertType.success);
+                  if (nuevoProducto.isNotEmpty) {
+                    addProducto(nuevoProducto, 0,
+                        globals.agenciaSeleccionadaParaVer, 0);
+                    showAlert(QuickAlertType.success);
+                  } else {
+                    showAlert(QuickAlertType.error);
+                  }
                 }
               } else {
                 showAlert(QuickAlertType.error);
@@ -238,7 +243,7 @@ class _InventarioState extends State<Inventario> {
           foregroundColor: Colors.white,
           child: Text(
             globals.newListInventario[index][0],
-            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
         ),
         title: Column(
@@ -246,14 +251,14 @@ class _InventarioState extends State<Inventario> {
           children: [
             Text(
               'Nombre: ' + globals.newListInventario[index].toString(), //.item,
-              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
-            Text('Cantidad: ' + displayText, style: TextStyle(fontSize: 10)),
+            Text('Cantidad: ' + displayText, style: TextStyle(fontSize: 15)),
             Text(
               'Precio: ' +
                   globals.newListInventarioPrecio[index].toString() +
                   ' Bs.', //.item,
-              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
           ],
         ),

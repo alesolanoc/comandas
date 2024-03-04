@@ -56,7 +56,11 @@ Future<void> printDoc1(int numeroComanda, String nombreCliente, int numeroMesa,
   );*/
   final doc = pw.Document();
   doc.addPage(pw.Page(
-      pageFormat: PdfPageFormat.a4,
+      pageFormat: PdfPageFormat.a4.copyWith(
+          marginBottom: 0.0 * PdfPageFormat.cm,
+          marginLeft: 0.0 * PdfPageFormat.cm,
+          marginRight: 0.0 * PdfPageFormat.cm,
+          marginTop: 0.0 * PdfPageFormat.cm),
       build: (pw.Context context) {
         return buildPrintableData(numeroComanda, nombreCliente, numeroMesa,
             sucursal, comandaLista, total, opcion);
@@ -243,6 +247,21 @@ Future<void> printDoc8(
             listaDeComandasDetalle,
             cadena,
             ListaDeTotalConsumido);
+      }));
+  await Printing.layoutPdf(
+      onLayout: (PdfPageFormat format) async => doc.save());
+}
+
+Future<void> printDoc9(
+    String agencia, DateTime fecha, List inventario, double total) async {
+/*  final image = await imageFromAssetBundle(
+    '',
+  );*/
+  final doc = pw.Document();
+  doc.addPage(pw.Page(
+      pageFormat: PdfPageFormat.a4,
+      build: (pw.Context context) {
+        return buildPrintableData9(agencia, fecha, inventario, total);
       }));
   await Printing.layoutPdf(
       onLayout: (PdfPageFormat format) async => doc.save());

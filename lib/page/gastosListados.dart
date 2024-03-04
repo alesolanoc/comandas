@@ -47,6 +47,7 @@ class _GastosListadosState extends State<GastosListados> {
     descuentoField.text = '0';
     totalConsumo = 0;
     super.initState();
+    globals.formattedDateGlobal = '';
     controller = TextEditingController();
   }
 
@@ -64,7 +65,7 @@ class _GastosListadosState extends State<GastosListados> {
           child: AppBar(
               title: Text(
             'Listado de Gastos  -  Coffeina',
-            style: TextStyle(color: Colors.black, fontSize: 10),
+            style: TextStyle(color: Colors.black, fontSize: 20),
           )),
         ),
         body: Padding(
@@ -81,7 +82,7 @@ class _GastosListadosState extends State<GastosListados> {
                 labelStyle: TextStyle(
                     color: Colors.black,
                     fontStyle: FontStyle.italic,
-                    fontSize: 10), //label text of field
+                    fontSize: 15), //label text of field
               ),
               readOnly: true,
               //set it true, so that user will not able to edit text
@@ -115,10 +116,10 @@ class _GastosListadosState extends State<GastosListados> {
                   isDense: true, // Added this
                   contentPadding: EdgeInsets.all(8),
                   hintText: 'Fecha: ' + globals.formattedDateGlobal,
-                  hintStyle: TextStyle(fontSize: 10),
+                  hintStyle: TextStyle(fontSize: 15),
                   enabled: false,
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)))),
+                      borderRadius: BorderRadius.all(Radius.circular(15)))),
             ),
             FutureBuilder(
                 future: getGastos(globals.formattedDateGlobal),
@@ -202,23 +203,23 @@ class _GastosListadosState extends State<GastosListados> {
           foregroundColor: Colors.white,
           child: Text(
             globals.inventarioNumeroGasto[index].toString(),
-            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
         ),
         title: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(
             'Nro. Gasto: ' + globals.inventarioNumeroGasto[index].toString(),
-            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
           Text(
             'Descrip: ' + globals.inventarioConceptoGasto[index],
-            style: TextStyle(fontSize: 10),
+            style: TextStyle(fontSize: 15),
           ),
           Text(
             'Gasto: ' +
                 globals.inventarioTotalGasto[index].toString() +
                 ' Bs.', //.item,
-            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           )
         ]),
         trailing: SizedBox(

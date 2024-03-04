@@ -45,15 +45,21 @@ buildPrintableData(
                     height: 50,
                   ),*/
                 ),
-                pw.SizedBox(width: 10),
+                //  pw.SizedBox(width: 5),
                 pw.Text(
-                  "Comanda-->" + numberoComanda.toString(),
+                  "COFFEINA-",
                   style: pw.TextStyle(
-                      fontSize: 20.00, fontWeight: pw.FontWeight.bold),
+                      fontSize: 30.00, fontWeight: pw.FontWeight.bold),
+                ),
+                pw.SizedBox(width: 5),
+                pw.Text(
+                  "Comanda->" + numberoComanda.toString(),
+                  style: pw.TextStyle(
+                      fontSize: 30.00, fontWeight: pw.FontWeight.bold),
                 ),
               ],
             ),
-            pw.SizedBox(height: 20.00),
+            pw.SizedBox(height: 10.00),
             pw.Container(
               //  color: const PdfColor(0.5, 1, 0.5, 0.7),
               width: double.infinity,
@@ -61,7 +67,7 @@ buildPrintableData(
               //     child: pw.Center(
               child: pw.Text(
                 "Numero de Mesa -> " + numeroMesa.toString(),
-                style: pw.TextStyle(fontSize: 15),
+                style: pw.TextStyle(fontSize: 25),
                 /* style: pw.TextStyle(
                     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                     fontSize: 20.00,
@@ -69,6 +75,7 @@ buildPrintableData(
               ),
               //    ),
             ),
+            /*       pw.SizedBox(height: 10.00),
             pw.Container(
               // color: const PdfColor(0.5, 1, 0.5, 0.7),
               width: double.infinity,
@@ -76,21 +83,94 @@ buildPrintableData(
               //    child: pw.Center(
               child: pw.Text(
                   "Nombre del Cliente -> " + nombreCliente.toString(),
-                  style: pw.TextStyle(fontSize: 15)
+                  style: pw.TextStyle(fontSize: 25)
                   /*  style: pw.TextStyle(
                     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                     fontSize: 20.00,
                     fontWeight: pw.FontWeight.bold),*/
                   ),
               //    ),
-            ),
+            ),*/
+            /*     pw.SizedBox(height: 10.00),
             pw.Container(
               // color: const PdfColor(0.5, 1, 0.5, 0.7),
               width: double.infinity,
               height: 20.00,
               //       child: pw.Center(
-              child: pw.Text("Sucursal -> " + sucursal.toString(),
-                  style: pw.TextStyle(fontSize: 15)
+              child: pw.Text("Agencia -> " + sucursal.toString(),
+                  style: pw.TextStyle(fontSize: 25)
+                  /*       style: pw.TextStyle(
+                    color: const PdfColor(0.2, 0.6, 0.2, 0.7),
+                    fontSize: 20.00,
+                    fontWeight: pw.FontWeight.bold),*/
+                  ),
+              //    ),
+            ),*/
+            pw.SizedBox(height: 10.00),
+            pw.Container(
+              // color: const PdfColor(0.5, 1, 0.5, 0.7),
+              width: double.infinity,
+              height: 20.00,
+              //        child: pw.Center(
+              child: pw.Text("Fecha -> " + DateTime.now().toString(),
+                  style: pw.TextStyle(fontSize: 25)
+                  /*  style: pw.TextStyle(
+                    color: const PdfColor(0.2, 0.6, 0.2, 0.7),
+                    fontSize: 20.00,
+                    fontWeight: pw.FontWeight.bold),*/
+                  ),
+              //        ),
+            ),
+            pw.SizedBox(height: 10.00),
+            //  pw.Container(
+            // color: const PdfColor(0.5, 1, 0.5, 0.7),
+            /*   width: double.infinity,
+              height: 20.00,*/
+
+            //child:
+
+            pw.Container(
+              // color: const PdfColor(0.5, 1, 0.5, 0.7),
+              width: double.infinity,
+              height: 20.00,
+              //       child: pw.Center(
+              child: pw.Text(
+                "Item  --> Cantidad  Precio/U  Precio/T",
+                style:
+                    pw.TextStyle(fontSize: 20, fontWeight: pw.FontWeight.bold),
+                /*       style: pw.TextStyle(
+                    color: const PdfColor(0.2, 0.6, 0.2, 0.7),
+                    fontSize: 20.00,
+                    fontWeight: pw.FontWeight.bold),*/
+              ),
+              //    ),
+            ),
+            /*     pw.SizedBox(height: 10.00),
+            pw.Container(
+              // color: const PdfColor(0.5, 1, 0.5, 0.7),
+              width: double.infinity,
+              height: 20.00,
+              //       child: pw.Center(
+              child: pw.Text("         -->Cantidad  Precio/U  Precio/T",
+                  style:
+                      pw.TextStyle(fontSize: 25, fontWeight: pw.FontWeight.bold)
+                  /*       style: pw.TextStyle(
+                    color: const PdfColor(0.2, 0.6, 0.2, 0.7),
+                    fontSize: 20.00,
+                    fontWeight: pw.FontWeight.bold),*/
+                  ),
+              //    ),
+            ),*/
+            //     pw.SizedBox(height: 10.00),
+            pw.Container(
+              // color: const PdfColor(0.5, 1, 0.5, 0.7),
+              width: double.infinity,
+              height: 20.00,
+              //       child: pw.Center(
+              child: pw.Text(
+                  "----------------------------------------------------",
+                  style:
+                      pw.TextStyle(fontSize: 25, fontWeight: pw.FontWeight.bold)
                   /*       style: pw.TextStyle(
                     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                     fontSize: 20.00,
@@ -98,86 +178,136 @@ buildPrintableData(
                   ),
               //    ),
             ),
-            pw.Container(
-              // color: const PdfColor(0.5, 1, 0.5, 0.7),
-              width: double.infinity,
-              height: 20.00,
-              //        child: pw.Center(
-              child: pw.Text("Fecha -> " + DateTime.now().toString(),
-                  style: pw.TextStyle(fontSize: 15)
-                  /*  style: pw.TextStyle(
+
+            //     pw.Text('Item  ', style: pw.TextStyle(fontSize: 8)),
+            // pw.Container(
+            //child:
+            /*      pw.Text('Cantidad  Precio/U  Precio/T',
+                style: pw.TextStyle(fontSize: 8)
+                /*  style: pw.TextStyle(
                     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                     fontSize: 20.00,
                     fontWeight: pw.FontWeight.bold),*/
-                  ),
-              //        ),
-            ),
-            pw.SizedBox(height: 20.00),
-            pw.Container(
-              // color: const PdfColor(0.5, 1, 0.5, 0.7),
-              width: double.infinity,
-              height: 20.00,
-              //        child: pw.Center(
-              child: pw.Text(
-                  'Nro.  Item                                         Cantidad  Precio/U  Precio/T',
-                  style: pw.TextStyle(fontSize: 15)
-                  /*  style: pw.TextStyle(
-                    color: const PdfColor(0.2, 0.6, 0.2, 0.7),
-                    fontSize: 20.00,
-                    fontWeight: pw.FontWeight.bold),*/
-                  ),
-              //        ),
-            ),
+                ),*/
+            //        ),
+            //  ),
             for (var i = 0; i < comandaLista.length; i++)
               //  comandaLista.forEach((element) {
 
-              pw.Table(border: pw.TableBorder.all(), columnWidths: {
-                0: pw.FractionColumnWidth(0.05),
-                1: pw.FractionColumnWidth(0.50),
-                2: pw.FractionColumnWidth(0.15),
-                3: pw.FractionColumnWidth(0.15),
-                4: pw.FractionColumnWidth(0.15),
-              }, children: [
-                pw.TableRow(
+              pw.Table(
+                  /*border: pw.TableBorder.all(),*/ /*columnWidths: {
+                //  0: pw.FractionColumnWidth(0.05),
+                0: pw.FractionColumnWidth(0.85),
+                1: pw.FractionColumnWidth(0.05),
+                2: pw.FractionColumnWidth(0.05),
+                3: pw.FractionColumnWidth(0.05),}*/
+                  /*   columnWidths: {
+                    0: pw.FixedColumnWidth(5),
+                  },*/
                   children: [
-                    pw.Container(
+                    pw.TableRow(
+                      children: [
+                        /*    pw.Container(
                       child: pw.Text((i + 1).toString(),
-                          style: pw.TextStyle(fontSize: 15)),
+                          style: pw.TextStyle(fontSize: 10)),
+                    ),*/
+                        pw.Container(
+                          width: double.infinity,
+                          height: 25.00,
+                          child: pw.Text("* " + comandaLista[i]['item'],
+                              /* +
+                                  " " +
+                                  comandaLista[i]['datoAdicional'],*/
+                              style: pw.TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: pw.FontWeight.bold)),
+                        ),
+                        /*       comandaLista[i]['datoAdicional'] == "//"
+                            ? pw.Container(
+                                width: double.infinity,
+                                height: 25.00,
+                                child: pw.Text(comandaLista[i]['datoAdicional'],
+                                    style: pw.TextStyle(
+                                        fontSize: 25,
+                                        fontWeight: pw.FontWeight.bold)),
+                              )
+                            : pw.SizedBox(height: 00.00),*/
+                      ],
                     ),
-                    pw.Container(
-                      child: pw.Text(comandaLista[i]['item'],
-                          style: pw.TextStyle(fontSize: 15)),
-                    ),
-                    pw.Container(
-                      child: pw.Text(comandaLista[i]['cantidad'],
-                          style: pw.TextStyle(fontSize: 15)),
-                    ),
-                    pw.Container(
-                      child: pw.Text(comandaLista[i]['precio'],
-                          style: pw.TextStyle(fontSize: 15)),
-                    ),
-                    pw.Container(
-                      child: pw.Text(
-                          (double.parse(comandaLista[i]['precio']) *
-                                  double.parse(comandaLista[i]['cantidad']))
-                              .toStringAsFixed(2),
-                          style: pw.TextStyle(fontSize: 15)),
-                    ),
-                  ],
-                )
-              ]),
+                    (comandaLista[i]['datoAdicional'] != "//")
+                        ? pw.TableRow(
+                            children: [
+                              /*    pw.Container(
+                      child: pw.Text((i + 1).toString(),
+                          style: pw.TextStyle(fontSize: 10)),
+                    ),*/
+                              pw.Container(
+                                width: double.infinity,
+                                height: 25.00,
+                                child: pw.Text(comandaLista[i]['datoAdicional'],
+                                    /* +
+                                  " " +
+                                  comandaLista[i]['datoAdicional'],*/
+                                    style: pw.TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: pw.FontWeight.bold)),
+                              ),
+                            ],
+                          )
+                        : pw.TableRow(
+                            children: [
+                              /*    pw.Container(
+                      child: pw.Text((i + 1).toString(),
+                          style: pw.TextStyle(fontSize: 10)),
+                    ),*/
+                            ],
+                          ),
+                    pw.TableRow(
+                      children: [
+                        pw.Container(
+                          width: double.infinity,
+                          height: 25.00,
+                          child: pw.Text(
+                              "         -->   " +
+                                  comandaLista[i]['cantidad'] +
+                                  "             " +
+                                  comandaLista[i]['precio'] +
+                                  "             " +
+                                  (double.parse(comandaLista[i]['precio']) *
+                                          double.parse(
+                                              comandaLista[i]['cantidad']))
+                                      .toStringAsFixed(2),
+                              style: pw.TextStyle(fontSize: 20)),
+                        ),
+                        //     pw.SizedBox(height: 10.00),
+                        /*       pw.Container(
+                          child: pw.Text(comandaLista[i]['precio'],
+                              style: pw.TextStyle(fontSize: 8)),
+                        ),
+                        pw.Container(
+                          child: pw.Text(
+                              (double.parse(comandaLista[i]['precio']) *
+                                      double.parse(comandaLista[i]['cantidad']))
+                                  .toStringAsFixed(2),
+                              style: pw.TextStyle(fontSize: 8)),
+                        ),*/
+                      ],
+                    )
+                  ]),
+
             pw.Padding(
               padding: const pw.EdgeInsets.symmetric(horizontal: 25.0),
               child: pw.Container(
                 width: double.infinity,
-                height: 36.00,
+                height: 15.00,
                 child: pw.Row(
-                  mainAxisAlignment: pw.MainAxisAlignment.end,
+                  //       mainAxisAlignment: pw.MainAxisAlignment.end,
                   children: [
                     pw.Text(
-                      "\Bs." + total.toStringAsFixed(2),
+                      "                 TOTAL Bs.      " +
+                          total.toStringAsFixed(2),
                       style: pw.TextStyle(
-                        fontSize: 22.00,
+                        fontSize: 25.00,
                         fontWeight: pw.FontWeight.bold,
                         //      color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                       ),
@@ -186,19 +316,74 @@ buildPrintableData(
                 ),
               ),
             ),
-            pw.SizedBox(height: 15.00),
-            pw.Text(
+            pw.SizedBox(height: 20.00),
+            // pw.SizedBox(height: 20.00),
+            pw.Container(
+              // color: const PdfColor(0.5, 1, 0.5, 0.7),
+              width: double.infinity,
+              height: 10.00,
+              //       child: pw.Center(
+              child: pw.Text(
+                "Nombre: ................................................",
+                style: const pw.TextStyle(
+                    color: PdfColor(0.5, 0.5, 0.5, 0.5), fontSize: 20.00),
+                /*       style: pw.TextStyle(
+                    color: const PdfColor(0.2, 0.6, 0.2, 0.7),
+                    fontSize: 20.00,
+                    fontWeight: pw.FontWeight.bold),*/
+              ),
+              //    ),
+            ),
+            pw.SizedBox(height: 20.00),
+            // pw.SizedBox(height: 20.00),
+            pw.Container(
+              // color: const PdfColor(0.5, 1, 0.5, 0.7),
+              width: double.infinity,
+              height: 10.00,
+              //       child: pw.Center(
+              child: pw.Text(
+                "Nit/CI: ....................................................",
+                style: const pw.TextStyle(
+                    color: PdfColor(0.5, 0.5, 0.5, 0.5), fontSize: 20.00),
+                /*       style: pw.TextStyle(
+                    color: const PdfColor(0.2, 0.6, 0.2, 0.7),
+                    fontSize: 20.00,
+                    fontWeight: pw.FontWeight.bold),*/
+              ),
+              //    ),
+            ),
+
+            /*     pw.SizedBox(height: 25.00),
+            pw.SizedBox(height: 20.00),
+            pw.Container(
+              // color: const PdfColor(0.5, 1, 0.5, 0.7),
+              width: double.infinity,
+              height: 10.00,
+              //       child: pw.Center(
+              child: pw.Text(
+                "       ** Gracias por preferirnos! **",
+                style: const pw.TextStyle(
+                    color: PdfColor(0.5, 0.5, 0.5, 0.5), fontSize: 25.00),
+                /*       style: pw.TextStyle(
+                    color: const PdfColor(0.2, 0.6, 0.2, 0.7),
+                    fontSize: 20.00,
+                    fontWeight: pw.FontWeight.bold),*/
+              ),
+              //    ),
+            ),*/
+
+            /*          pw.Text(
               "Gracias por preferirnos!",
               style: const pw.TextStyle(
                   color: PdfColor(0.5, 0.5, 0.5, 0.5), fontSize: 8.00),
             ),
-            pw.SizedBox(height: 5.00),
+                pw.SizedBox(height: 5.00),
             pw.Text(
               'Contactos:  79396019  -> https://www.facebook.com/Coffeinacoffeeroasters',
               style: const pw.TextStyle(
                   color: PdfColor(0.5, 0.5, 0.5, 0.5), fontSize: 8.00),
             ),
-            pw.SizedBox(height: 15.00),
+            pw.SizedBox(height: 5.00),
             pw.Text(
               'Central: Calle Esteban Arce #0354, entre Jordan y sucre (lado hotel las Vegas) (atención de 9:00 a 22:00)',
               style: const pw.TextStyle(
@@ -208,7 +393,7 @@ buildPrintableData(
               'Sucursal: Calle Nueva Granada #1533 entre Av. Perú y Diego de Almagro (atención de 11:00 a 20:00)',
               style: const pw.TextStyle(
                   color: PdfColor(0.5, 0.5, 0.5, 0.5), fontSize: 8),
-            ),
+            ),*/
           ],
         )
       ]),
@@ -255,15 +440,20 @@ buildPrintableData1(
                     height: 50,
                   ),*/
                 ),
-                pw.SizedBox(width: 10),
+                pw.Text(
+                  "COFFEINA-",
+                  style: pw.TextStyle(
+                      fontSize: 30.00, fontWeight: pw.FontWeight.bold),
+                ),
+                pw.SizedBox(width: 5),
                 pw.Text(
                   "Comanda-->" + numberoComanda.toString(),
                   style: pw.TextStyle(
-                      fontSize: 20.00, fontWeight: pw.FontWeight.bold),
+                      fontSize: 30.00, fontWeight: pw.FontWeight.bold),
                 ),
               ],
             ),
-            pw.SizedBox(height: 10.00),
+            pw.SizedBox(height: 15.00),
             pw.Container(
               //  color: const PdfColor(0.5, 1, 0.5, 0.7),
               width: double.infinity,
@@ -271,7 +461,7 @@ buildPrintableData1(
               //     child: pw.Center(
               child: pw.Text(
                 "Numero de Mesa -> " + numeroMesa.toString(),
-                style: pw.TextStyle(fontSize: 15),
+                style: pw.TextStyle(fontSize: 25),
                 /* style: pw.TextStyle(
                     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                     fontSize: 20.00,
@@ -279,6 +469,7 @@ buildPrintableData1(
               ),
               //    ),
             ),
+            pw.SizedBox(height: 10.00),
             pw.Container(
               // color: const PdfColor(0.5, 1, 0.5, 0.7),
               width: double.infinity,
@@ -286,7 +477,7 @@ buildPrintableData1(
               //    child: pw.Center(
               child: pw.Text(
                 "Nombre del Cliente -> " + nombreCliente.toString(),
-                style: pw.TextStyle(fontSize: 15),
+                style: pw.TextStyle(fontSize: 25),
                 /*  style: pw.TextStyle(
                     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                     fontSize: 20.00,
@@ -294,6 +485,7 @@ buildPrintableData1(
               ),
               //    ),
             ),
+            pw.SizedBox(height: 10.00),
             pw.Container(
               // color: const PdfColor(0.5, 1, 0.5, 0.7),
               width: double.infinity,
@@ -301,28 +493,13 @@ buildPrintableData1(
               //       child: pw.Center(
               child: pw.Text(
                 "Sucursal -> " + sucursal.toString(),
-                style: pw.TextStyle(fontSize: 15),
+                style: pw.TextStyle(fontSize: 25),
                 /*       style: pw.TextStyle(
                     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                     fontSize: 20.00,
                     fontWeight: pw.FontWeight.bold),*/
               ),
               //    ),
-            ),
-            pw.Container(
-              // color: const PdfColor(0.5, 1, 0.5, 0.7),
-              width: double.infinity,
-              height: 20.00,
-              //        child: pw.Center(
-              child: pw.Text(
-                "Fecha -> " + DateTime.now().toString(),
-                style: pw.TextStyle(fontSize: 15),
-                /*  style: pw.TextStyle(
-                    color: const PdfColor(0.2, 0.6, 0.2, 0.7),
-                    fontSize: 20.00,
-                    fontWeight: pw.FontWeight.bold),*/
-              ),
-              //        ),
             ),
             pw.SizedBox(height: 10.00),
             pw.Container(
@@ -331,8 +508,8 @@ buildPrintableData1(
               height: 20.00,
               //        child: pw.Center(
               child: pw.Text(
-                'Nro.  Item                                         Cantidad  Precio/U  Precio/T',
-                style: pw.TextStyle(fontSize: 15),
+                "Fecha -> " + DateTime.now().toString(),
+                style: pw.TextStyle(fontSize: 25),
                 /*  style: pw.TextStyle(
                     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                     fontSize: 20.00,
@@ -340,47 +517,81 @@ buildPrintableData1(
               ),
               //        ),
             ),
+            pw.SizedBox(height: 15.00),
+            pw.Container(
+              // color: const PdfColor(0.5, 1, 0.5, 0.7),
+              width: double.infinity,
+              height: 20.00,
+              //        child: pw.Center(
+              child: pw.Text(
+                'Item                                  Cantidad  Precio/U  Precio/T',
+                style: pw.TextStyle(fontSize: 17),
+                /*  style: pw.TextStyle(
+                    color: const PdfColor(0.2, 0.6, 0.2, 0.7),
+                    fontSize: 20.00,
+                    fontWeight: pw.FontWeight.bold),*/
+              ),
+              //        ),
+            ),
+            pw.SizedBox(height: 5.00),
+            pw.Container(
+              // color: const PdfColor(0.5, 1, 0.5, 0.7),
+              width: double.infinity,
+              height: 20.00,
+              //       child: pw.Center(
+              child: pw.Text(
+                  "----------------------------------------------------",
+                  style:
+                      pw.TextStyle(fontSize: 25, fontWeight: pw.FontWeight.bold)
+                  /*       style: pw.TextStyle(
+                    color: const PdfColor(0.2, 0.6, 0.2, 0.7),
+                    fontSize: 20.00,
+                    fontWeight: pw.FontWeight.bold),*/
+                  ),
+              //    ),
+            ),
+            pw.SizedBox(height: 5.00),
             for (var i = 0; i < comandaLista.length; i++)
               //  comandaLista.forEach((element) {
 
-              pw.Table(border: pw.TableBorder.all(), columnWidths: {
-                0: pw.FractionColumnWidth(0.05),
-                1: pw.FractionColumnWidth(0.50),
+              pw.Table(/*border: pw.TableBorder.all(),*/ columnWidths: {
+                //     0: pw.FractionColumnWidth(0.05),
+                0: pw.FractionColumnWidth(0.55),
+                1: pw.FractionColumnWidth(0.15),
                 2: pw.FractionColumnWidth(0.15),
                 3: pw.FractionColumnWidth(0.15),
-                4: pw.FractionColumnWidth(0.15),
               }, children: [
                 pw.TableRow(
                   children: [
-                    pw.Container(
+                    /*   pw.Container(
                       child: pw.Text(
                         (i + 1).toString(),
-                        style: pw.TextStyle(fontSize: 15),
+                        style: pw.TextStyle(fontSize: 17),
                       ),
-                    ),
+                    ),*/
                     pw.Container(
                       child: pw.Text(
                         comandaLista[i],
-                        style: pw.TextStyle(fontSize: 15),
+                        style: pw.TextStyle(fontSize: 17),
                       ),
                     ),
                     pw.Container(
                       child: pw.Text(
                         comandaLista1[i].toStringAsFixed(2),
-                        style: pw.TextStyle(fontSize: 15),
+                        style: pw.TextStyle(fontSize: 17),
                       ),
                     ),
                     pw.Container(
                       child: pw.Text(
                         comandaLista2[i].toStringAsFixed(2),
-                        style: pw.TextStyle(fontSize: 15),
+                        style: pw.TextStyle(fontSize: 17),
                       ),
                     ),
                     pw.Container(
                       child: pw.Text(
                         (comandaLista1[i] * (comandaLista2[i]))
                             .toStringAsFixed(2),
-                        style: pw.TextStyle(fontSize: 15),
+                        style: pw.TextStyle(fontSize: 17),
                       ),
                     ),
                   ],
@@ -397,7 +608,7 @@ buildPrintableData1(
                     pw.Text(
                       "\Descuento ->" + descuento,
                       style: pw.TextStyle(
-                        fontSize: 15.00,
+                        fontSize: 20.00,
                         fontWeight: pw.FontWeight.bold,
                         //     color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                       ),
@@ -415,7 +626,7 @@ buildPrintableData1(
                   mainAxisAlignment: pw.MainAxisAlignment.end,
                   children: [
                     pw.Text(
-                      "\Bs." +
+                      "Total Consumo Bs." +
                           (total - (double.parse(descuento)))
                               .toStringAsFixed(2),
                       style: pw.TextStyle(
@@ -428,13 +639,13 @@ buildPrintableData1(
                 ),
               ),
             ),
-            pw.SizedBox(height: 15.00),
+            pw.SizedBox(height: 20.00),
             pw.Text(
               "Gracias por preferirnos!",
               style: const pw.TextStyle(
-                  color: PdfColor(0.5, 0.5, 0.5, 0.5), fontSize: 8.00),
+                  color: PdfColor(0.5, 0.5, 0.5, 0.5), fontSize: 15.00),
             ),
-            pw.SizedBox(height: 5.00),
+            /*          pw.SizedBox(height: 5.00),
             pw.Text(
               'Contactos:  79396019  -> https://www.facebook.com/Coffeinacoffeeroasters',
               style: const pw.TextStyle(
@@ -450,7 +661,7 @@ buildPrintableData1(
               'Sucursal: Calle Nueva Granada #1533 entre Av. Perú y Diego de Almagro (atención de 11:00 a 20:00)',
               style: const pw.TextStyle(
                   color: PdfColor(0.5, 0.5, 0.5, 0.5), fontSize: 8),
-            ),
+            ),*/
           ],
         )
       ]),
@@ -515,7 +726,7 @@ buildPrintableData3(
             for (var i = 0; i < inventarioTotalGasto.length; i++)
               //  comandaLista.forEach((element) {
 
-              pw.Table(border: pw.TableBorder.all(), columnWidths: {
+              pw.Table(/*border: pw.TableBorder.all(), */ columnWidths: {
                 0: pw.FractionColumnWidth(0.05),
                 1: pw.FractionColumnWidth(0.75),
                 2: pw.FractionColumnWidth(0.20),
@@ -601,21 +812,21 @@ buildPrintableData4(
               height: 10.00,
               //        child: pw.Center(
               child: pw.Text(
-                'Nro.Comanda   Status        Hora        Total/Consumo     Descuento      Agencia',
+                'Nro.Comanda   Status     Hora      Total/Consumo    Descuento      Agencia',
               ),
             ),
-            pw.SizedBox(height: 10.00),
+            pw.SizedBox(height: 20.00),
             for (var i = 0; i < inventarioNumeroComanda.length; i++)
               //  comandaLista.forEach((element) {
 
-              pw.Table(border: pw.TableBorder.all(), columnWidths: {
-                0: pw.FractionColumnWidth(0.14),
-                1: pw.FractionColumnWidth(0.14),
+              pw.Table(/*border: pw.TableBorder.all(),*/ columnWidths: {
+                0: pw.FractionColumnWidth(0.05),
+                1: pw.FractionColumnWidth(0.16),
                 2: pw.FractionColumnWidth(0.11),
                 3: pw.FractionColumnWidth(0.14),
-                4: pw.FractionColumnWidth(0.14),
-                5: pw.FractionColumnWidth(0.14),
-                6: pw.FractionColumnWidth(0.16),
+                4: pw.FractionColumnWidth(0.15),
+                5: pw.FractionColumnWidth(0.15),
+                6: pw.FractionColumnWidth(0.17),
               }, children: [
                 pw.TableRow(
                   children: [
@@ -654,7 +865,7 @@ buildPrintableData4(
                           (inventarioDescuento.reduce((a, b) => a + b))
                               .toStringAsFixed(2),
                       style: pw.TextStyle(
-                        fontSize: 15.00,
+                        fontSize: 20.00,
                         fontWeight: pw.FontWeight.bold,
                         color: const PdfColor(0.2, 0.6, 0.2, 0.7),
                       ),
@@ -800,16 +1011,16 @@ buildPrintableData6(
                     height: 50,
                   ),*/
                 ),
-                pw.SizedBox(width: 8),
+                //  pw.SizedBox(width: 8),
                 pw.Text(
-                  'Ingresos --> ' + agencia,
+                  'Ingresos-> ' + agencia,
                   style: pw.TextStyle(
                       fontSize: 20.00, fontWeight: pw.FontWeight.bold),
                 ),
                 pw.Text(
-                  'Fecha --> ' + fecha.toString(),
+                  ' Fecha-> ' + fecha.toString(),
                   style: pw.TextStyle(
-                      fontSize: 10.00, fontWeight: pw.FontWeight.bold),
+                      fontSize: 20.00, fontWeight: pw.FontWeight.bold),
                 ),
               ],
             ),
@@ -1185,6 +1396,95 @@ buildPrintableData8(
                 ),
               ),
             ),*/
+          ],
+        )
+      ]),
+    );
+
+buildPrintableData9(
+        String agencia, DateTime fecha, List inventario, double total) =>
+    pw.Padding(
+      padding: const pw.EdgeInsets.all(25.00),
+      child: pw.Column(children: [
+        pw.Column(
+          children: [
+            pw.Row(
+              crossAxisAlignment: pw.CrossAxisAlignment.end,
+              children: [
+                pw.Align(
+                  alignment: pw.Alignment.topLeft,
+                  /*    child: pw.Image(
+                    image,
+                    width: 50,
+                    height: 50,
+                  ),*/
+                ),
+                //  pw.SizedBox(width: 8),
+                pw.Text(
+                  'Ingreso No Cobrado->' + agencia,
+                  style: pw.TextStyle(
+                      fontSize: 20.00, fontWeight: pw.FontWeight.bold),
+                ),
+                pw.Text(
+                  '->' + fecha.toString(),
+                  style: pw.TextStyle(
+                      fontSize: 20.00, fontWeight: pw.FontWeight.bold),
+                ),
+              ],
+            ),
+            pw.SizedBox(height: 10.00),
+            pw.Container(
+              // color: const PdfColor(0.5, 1, 0.5, 0.7),
+              width: double.infinity,
+              height: 10.00,
+              //        child: pw.Center(
+              child: pw.Text(
+                'Nro.         Fecha                                              Ingreso',
+              ),
+            ),
+            pw.SizedBox(height: 10.00),
+            for (var i = 0, j = 0; i < inventario.length; i = i + 2, j++)
+              //  comandaLista.forEach((element) {
+
+              pw.Table(border: pw.TableBorder.all(), columnWidths: {
+                0: pw.FractionColumnWidth(0.05),
+                1: pw.FractionColumnWidth(0.20),
+                2: pw.FractionColumnWidth(0.20),
+              }, children: [
+                pw.TableRow(
+                  children: [
+                    pw.Container(
+                      child: pw.Text((j + 1).toString()),
+                    ),
+                    pw.Container(
+                      child: pw.Text(inventario[i].toString()),
+                    ),
+                    pw.Container(
+                      child: pw.Text(inventario[i + 1].toStringAsFixed(2)),
+                    ),
+                  ],
+                )
+              ]),
+            pw.Padding(
+              padding: const pw.EdgeInsets.symmetric(horizontal: 25.0),
+              child: pw.Container(
+                width: double.infinity,
+                height: 15.00,
+                child: pw.Row(
+                  mainAxisAlignment: pw.MainAxisAlignment.end,
+                  children: [
+                    pw.Text(
+                      "\Total No Cobrado -->  Bs. " + total.toStringAsFixed(2),
+                      style: pw.TextStyle(
+                        fontSize: 22.00,
+                        fontWeight: pw.FontWeight.bold,
+                        color: const PdfColor(0.2, 0.6, 0.2, 0.7),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         )
       ]),

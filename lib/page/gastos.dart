@@ -74,7 +74,7 @@ class _GastosState extends State<Gastos> {
           child: AppBar(
               title: Text(
             'Ingresar Gastos  -  Coffeina',
-            style: TextStyle(color: Colors.black, fontSize: 10),
+            style: TextStyle(color: Colors.black, fontSize: 20),
           )),
         ),
         body: Padding(
@@ -92,7 +92,7 @@ class _GastosState extends State<Gastos> {
                   labelStyle: TextStyle(
                       color: Colors.black,
                       fontStyle: FontStyle.italic,
-                      fontSize: 10), //label text of field
+                      fontSize: 15), //label text of field
                 ),
                 readOnly: true,
                 onTap: () async {
@@ -125,34 +125,34 @@ class _GastosState extends State<Gastos> {
                     isDense: true, // Added this
                     contentPadding: EdgeInsets.all(8),
                     hintText: 'Fecha: ' + globals.formattedDateGlobal,
-                    hintStyle: TextStyle(fontSize: 10),
+                    hintStyle: TextStyle(fontSize: 15),
                     enabled: false,
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(10)))),
               ),
               SizedBox(height: 10),
               TextField(
-                style: TextStyle(fontSize: 10.0, height: 2.5),
+                style: TextStyle(fontSize: 15.0, height: 2.5),
                 controller: conceptoGastpField,
                 decoration: InputDecoration(
                     isDense: true, // Added this
                     contentPadding: EdgeInsets.all(8),
                     hintText: "Concepto del Gasto",
-                    hintStyle: TextStyle(fontSize: 10),
+                    hintStyle: TextStyle(fontSize: 15),
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)))),
+                        borderRadius: BorderRadius.all(Radius.circular(15)))),
               ),
               SizedBox(height: 10),
               TextField(
-                style: TextStyle(fontSize: 10.0, height: 2.5),
+                style: TextStyle(fontSize: 15.0, height: 2.5),
                 controller: montodelGastoField,
                 decoration: InputDecoration(
                     isDense: true, // Added this
                     contentPadding: EdgeInsets.all(8),
                     hintText: "Monto del Gasto",
-                    hintStyle: TextStyle(fontSize: 10),
+                    hintStyle: TextStyle(fontSize: 15),
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)))),
+                        borderRadius: BorderRadius.all(Radius.circular(15)))),
                 keyboardType: TextInputType.number,
                 inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.digitsOnly
@@ -162,9 +162,9 @@ class _GastosState extends State<Gastos> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Expanded(
+                  Center(
                     child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
+                        /*   style: ElevatedButton.styleFrom(
                             fixedSize: const Size(150, 35),
                             primary:
                                 Colors.redAccent, //background color of button
@@ -177,7 +177,7 @@ class _GastosState extends State<Gastos> {
                                 borderRadius: BorderRadius.circular(30)),
                             padding: EdgeInsets.all(
                                 20) //content padding inside button
-                            ),
+                            ),*/
                         onPressed: () {
                           print(conceptoGastpField.text);
                           print(montodelGastoField.text);
@@ -295,7 +295,7 @@ class _GastosState extends State<Gastos> {
           foregroundColor: Colors.white,
           child: Text(
             itemgastos[index].item[0],
-            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
         ),
         title: Column(
@@ -303,11 +303,11 @@ class _GastosState extends State<Gastos> {
           children: [
             Text(
               itemgastos[index].item,
-              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
             Text('Gasto: ${itemgastos[index].gasto} Bs.',
                 style: TextStyle(
-                  fontSize: 10,
+                  fontSize: 15,
                 )),
           ],
         ),

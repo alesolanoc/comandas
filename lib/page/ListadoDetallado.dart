@@ -32,7 +32,8 @@ List<String> options = [
   'sucursal 1',
   'Baja',
   'Merendar',
-  'Reposicion'
+  'Reposicion',
+  'Eliminado'
 ];
 
 class _ListadoDetalladoState extends State<ListadoDetallado> {
@@ -63,6 +64,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
     descuentoField.text = '0';
     super.initState();
     controller = TextEditingController();
+    globals.formattedDateGlobal = '';
   }
 
   @override
@@ -79,7 +81,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
           child: AppBar(
               title: Text(
             'Listado Detallado de Comandas  -  Coffeina',
-            style: TextStyle(color: Colors.black, fontSize: 10),
+            style: TextStyle(color: Colors.black, fontSize: 20),
           )),
         ),
         body: Padding(
@@ -98,7 +100,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                 labelStyle: TextStyle(
                     color: Colors.black,
                     fontStyle: FontStyle.italic,
-                    fontSize: 10), //label text of field
+                    fontSize: 15), //label text of field
               ),
               readOnly: true,
               //set it true, so that user will not able to edit text
@@ -130,10 +132,10 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                   isDense: true, // Added this
                   contentPadding: EdgeInsets.all(8),
                   hintText: 'Fecha: ' + globals.formattedDateGlobal,
-                  hintStyle: TextStyle(fontSize: 10),
+                  hintStyle: TextStyle(fontSize: 15),
                   enabled: false,
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)))),
+                      borderRadius: BorderRadius.all(Radius.circular(15)))),
             ),
             Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
               Expanded(
@@ -145,7 +147,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                     child: RadioListTile(
                       title: const Text(
                         'Todo',
-                        style: TextStyle(color: Colors.black, fontSize: 10),
+                        style: TextStyle(color: Colors.black, fontSize: 15),
                       ),
                       value: options[0],
                       groupValue: currentOption,
@@ -178,7 +180,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                             title: Text(
                               "Cobrados?",
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 10),
+                                  TextStyle(color: Colors.black, fontSize: 15),
                             ),
                           ))))
             ]),
@@ -193,7 +195,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                             title: const Text(
                               'central',
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 10),
+                                  TextStyle(color: Colors.black, fontSize: 15),
                             ),
                             value: options[1],
                             groupValue: currentOption,
@@ -215,7 +217,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                             title: const Text(
                               'Baja',
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 10),
+                                  TextStyle(color: Colors.black, fontSize: 15),
                             ),
                             value: options[3],
                             groupValue: currentOption,
@@ -237,7 +239,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                             title: const Text(
                               'Reponer',
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 10),
+                                  TextStyle(color: Colors.black, fontSize: 15),
                             ),
                             value: options[5],
                             groupValue: currentOption,
@@ -260,7 +262,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                         child: RadioListTile(
                           title: const Text(
                             'sucursal 1',
-                            style: TextStyle(color: Colors.black, fontSize: 10),
+                            style: TextStyle(color: Colors.black, fontSize: 15),
                           ),
                           value: options[2],
                           groupValue: currentOption,
@@ -282,7 +284,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                         child: RadioListTile(
                           title: const Text(
                             'Merendar',
-                            style: TextStyle(color: Colors.black, fontSize: 10),
+                            style: TextStyle(color: Colors.black, fontSize: 15),
                           ),
                           value: options[4],
                           groupValue: currentOption,
@@ -290,6 +292,28 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                             setState(() {
                               currentOption = value.toString();
                               seleccionarOpcion = 5;
+                              print(check3);
+                            });
+                          },
+                        ),
+                      ))),
+              Expanded(
+                  child: SizedBox(
+                      width: 10,
+                      height: 30,
+                      child: Container(
+                        width: double.infinity,
+                        child: RadioListTile(
+                          title: const Text(
+                            'Eliminadas',
+                            style: TextStyle(color: Colors.black, fontSize: 15),
+                          ),
+                          value: options[6],
+                          groupValue: currentOption,
+                          onChanged: (value) {
+                            setState(() {
+                              currentOption = value.toString();
+                              seleccionarOpcion = 7;
                               print(check3);
                             });
                           },
@@ -393,17 +417,17 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                 globals.inventarioNumeroComanda[index].toString() +
                 ' -> Status: ' +
                 globals.inventarioStatus[index], //.item,
-            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
           Text('Cliente: ' + globals.inventarioNombreCliente[index],
-              style: TextStyle(fontSize: 10) //.item,
+              style: TextStyle(fontSize: 15) //.item,
               ),
           Text(
             'Hora: ' + globals.inventarioHora[index], //.item,
-            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
           Text('Agencia: ' + globals.inventarioAgencia[index],
-              style: TextStyle(fontSize: 10) //.item,
+              style: TextStyle(fontSize: 15) //.item,
               ),
           FutureBuilder(
               future: getAComanda(globals.inventarioCodigoComanda[index]),
@@ -448,12 +472,12 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                               .toStringAsFixed(2) +
                           ' Bs.', //.item,
                       style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
                   Text(
                     '   -> Desc: ' +
                         globals.inventarioDescuento[index].toStringAsFixed(2) +
                         ' Bs.', //.item,
-                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                   )
                 ])
               : Text(
@@ -461,7 +485,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                       (globals.inventarioTotalConsumo[index])
                           .toStringAsFixed(2) +
                       ' Bs.', //.item,
-                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
         ]),
         trailing: SizedBox(
           width: 70,
@@ -516,7 +540,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                     Text(
                       '----->Numero de Comanda: ' + numeroComanda,
                       style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 10),
                     TextField(
@@ -526,11 +550,11 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                           contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.home),
                           hintText: 'Agencia: ' + agenciaNombre,
-                          hintStyle: TextStyle(fontSize: 10),
+                          hintStyle: TextStyle(fontSize: 15),
                           enabled: false,
                           border: OutlineInputBorder(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(10)))),
+                                  BorderRadius.all(Radius.circular(15)))),
                     ),
                     SizedBox(height: 10),
                     TextField(
@@ -540,11 +564,11 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                           contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.person),
                           hintText: 'Nombre: ' + nombreCliente,
-                          hintStyle: TextStyle(fontSize: 10),
+                          hintStyle: TextStyle(fontSize: 15),
                           enabled: false,
                           border: OutlineInputBorder(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(10)))),
+                                  BorderRadius.all(Radius.circular(15)))),
                     ),
                     SizedBox(height: 10),
                     TextField(
@@ -554,11 +578,11 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                           contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.table_bar),
                           hintText: 'Nro. de Mesa: ' + numeroMesa,
-                          hintStyle: TextStyle(fontSize: 10),
+                          hintStyle: TextStyle(fontSize: 15),
                           enabled: false,
                           border: OutlineInputBorder(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(10)))),
+                                  BorderRadius.all(Radius.circular(15)))),
                     ),
                     SizedBox(height: 10),
                     TextField(
@@ -568,11 +592,11 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                           contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.alarm),
                           hintText: "Hora: " + hora,
-                          hintStyle: TextStyle(fontSize: 10),
+                          hintStyle: TextStyle(fontSize: 15),
                           enabled: false,
                           border: OutlineInputBorder(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(10)))),
+                                  BorderRadius.all(Radius.circular(15)))),
                     ),
                     SizedBox(height: 10),
                     TextField(
@@ -582,11 +606,11 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                           contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.fiber_smart_record),
                           hintText: "Status: " + status,
-                          hintStyle: TextStyle(fontSize: 10),
+                          hintStyle: TextStyle(fontSize: 15),
                           enabled: false,
                           border: OutlineInputBorder(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(10)))),
+                                  BorderRadius.all(Radius.circular(15)))),
                     ),
                     FutureBuilder(
                         future: getAComanda(codigoComanda),
@@ -620,7 +644,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                             children: [
                                 Text(
                                   'Inserte Descuento -> ',
-                                  style: TextStyle(fontSize: 10),
+                                  style: TextStyle(fontSize: 15),
                                 ),
                                 SizedBox(
                                     width: 250,
@@ -635,7 +659,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                                           enabled: true,
                                           border: OutlineInputBorder(
                                               borderRadius: BorderRadius.all(
-                                                  Radius.circular(10)))),
+                                                  Radius.circular(15)))),
                                     )),
                               ])
                         : descuento1 != '0'
@@ -647,11 +671,11 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                                     prefixIcon: Icon(Icons.attach_money),
                                     hintText:
                                         'Descuento: ' + descuento1 + ' Bs.',
-                                    hintStyle: TextStyle(fontSize: 10),
+                                    hintStyle: TextStyle(fontSize: 15),
                                     enabled: false,
                                     border: OutlineInputBorder(
                                         borderRadius: BorderRadius.all(
-                                            Radius.circular(10)))),
+                                            Radius.circular(15)))),
                               )
                             : SizedBox(height: 10),
                     TextField(
@@ -665,11 +689,11 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                                       double.parse(descuento1))
                                   .toStringAsFixed(2) +
                               ' Bs.',
-                          hintStyle: TextStyle(fontSize: 10),
+                          hintStyle: TextStyle(fontSize: 15),
                           enabled: false,
                           border: OutlineInputBorder(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(10)))),
+                                  BorderRadius.all(Radius.circular(15)))),
                     ),
                     SizedBox(height: 10),
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -847,7 +871,7 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
           children: [
             Text(
               'Item: ' + globals.listaItemDeUnaComanda[index],
-              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
             Text(
                 'Cantidad: ' +
@@ -855,14 +879,14 @@ class _ListadoDetalladoState extends State<ListadoDetallado> {
                     ' --> Precio Unitario: ' +
                     globals.listaPrecioDeUnaComanda[index].toStringAsFixed(2) +
                     ' Bs.',
-                style: TextStyle(fontSize: 10)),
+                style: TextStyle(fontSize: 15)),
             Text(
               'Total del Item: ' +
                   (globals.listaPrecioDeUnaComanda[index] *
                           globals.listaCantidadDeUnaComanda[index])
                       .toStringAsFixed(2) +
                   ' Bs.',
-              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
           ],
         ),

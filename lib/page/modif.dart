@@ -27,9 +27,18 @@ class Pedido {
   String item;
   String cantidad;
   String precio;
-  Pedido({required this.item, required this.cantidad, required this.precio});
-  Map<String, dynamic> toJson() =>
-      {"item": item, "cantidad": cantidad, "precio": precio};
+  String datoAdicional;
+  Pedido(
+      {required this.item,
+      required this.cantidad,
+      required this.precio,
+      required this.datoAdicional});
+  Map<String, dynamic> toJson() => {
+        "item": item,
+        "cantidad": cantidad,
+        "precio": precio,
+        "datoAdicional": datoAdicional
+      };
 }
 
 class Agencia {
@@ -50,6 +59,7 @@ class _ModifState extends State<Modif> {
   final formKey = GlobalKey<FormState>();
   TextEditingController itemController = TextEditingController();
   TextEditingController cantidadController = TextEditingController();
+  TextEditingController datoAdicionalController = TextEditingController();
   TextEditingController precioController = TextEditingController();
   TextEditingController agenciaController = TextEditingController();
   TextEditingController nombreclienteController = TextEditingController();
@@ -75,6 +85,20 @@ class _ModifState extends State<Modif> {
   String? productoo;
   String numeroComandaContr = '0';
   bool typing = false;
+  bool _isPressed = false;
+
+  void _myCallback() {
+    setState(() {
+      _isPressed = true;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    globals.numeroDeComanda = 0;
+    globals.agenciaSeleccionada = '';
+  }
 
   void showAlert(QuickAlertType quickAlertType) {
     QuickAlert.show(context: context, type: quickAlertType, width: 100);
@@ -109,7 +133,7 @@ class _ModifState extends State<Modif> {
             title: typing
                 ? TextBox()
                 : Text('Nro de Comanda - ' + globals.numeroDeComanda.toString(),
-                    style: TextStyle(fontSize: 15)),
+                    style: TextStyle(fontSize: 20)),
             leading: IconButton(
               icon: Icon(typing ? Icons.done : Icons.search),
               onPressed: () async {
@@ -117,6 +141,7 @@ class _ModifState extends State<Modif> {
                   _totalConsumo = 0;
                   globals.comandaLista = [];
                   cantidadController.text = '';
+                  datoAdicionalController.text = '';
                   mesaController.text = '';
                   pedido.clear();
                   pedido = [];
@@ -146,7 +171,8 @@ class _ModifState extends State<Modif> {
                     pedido.add(Pedido(
                         item: item['item'],
                         cantidad: item['cantidad'].toString(),
-                        precio: item['precio'].toString()));
+                        precio: item['precio'].toString(),
+                        datoAdicional: item['datoAdicional']));
                     //        globals.ListaParaBorrar.add(item['id']);
                     _totalConsumo =
                         _totalConsumo + (item['precio'] * item['cantidad']);
@@ -181,16 +207,16 @@ class _ModifState extends State<Modif> {
             children: [
               globals.agenciaSeleccionada != ''
                   ? TextField(
-                      style: TextStyle(fontSize: 10.0, height: 2.5),
+                      style: TextStyle(fontSize: 15.0, height: 2.5),
                       controller: mesaController,
                       decoration: InputDecoration(
                           isDense: true, // Added this
                           contentPadding: EdgeInsets.all(8),
                           hintText: "Numero de Mesa",
-                          hintStyle: TextStyle(fontSize: 10),
+                          hintStyle: TextStyle(fontSize: 15),
                           border: OutlineInputBorder(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(10)))),
+                                  BorderRadius.all(Radius.circular(15)))),
                       keyboardType: TextInputType.number,
                       inputFormatters: <TextInputFormatter>[
                         FilteringTextInputFormatter.digitsOnly
@@ -203,7 +229,7 @@ class _ModifState extends State<Modif> {
                         isDense: true, // Added this
                         contentPadding: EdgeInsets.all(8),
                         enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(15),
                           borderSide: BorderSide(width: 3, color: Colors.grey),
                         ),
                       ),
@@ -215,7 +241,7 @@ class _ModifState extends State<Modif> {
                       menuMaxHeight: 350,
                       iconSize: 36,
                       value: productoo,
-                      style: TextStyle(color: Colors.black, fontSize: 10),
+                      style: TextStyle(color: Colors.black, fontSize: 15),
                       items: globals.newList
                           .map((item) => DropdownMenuItem<String>(
                                 value: item,
@@ -239,15 +265,16 @@ class _ModifState extends State<Modif> {
               //    SizedBox(height: 10),
               globals.agenciaSeleccionada != ''
                   ? TextField(
+                      style: TextStyle(fontSize: 15.0, height: 2.5),
                       controller: cantidadController,
                       decoration: InputDecoration(
                           isDense: true, // Added this
                           contentPadding: EdgeInsets.all(8),
                           hintText: "Inserte Cantidad",
-                          hintStyle: TextStyle(fontSize: 10),
+                          hintStyle: TextStyle(fontSize: 15),
                           border: OutlineInputBorder(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(10)))),
+                                  BorderRadius.all(Radius.circular(15)))),
                       keyboardType: TextInputType.number,
                       inputFormatters: <TextInputFormatter>[
                         FilteringTextInputFormatter.digitsOnly
@@ -255,27 +282,31 @@ class _ModifState extends State<Modif> {
                     )
                   : Center(),
               //    SizedBox(height: 10),
+              globals.agenciaSeleccionada != ''
+                  ? TextField(
+                      style: TextStyle(fontSize: 15.0, height: 2.5),
+                      controller: datoAdicionalController,
+                      decoration: InputDecoration(
+                          isDense: true, // Added this
+                          contentPadding: EdgeInsets.all(8),
+                          hintText: "Inserte Dato adicional del producto",
+                          hintStyle: TextStyle(fontSize: 15),
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)))),
+                      /* keyboardType: TextInputType.number,
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly
+                ],*/
+                    )
+                  : Center(),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   globals.agenciaSeleccionada != ''
                       ? Center(
                           child: ElevatedButton(
-                              /*   style: ElevatedButton.styleFrom(
-                                  fixedSize: const Size(150, 35),
-                                  primary: Colors
-                                      .redAccent, //background color of button
-                                  side: BorderSide(
-                                      width: 1,
-                                      color: Colors
-                                          .brown), //border width and color
-                                  elevation: 1, //elevation of button
-                                  shape: RoundedRectangleBorder(
-                                      //to set border radius to button
-                                      borderRadius: BorderRadius.circular(30)),
-                                  padding: EdgeInsets.all(
-                                      20) //content padding inside button
-                                  ),*/
                               onPressed: () async {
                                 if (cantidadController.text.isNotEmpty) {
                                   int totalComandas =
@@ -288,6 +319,8 @@ class _ModifState extends State<Modif> {
                                       mensajeAControlador;
 
                                   String cantidad = cantidadController.text;
+                                  String datoAdicional1 =
+                                      datoAdicionalController.text;
                                   String item = _selectedVal ?? "";
                                   final precio = await getPrecioOfAProductos(
                                       globals.agenciaSeleccionada, item);
@@ -302,12 +335,14 @@ class _ModifState extends State<Modif> {
                                     setState(() {
                                       itemController.text = '';
                                       cantidadController.text = '';
+                                      datoAdicionalController.text = '';
                                       precioController.text = '';
                                       globals.comandaLista = [];
                                       pedido.add(Pedido(
                                           item: item,
                                           cantidad: cantidad,
-                                          precio: globals.precioo.toString()));
+                                          precio: globals.precioo.toString(),
+                                          datoAdicional: datoAdicional1));
                                       globals.comandaLista = pedido;
                                       globals.sucursal =
                                           globals.agenciaSeleccionada;
@@ -337,7 +372,7 @@ class _ModifState extends State<Modif> {
                                 }
                               },
                               child: Text('Armar la Comanda',
-                                  style: TextStyle(fontSize: 10))),
+                                  style: TextStyle(fontSize: 15))),
                         )
                       : Center()
                 ],
@@ -365,12 +400,14 @@ class _ModifState extends State<Modif> {
                   child: Icon(Icons.add),
                   tooltip: 'Grabar Comanda',
                   onPressed: () async {
+                    _isPressed == false ? _myCallback : null;
                     if (globals.comandaLista.isNotEmpty) {
                       await deleteComanda(globals.numeroDeComanda);
                       collectionSum();
                       print('mesa1');
                       print(globals.numeroMesa);
                       print(mesaController.text);
+                      globals.totalConsumo = _totalConsumo;
                       await aupdateComanda(
                           globals.comandaLista,
                           globals.nombreCliente,
@@ -384,6 +421,7 @@ class _ModifState extends State<Modif> {
                       var user = jsonEncode(globals.comandaLista);
                       String user1 = user;
                       var ab = json.decode(user1).toList();
+                      /* */ globals.totalConsumo = _totalConsumo;
                       printDoc1(
                           globals.numeroDeComanda,
                           globals.nombreCliente,
@@ -404,12 +442,14 @@ class _ModifState extends State<Modif> {
                     globals.bandera = 1;
                     itemController.text = '';
                     cantidadController.text = '';
+                    datoAdicionalController.text = '';
                     mesaController.text = '';
                     nombreclienteController.text = '';
                     numeroComandaController.text = '';
                     pedido.clear();
                     pedido = [];
-
+                    globals.numeroDeComanda = 0;
+                    globals.agenciaSeleccionada = '';
                     setState(() {
                       productoo = null;
                     });
@@ -444,7 +484,7 @@ class _ModifState extends State<Modif> {
                                   globals.bandera = 1;
                                   itemController.text = '';
                                   cantidadController.text = '';
-
+                                  datoAdicionalController.text = '';
                                   pedido.clear();
                                   pedido = [];
                                   _totalConsumo = 0;
@@ -480,6 +520,118 @@ class _ModifState extends State<Modif> {
               context, MaterialPageRoute(builder: (context) => Dashboard()));*/
                   },
                 )
+              : Center(),
+          globals.agenciaSeleccionada != ''
+              ? FloatingActionButton(
+                  tooltip: 'Borrar Comanda',
+                  child: Icon(Icons.not_interested),
+                  onPressed: () {
+                    if (globals.password == 'patitoalejo') {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return Container(
+                                child: AlertDialog(
+                              title: Text('Confirmar Eliminacion de Comanda ?'),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                    setState(() {});
+                                  },
+                                  child: Text('No'),
+                                ),
+                                TextButton(
+                                  onPressed: () async {
+                                    if (globals.comandaLista.isNotEmpty) {
+                                      await deleteComandaParaEliminar(
+                                          globals.numeroDeComanda);
+                                      collectionSum();
+                                      /*     print('mesa1');
+                                      print(globals.numeroMesa);
+                                      print(mesaController.text);*/
+                                      globals.totalConsumo = _totalConsumo;
+                                      await aupdateComandaparaEliminar(
+                                          globals.comandaLista,
+                                          globals.nombreCliente,
+                                          int.parse(mesaController
+                                              .text), //globals.numeroMesa,
+                                          globals.numeroDeComanda,
+                                          globals.sucursal,
+                                          globals.countComandas,
+                                          0,
+                                          'Eliminado');
+
+                                      /* var user =
+                                          jsonEncode(globals.comandaLista);
+                                      String user1 = user;
+                                      var ab = json.decode(user1).toList();
+                                       globals.totalConsumo =
+                                          _totalConsumo;
+                                      printDoc1(
+                                          globals.numeroDeComanda,
+                                          globals.nombreCliente,
+                                          int.parse(mesaController.text),
+                                          globals.sucursal,
+                                          ab,
+                                          globals.totalConsumo,
+                                          1);*/
+                                      _totalConsumo = 0;
+
+                                      //    showAlert(QuickAlertType.success);
+                                    } else {
+                                      showAlert(QuickAlertType.error);
+                                    }
+                                    globals.comandaLista = [];
+                                    globals.nombreCliente = "";
+                                    collectionSum();
+                                    globals.bandera = 1;
+                                    itemController.text = '';
+                                    cantidadController.text = '';
+                                    datoAdicionalController.text = '';
+                                    mesaController.text = '';
+                                    nombreclienteController.text = '';
+                                    numeroComandaController.text = '';
+                                    pedido.clear();
+                                    pedido = [];
+                                    globals.numeroDeComanda = 0;
+                                    globals.agenciaSeleccionada = '';
+                                    Navigator.pop(context);
+                                    setState(() {
+                                      productoo = null;
+                                    });
+                                    /*   Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Dashboard()));*/
+                                  },
+                                  child: Text('Si'),
+                                ),
+                              ],
+                            ));
+                          });
+/*
+
+
+
+
+                    globals.comandaLista = [];
+                    collectionSum();
+                    globals.bandera = 1;
+                    itemController.text = '';
+                    cantidadController.text = '';
+
+                    pedido.clear();
+                    pedido = [];
+                    _totalConsumo = 0;
+                    setState(() {
+                      productoo = null;
+                    });*/
+                      /*   Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Dashboard()));*/
+                    } else {
+                      showAlert(QuickAlertType.warning);
+                    }
+                  },
+                )
               : Center()
         ]));
   }
@@ -493,7 +645,7 @@ class _ModifState extends State<Modif> {
           foregroundColor: Colors.white,
           child: Text(
             pedido[index].item[0],
-            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
         ),
         title: Column(
@@ -501,14 +653,14 @@ class _ModifState extends State<Modif> {
           children: [
             Text(
               pedido[index].item,
-              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
             Text(
-                style: TextStyle(fontSize: 10),
+                style: TextStyle(fontSize: 15),
                 'Cantidad: ${pedido[index].cantidad}  -->  Precio Unitario: ${pedido[index].precio} Bs.'),
             Text(
               'Total del Item: ${(int.parse(pedido[index].cantidad) * double.parse(pedido[index].precio)).toStringAsFixed(2)} Bs.',
-              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
           ],
         ),

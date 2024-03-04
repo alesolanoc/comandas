@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:js_interop';
 import 'globals.dart' as globals;
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -33,6 +34,39 @@ Future<List> getComandasForADay(
   })*/
 
   return comandas;
+  //Future.delayed(Duration(seconds: 1), () => comandas);
+}
+
+Future<List> getComandasForADayForTotalIngresos(
+    String agencia, String fecha, String status) async {
+  List comandas = [];
+  double total = 0;
+  int i = 0;
+  print('estado');
+  print(status);
+  CollectionReference collectionReferenceComanda =
+      db.collection('comandaCabecera');
+  QuerySnapshot querycomandas = await collectionReferenceComanda
+      .where('agencia', isEqualTo: agencia)
+      .where('creacionDate', isEqualTo: fecha)
+      .where('status', isEqualTo: status)
+      .get();
+  querycomandas.docs.forEach((documento) {
+    //   print(documento.data());
+    comandas.add(documento.data());
+    var user = jsonEncode(comandas);
+    String user1 = user;
+    var ab = json.decode(user1).toList();
+    // total = ab[i]['totalConsumo'] - ab[i]['descuento'];
+    i = i + 1;
+  });
+/*  comandas.forEach((element) {
+    total = total +double.parse(comandas['totalConsumo']);
+  })*/
+  print('comandas');
+  print(comandas);
+  return comandas;
+  //Future.delayed(Duration(seconds: 1), () => comandas);
 }
 
 /*
@@ -63,17 +97,39 @@ List getComandasForADay1(
   return comandas;
 }
 */
-Future<List> getAllProducts(String agencia, int opcion, bool check3) async {
+Future<List> getAllProducts(
+    String agencia, int opcion, bool check3, String fecha) async {
   List productos = [];
+  List comandas = [];
+  List comandas1 = [];
+  List comandas2 = [];
+  print('check == true');
+  CollectionReference collectionReferenceComandas = db.collection('comanda');
+  QuerySnapshot queryComandas = await collectionReferenceComandas
+      .where('agencia', isEqualTo: agencia)
+      .where('creacionDate', isEqualTo: fecha)
+      .get();
+  queryComandas.docs.forEach((element) {
+    comandas.add(element.data());
+  });
+  comandas.forEach((element) {
+    comandas1.add(element['item']);
+  });
+  comandas2 = comandas1.toSet().toList();
   CollectionReference collectionReferenceproductos = db.collection('productos');
   if ((opcion == 1) || (opcion == 2) || (opcion == 3)) {
     if (agencia != 'Todo') {
-      QuerySnapshot queryproductos = await collectionReferenceproductos
-          .where('agencia', isEqualTo: agencia)
-          .get();
-      queryproductos.docs.forEach((documento) {
-        //     print(documento.data());
-        productos.add(documento.data());
+      comandas2.forEach((element) async {
+        //      print(element);
+        QuerySnapshot queryproductos = await collectionReferenceproductos
+            .where('agencia', isEqualTo: agencia)
+            .where('item', isEqualTo: element)
+            .get();
+        queryproductos.docs.forEach((documento) {
+          //    print(documento.data());
+          productos.add(documento.data());
+          //       print(documento.data());
+        });
       });
     } /*else {
       // CollectionReference collectionReferenceComanda =
@@ -88,7 +144,104 @@ Future<List> getAllProducts(String agencia, int opcion, bool check3) async {
     }*/
   }
   productos.sortBy(['item']);
-  return productos;
+  return Future.delayed(Duration(seconds: 2), () => productos);
+}
+
+Future<List> getAllProductsFromRange(
+    String agencia, int opcion, bool check3, int rango1, int rango2) async {
+  List productos = [];
+  List comandas = [];
+  List comandas1 = [];
+  List comandas2 = [];
+  int i = 0;
+  print('check == true');
+  print(check3);
+  print('rangos');
+  print(rango1);
+  print(rango2);
+  print(agencia);
+  rango1 = 970;
+  /* CollectionReference collectionReferenceComandas = db.collection('comanda');
+  QuerySnapshot queryComandas = await collectionReferenceComandas
+      .where('agencia', isEqualTo: agencia)
+      .where('cantidad', isEqualTo: '970')
+      // .where('cantidad', isLessThanOrEqualTo: rango2)
+      .get();
+  queryComandas.docs.forEach((element) {
+    print(element);
+    comandas.add(element.data());
+    productos.add(element.data());
+  });*/
+  comandas.forEach((element) {
+    comandas1.add(element['item']);
+  });
+  comandas2 = comandas1.toSet().toList();
+  rango1 = -2;
+  rango2 = 970;
+  CollectionReference collectionReferenceproductos = db.collection('productos');
+  if ((opcion == 1) || (opcion == 2) || (opcion == 3)) {
+    if (agencia != 'Todo') {
+      // comandas2.forEach((element) async {
+      //      print(element);
+      QuerySnapshot queryproductos = await collectionReferenceproductos
+          .where('agencia', isEqualTo: agencia)
+          /*      .where('cantidad', isGreaterThanOrEqualTo: rango1)
+          .where('cantidad', isLessThanOrEqualTo: rango2)*/
+
+          //     .where('item', isEqualTo: element)
+          .get();
+      queryproductos.docs.forEach((documento) {
+        //    print(documento.data());
+        productos.add(documento.data());
+        /*   print('productossss');
+        print(productos);
+        print(productos[0]['item']);*/
+        /*      var user = jsonEncode(productos);
+        String user1 = user;
+        var ab = json.decode(user1).toList();
+        print('i');
+        print(i);
+        print(ab[i]);
+        if (ab[i]['cantidad'] == 1000) {
+          print('abababab');
+          print(ab);
+          productos.removeLast();
+        }
+
+        i = i + 1;*/
+
+        //       print(documento.data());
+      });
+/*      print('sssssssssssssssss');
+
+      var j = 0;
+      for (var productoUnitario in productos) {
+        if (productoUnitario['cantidad'] == 987) {
+          print(productoUnitario['cantidad']);
+          // productos.removeAt(j);
+          //  print(productoUnitario['cantidad']);
+        }
+        j = j + 1;
+      }*/
+
+      //   }
+      // );
+    } /*else {
+      // CollectionReference collectionReferenceComanda =
+      //   db.collection('comandaCabecera');
+      //  if (check3 == true) {
+      QuerySnapshot queryproductos = await collectionReferenceproductos.get();
+      queryproductos.docs.forEach((documento) {
+        //print(documento.data());
+        productos.add(documento.data());
+      });
+      //    }
+    }*/
+  }
+
+  productos.sortBy(['item']);
+  // print('aaaaaaaaaaa');
+  return Future.delayed(Duration(seconds: 2), () => productos);
 }
 
 Future<List> getProductos(String agencia) async {
@@ -225,6 +378,16 @@ Future<List> getComandas(
         comandas.add(documento.data());
       });
     }
+    if (opcion == 7) {
+      QuerySnapshot querycomandas = await collectionReferenceComanda
+          .where('creacionDate', isEqualTo: fecha)
+          .where('status', isEqualTo: 'Eliminar')
+          .get();
+      querycomandas.docs.forEach((documento) {
+        //print(documento.data());
+        comandas.add(documento.data());
+      });
+    }
   }
   comandas.sortBy(['numeroComanda']);
   //comandas.sort((a, b) => a.numeroComanda.compareTo(b.numeroComanda));
@@ -287,7 +450,7 @@ Future<List> getAComanda(String codigoComanda) async {
   // print('comanda');
   // print(comanda);
   //print(comanda);
-  return comanda;
+  return Future.delayed(Duration(seconds: 2), () => comanda);
 }
 
 Future<List> getAComandaFromProductNameToPDF(
@@ -319,7 +482,8 @@ Future<List> getAComandaFromProductName(
   querycomandas.docs.forEach((documento) {
     comanda.add(documento.data());
   });
-  return comanda;
+  return Future.delayed(Duration(seconds: 2), () => comanda);
+  ;
 }
 
 Future<List> getAgencias() async {
@@ -397,13 +561,21 @@ Future<void> addComanda(
       'numeroComanda': globals.countComandas, //numeroComanda,
       'item': ab[i]['item'],
       'cantidad': elementCantidad,
+      'datoAdicional': ab[i]['datoAdicional'],
       'precio': double.parse(ab[i]['precio']),
       'codigoComanda': dateStr,
       'creacionDate': cdate,
       'creacionTime': tdata
     });
+    print('actualiza prod1');
+    print(ab[i]['item']);
+    print(elementCantidad);
+
     updateProduct(
         agencia, ab[i]['item'], elementCantidad, double.parse(ab[i]['precio']));
+    print('despues de actu');
+    print(ab[i]['item']);
+    print(elementCantidad);
     i = i + 1;
   });
 }
@@ -497,6 +669,9 @@ Future<void> aupdateComanda(
     print(ab[i]['item']);
     print(agencia);
     print(nombreCliente);
+    if (ab[i]['datoAdicional'] == "") {
+      ab[i]['datoAdicional'] = "//";
+    }
     db.collection("comanda").add({
       'agencia': agencia,
       'nombreCliente': nombreCliente,
@@ -504,12 +679,126 @@ Future<void> aupdateComanda(
       'numeroComanda': numeroComanda, //numeroComanda,
       'item': ab[i]['item'],
       'cantidad': elementCantidad,
+      'datoAdicional': ab[i]['datoAdicional'],
       'precio': double.parse(ab[i]['precio']),
       'codigoComanda': codigoComanda,
       'creacionDate': creacionDate,
       'creacionTime': creacionTime
     });
     updateProduct(
+        agencia, ab[i]['item'], elementCantidad, double.parse(ab[i]['precio']));
+    i = i + 1;
+  });
+}
+
+Future<void> aupdateComandaparaEliminar(
+    List<dynamic> comandaListaAGrabar,
+    String nombreCliente,
+    int mesa,
+    int numeroComanda,
+    String agencia,
+    int countcomanda,
+    double totalConsumo,
+    String status) async {
+  List<dynamic> data = comandaListaAGrabar;
+  String codigoComanda = '';
+  String creacionDate = '';
+  String creacionTime = '';
+  var user = jsonEncode(data);
+  String user1 = user;
+  // getLastComanda();
+  DateTime current_date = DateTime.now();
+  String dateStr = current_date.toString();
+  var ab = json.decode(user1).toList();
+  int i = 0;
+  int elementCantidad = 0;
+
+  String cdate = DateFormat("yyyy-MM-dd").format(DateTime.now());
+  String tdata = DateFormat("HH:mm:ss").format(DateTime.now());
+
+  List productos = [];
+  int ii = 0;
+  CollectionReference collectionReferenceProductos =
+      db.collection('comandaCabecera');
+  QuerySnapshot queryProductos = await collectionReferenceProductos
+      .where('numeroComanda', isEqualTo: numeroComanda)
+      .get();
+  queryProductos.docs.forEach((documento) async {
+    String iD = documento.id;
+    productos.add(documento.data());
+    var user = jsonEncode(productos);
+    String user1 = user;
+    var ab = json.decode(user1).toList();
+    String agencia = ab[ii]['agencia'];
+    codigoComanda = ab[ii]['codigoComanda'];
+    creacionDate = ab[ii]['creacionDate'];
+    creacionTime = ab[ii]['creacionTime'];
+    //int mesa = ab[i]['mesa'];
+    String nombreCliente = ab[ii]['nombreCliente'];
+    int numeroComanda = ab[ii]['numeroComanda'];
+    //double totalConsumo = ab[ii]['totalConsumo'];
+    String status = ab[ii]['status'];
+    ;
+    double descuento = ab[ii]['descuento'];
+    ;
+    ii = ii + 1;
+    await db.collection('comandaCabecera').doc(iD).set({
+      'agencia': agencia,
+      'codigoComanda': codigoComanda,
+      'creacionDate': creacionDate,
+      'creacionTime': creacionTime,
+      'mesa': mesa,
+      'nombreCliente': nombreCliente,
+      'numeroComanda': numeroComanda,
+      'totalConsumo': totalConsumo,
+      'status': "Eliminado",
+      'descuento': descuento
+    });
+  });
+
+  /* getLastComanda();
+  collectionSum();
+  db.collection("comandaCabecera").add({
+    'agencia': agencia,
+    'nombreCliente': nombreCliente,
+    'mesa': mesa,
+    'numeroComanda': globals.countComandas, //numeroComanda,
+    'codigoComanda': dateStr,
+    'creacionDate': cdate,
+    'creacionTime': tdata,
+    'totalConsumo': totalConsumo,
+    'status': status,
+    'descuento': 0
+  });*/
+/*  print('numeroDEDEComanda');
+  print(numeroComanda);
+  print('abababab');
+  print(ab);*/
+  ab.forEach((item) {
+    elementCantidad = int.parse(ab[i]['cantidad']);
+    /*  print(elementCantidad);
+    print('ab[i][');
+    print(ab[i]['item']);
+    print(agencia);
+    print(nombreCliente);*/
+    if (ab[i]['datoAdicional'] == "") {
+      ab[i]['datoAdicional'] = "//";
+    }
+    db.collection("comanda").add({
+      'agencia': agencia,
+      'nombreCliente': nombreCliente,
+      'mesa': mesa,
+      'numeroComanda': numeroComanda, //numeroComanda,
+      'item': ab[i]['item'],
+      'cantidad': elementCantidad,
+      'datoAdicional': ab[i]['datoAdicional'],
+      'precio': 0,
+      'codigoComanda': codigoComanda,
+      'creacionDate': creacionDate,
+      'creacionTime': creacionTime
+    });
+    // print("elementoCantidad " + elementCantidad.toString());
+    updateProductMasCantidad(
         agencia, ab[i]['item'], elementCantidad, double.parse(ab[i]['precio']));
     i = i + 1;
   });
@@ -539,9 +828,14 @@ Future<void> updateProduct(
     String codigoProducto = ab[i]['codigoProducto'];
     String creacionDate = ab[i]['creacionDate'];
     String creacionTime = ab[i]['creacionTime'];
+    print('actia;oza');
+    print(cantidad);
+    print(newCantidad);
     cantidad = cantidad - newCantidad;
     i = i + 1;
-    await db.collection('productos').doc(iD).set({
+    print('actia;oza1');
+    print(cantidad);
+    db.collection('productos').doc(iD).set({
       'agencia': agencia,
       'item': item,
       'cantidad': cantidad,
@@ -569,7 +863,11 @@ Future<void> updateProductMasCantidad(
       .get();
   queryProductos.docs.forEach((documento) async {
     String iD = documento.id;
+    /*   print('imprime doc');
+    print(documento.data());*/
     productos.add(documento.data());
+    /*  print("productosss");
+    print(productos);*/
     var user = jsonEncode(productos);
     String user1 = user;
     var ab = json.decode(user1).toList();
@@ -580,7 +878,11 @@ Future<void> updateProductMasCantidad(
     String codigoProducto = ab[i]['codigoProducto'];
     String creacionDate = ab[i]['creacionDate'];
     String creacionTime = ab[i]['creacionTime'];
+    /*   print("cantidadd " + cantidad.toString());
+    print("newCantidad " + newCantidad.toString());*/
     cantidad = cantidad + newCantidad;
+    /*   print("cantidaddd " + cantidad.toString());
+    print('agencia ' + agencia);*/
     i = i + 1;
     await db.collection('productos').doc(iD).set({
       'agencia': agencia,
@@ -951,6 +1253,19 @@ Future<void> deleteComanda(int numeroDeComanda) async {
   });
 }
 
+Future<void> deleteComandaParaEliminar(int numeroDeComanda) async {
+  CollectionReference collectionReferenceProductos = db.collection('comanda');
+  QuerySnapshot queryProductos = await collectionReferenceProductos
+      .where('numeroComanda', isEqualTo: numeroDeComanda)
+      .get();
+  queryProductos.docs.forEach((documento) {
+    /*   updateProductMasCantidad(documento['agencia'], documento['item'],
+        documento['cantidad'], documento['precio']);*/
+    //  agencia, ab[i]['item'], elementCantidad, double.parse(ab[i]['precio']));
+    documento.reference.delete();
+  });
+}
+
 Future<void> updateStatusGasto(String codigoGasto) async {
   List productos = [];
   int i = 0;
@@ -1030,6 +1345,7 @@ Future<void> addMerendar(
       'numeroComanda': globals.countComandas, //numeroComanda,
       'item': ab[i]['item'],
       'cantidad': elementCantidad,
+      'datoAdicional': ab[i]['datoAdicional'],
       'precio': double.parse(ab[i]['precio']),
       'codigoComanda': dateStr,
       'creacionDate': cdate,
@@ -1085,6 +1401,7 @@ Future<void> addDarDeBaja(
       'numeroComanda': globals.countComandas, //numeroComanda,
       'item': ab[i]['item'],
       'cantidad': elementCantidad,
+      'datoAdicional': ab[i]['datoAdicional'],
       'precio': double.parse(ab[i]['precio']),
       'codigoComanda': dateStr,
       'creacionDate': cdate,
@@ -1139,6 +1456,7 @@ Future<void> addReposicion(
       'numeroComanda': globals.countComandas, //numeroComanda,
       'item': ab[i]['item'],
       'cantidad': elementCantidad,
+      'datoAdicional': ab[i]['datoAdicional'],
       'precio': double.parse(ab[i]['precio']),
       'codigoComanda': dateStr,
       'creacionDate': cdate,

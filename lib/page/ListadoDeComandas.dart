@@ -52,6 +52,13 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
   bool? check3 = false;
   int seleccionarOpcion = 1;
   bool confirmarcobro = false;
+  bool _isPressed = false;
+
+  void _myCallback() {
+    setState(() {
+      _isPressed = true;
+    });
+  }
 
   void showAlert(QuickAlertType quickAlertType) {
     QuickAlert.show(context: context, type: quickAlertType, width: 100);
@@ -63,6 +70,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
     descuentoField.text = '0';
     super.initState();
     controller = TextEditingController();
+    globals.formattedDateGlobal = '';
   }
 
   @override
@@ -79,7 +87,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
           child: AppBar(
               title: Text(
             'Listado de Comandas  -  Coffeina',
-            style: TextStyle(color: Colors.black, fontSize: 10),
+            style: TextStyle(color: Colors.black, fontSize: 20),
           )),
         ),
         body: Padding(
@@ -157,7 +165,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                         child: RadioListTile(
                           title: const Text(
                             'Todo',
-                            style: TextStyle(color: Colors.black, fontSize: 10),
+                            style: TextStyle(color: Colors.black, fontSize: 15),
                           ),
                           value: options[0],
                           materialTapTargetSize:
@@ -192,7 +200,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                             title: Text(
                               "Cobrados?",
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 10),
+                                  TextStyle(color: Colors.black, fontSize: 15),
                             ),
                           ))))
             ]),
@@ -207,7 +215,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                             title: const Text(
                               'central',
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 10),
+                                  TextStyle(color: Colors.black, fontSize: 15),
                             ),
                             value: options[1],
                             //    materialTapTargetSize:
@@ -231,7 +239,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                             title: const Text(
                               'Baja',
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 10),
+                                  TextStyle(color: Colors.black, fontSize: 15),
                             ),
                             value: options[3],
                             materialTapTargetSize:
@@ -255,7 +263,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                             title: const Text(
                               'Reponer',
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 10),
+                                  TextStyle(color: Colors.black, fontSize: 15),
                             ),
                             value: options[5],
                             materialTapTargetSize:
@@ -280,7 +288,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                         child: RadioListTile(
                           title: const Text(
                             'sucursal 1',
-                            style: TextStyle(color: Colors.black, fontSize: 10),
+                            style: TextStyle(color: Colors.black, fontSize: 15),
                           ),
                           value: options[2],
                           materialTapTargetSize:
@@ -304,7 +312,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                         child: RadioListTile(
                           title: const Text(
                             'Merendar',
-                            style: TextStyle(color: Colors.black, fontSize: 10),
+                            style: TextStyle(color: Colors.black, fontSize: 15),
                           ),
                           value: options[4],
                           materialTapTargetSize:
@@ -410,19 +418,19 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                 globals.inventarioNumeroComanda[index].toString() +
                 ' -> Status: ' +
                 globals.inventarioStatus[index], //.item,
-            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
           Text(
             'Cliente: ' + globals.inventarioNombreCliente[index],
-            style: TextStyle(fontSize: 10), //.item,
+            style: TextStyle(fontSize: 15), //.item,
           ),
           Text(
             'Hora: ' + globals.inventarioHora[index], //.item,
-            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
           Text(
             'Agencia: ' + globals.inventarioAgencia[index],
-            style: TextStyle(fontSize: 10), //.item,
+            style: TextStyle(fontSize: 15), //.item,
           ),
           globals.inventarioDescuento[index] != 0
               ? Row(children: [
@@ -433,12 +441,12 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                               .toStringAsFixed(2) +
                           ' Bs.', //.item,
                       style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
                   Text(
                     '   -> Desc: ' +
                         globals.inventarioDescuento[index].toStringAsFixed(2) +
                         ' Bs.', //.item,
-                    style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                   )
                 ])
               : Text(
@@ -446,7 +454,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                       (globals.inventarioTotalConsumo[index])
                           .toStringAsFixed(2) +
                       ' Bs.', //.item,
-                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
         ]),
         trailing: SizedBox(
           width: 80,
@@ -647,14 +655,19 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                                       controller: descuentoField,
                                       autofocus: true,
                                       decoration: InputDecoration(
-                                          isDense: true, // Added this
-                                          contentPadding: EdgeInsets.all(8),
-                                          prefixIcon: Icon(Icons.attach_money),
-                                          // hintText: "Inserte Descuento",
-                                          enabled: true,
-                                          border: OutlineInputBorder(
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(10)))),
+                                        isDense: true, // Added this
+                                        contentPadding: EdgeInsets.all(8),
+                                        prefixIcon: Icon(Icons.attach_money),
+                                        // hintText: "Inserte Descuento",
+                                        enabled: true,
+                                        border: OutlineInputBorder(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(10))),
+                                      ),
+                                      keyboardType: TextInputType.number,
+                                      inputFormatters: <TextInputFormatter>[
+                                        FilteringTextInputFormatter.digitsOnly
+                                      ],
                                     )),
                               ])
                         : descuento1 != '0'
@@ -742,6 +755,11 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                                               ),
                                               TextButton(
                                                 onPressed: () async {
+                                                  if (descuentoField
+                                                      .text.isEmpty) {
+                                                    descuentoField.text = '0';
+                                                  }
+                                                  ;
                                                   confirmarcobro = true;
                                                   // descuento =
                                                   //   descuentoField.text='';
@@ -859,7 +877,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
           child: Text(
             globals.listaItemDeUnaComanda[index][0], //item[0],
             ///////      pedido[index].item[0],
-            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
         ),
         title: Column(
@@ -867,7 +885,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
           children: [
             Text(
               'Item: ' + globals.listaItemDeUnaComanda[index],
-              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
             Text(
               'Cantidad: ' +
@@ -875,7 +893,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                   ' --> Precio Unitario: ' +
                   globals.listaPrecioDeUnaComanda[index].toStringAsFixed(2) +
                   ' Bs.',
-              style: TextStyle(fontSize: 10),
+              style: TextStyle(fontSize: 15),
             ),
             Text(
               'Total del Item: ' +
@@ -883,11 +901,11 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                           globals.listaCantidadDeUnaComanda[index])
                       .toStringAsFixed(2) +
                   ' Bs.',
-              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
           ],
         ),
-        trailing: SizedBox(
+        /*    trailing: SizedBox(
           width: 70,
           child: Row(
             children: [
@@ -900,7 +918,7 @@ class _ListadoDeComandasState extends State<ListadoDeComandas> {
                   child: Icon(Icons.delete)),
             ],
           ),
-        ),
+        ),*/
       ),
     );
   }

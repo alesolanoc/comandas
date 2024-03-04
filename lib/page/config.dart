@@ -50,7 +50,7 @@ class _ConfigState extends State<Config> {
         child: AppBar(
             title: Text(
           'Configuracion  -  Coffeina',
-          style: TextStyle(color: Colors.black, fontSize: 10),
+          style: TextStyle(color: Colors.black, fontSize: 20),
         )),
       ),
       body: Padding(
@@ -62,11 +62,12 @@ class _ConfigState extends State<Config> {
               decoration: InputDecoration(
                   isDense: true, // Added this,
                   contentPadding: EdgeInsets.all(8),
-                  hintText: 'Inserte Palabra Clave2.0',
-                  hintStyle: TextStyle(fontSize: 10),
+                  hintText:
+                      'Inserte Palabra Clave 3.27 added validation on products',
+                  hintStyle: TextStyle(fontSize: 15),
                   enabled: true,
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)))),
+                      borderRadius: BorderRadius.all(Radius.circular(15)))),
             ),
             SizedBox(height: 10),
             ElevatedButton(
@@ -98,7 +99,7 @@ class _ConfigState extends State<Config> {
                 },
                 child: Text(
                   'Confirmar',
-                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                 )),
             SizedBox(height: 10),
             ElevatedButton(
@@ -120,7 +121,7 @@ class _ConfigState extends State<Config> {
                 },
                 child: Text(
                   'Restringir Acceso',
-                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                 )),
             SizedBox(height: 10),
             ElevatedButton(
@@ -150,6 +151,8 @@ class _ConfigState extends State<Config> {
                         print(element['item']);
                       });
                     });
+                  } else {
+                    showAlert(QuickAlertType.error);
                   }
                 },
                 child: Text('cargar productos')),

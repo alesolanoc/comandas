@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:html';
 import 'dart:js_util';
+import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter_application_1/page/printDoc.dart';
 import 'package:open_document/open_document.dart';
 import 'package:pdf/pdf.dart';
@@ -26,9 +27,18 @@ class Pedido {
   String item;
   String cantidad;
   String precio;
-  Pedido({required this.item, required this.cantidad, required this.precio});
-  Map<String, dynamic> toJson() =>
-      {"item": item, "cantidad": cantidad, "precio": precio};
+  String datoAdicional;
+  Pedido(
+      {required this.item,
+      required this.cantidad,
+      required this.precio,
+      required this.datoAdicional});
+  Map<String, dynamic> toJson() => {
+        "item": item,
+        "cantidad": cantidad,
+        "precio": precio,
+        "datoAdicional": datoAdicional
+      };
 }
 
 class Agencia {
@@ -49,6 +59,7 @@ class _DashboardState extends State<Dashboard> {
   final formKey = GlobalKey<FormState>();
   TextEditingController itemController = TextEditingController();
   TextEditingController cantidadController = TextEditingController();
+  TextEditingController datoAdicionalController = TextEditingController();
   TextEditingController precioController = TextEditingController();
 
   TextEditingController nombreclienteController = TextEditingController();
@@ -73,6 +84,13 @@ class _DashboardState extends State<Dashboard> {
   String? agenciaa;
   String? productoo;
   String numeroComandaContr = '0';
+  bool _isPressed = false;
+
+  void _myCallback() {
+    setState(() {
+      _isPressed = true;
+    });
+  }
 
   void showAlert(QuickAlertType quickAlertType, String mensaje) {
     QuickAlert.show(
@@ -107,7 +125,7 @@ class _DashboardState extends State<Dashboard> {
           child: AppBar(
               title: Text(
             'Comanda Nro.--> ' + numeroComandaContr,
-            style: TextStyle(color: Colors.black, fontSize: 12),
+            style: TextStyle(color: Colors.black, fontSize: 20),
           )),
         ),
         body: Padding(
@@ -140,7 +158,7 @@ class _DashboardState extends State<Dashboard> {
                         hint: Text(
                           'Seleccione Agencia para Comandas',
                           style: TextStyle(
-                              color: Colors.black, fontSize: 10, height: 2.0),
+                              color: Colors.black, fontSize: 15, height: 2.0),
                         ),
                         isExpanded: true,
                         menuMaxHeight: 350,
@@ -152,7 +170,7 @@ class _DashboardState extends State<Dashboard> {
                                   value: item,
                                   child: Text(item,
                                       style:
-                                          TextStyle(fontSize: 10, height: 2.0)),
+                                          TextStyle(fontSize: 15, height: 2.0)),
                                 ))
                             .toList(),
                         onChanged: pedido.isNotEmpty
@@ -180,20 +198,21 @@ class _DashboardState extends State<Dashboard> {
             ),*/
               //      SizedBox(height: 10),
               TextField(
-                style: TextStyle(fontSize: 10.0, height: 2.5),
+                style: TextStyle(fontSize: 15.0, height: 2.5),
                 controller: mesaController,
                 decoration: InputDecoration(
                     isDense: true, // Added this
                     contentPadding: EdgeInsets.all(8),
                     hintText: "Numero de Mesa",
-                    hintStyle: TextStyle(fontSize: 10),
+                    hintStyle: TextStyle(fontSize: 15),
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)))),
+                        borderRadius: BorderRadius.all(Radius.circular(15)))),
                 keyboardType: TextInputType.number,
                 inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.digitsOnly
                 ],
               ),
+
               //    SizedBox(height: 10),
 
               //   SizedBox(height: 10),
@@ -224,18 +243,18 @@ class _DashboardState extends State<Dashboard> {
                         ),
                         hint: Text(
                           'Seleccione un Producto',
-                          style: TextStyle(color: Colors.black, fontSize: 10),
+                          style: TextStyle(color: Colors.black, fontSize: 15),
                         ),
                         isExpanded: true,
                         menuMaxHeight: 350,
                         iconSize: 36,
                         value: productoo,
-                        style: TextStyle(color: Colors.black, fontSize: 10),
+                        style: TextStyle(color: Colors.black, fontSize: 15),
                         items: globals.newList
                             .map((item) => DropdownMenuItem<String>(
                                   value: item,
                                   child: Text(item,
-                                      style: TextStyle(fontSize: 10)),
+                                      style: TextStyle(fontSize: 15)),
                                 ))
                             .toList(),
                         onChanged: disableDropdown
@@ -248,20 +267,36 @@ class _DashboardState extends State<Dashboard> {
                   })),
               //    SizedBox(height: 10),
               TextField(
-                style: TextStyle(fontSize: 10.0, height: 2.5),
+                style: TextStyle(fontSize: 15.0, height: 2.5),
                 controller: cantidadController,
                 decoration: InputDecoration(
                     isDense: true, // Added this
                     contentPadding: EdgeInsets.all(8),
                     hintText: "Inserte Cantidad",
-                    hintStyle: TextStyle(fontSize: 10),
+                    hintStyle: TextStyle(fontSize: 15),
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)))),
+                        borderRadius: BorderRadius.all(Radius.circular(15)))),
                 keyboardType: TextInputType.number,
                 inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.digitsOnly
                 ],
               ),
+              TextField(
+                style: TextStyle(fontSize: 15.0, height: 2.5),
+                controller: datoAdicionalController,
+                decoration: InputDecoration(
+                    isDense: true, // Added this
+                    contentPadding: EdgeInsets.all(8),
+                    hintText: "Inserte Dato adicional del producto",
+                    hintStyle: TextStyle(fontSize: 15),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)))),
+                /* keyboardType: TextInputType.number,
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly
+                ],*/
+              ),
+
               //    SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -288,13 +323,19 @@ class _DashboardState extends State<Dashboard> {
                             ),*/
                         onPressed: () async {
                           if (cantidadController.text.isNotEmpty) {
-                            int totalComandas = await collectionSumValue();
+                            int totalComandas = 0;
+                            //await collectionSumValue();
 
                             numeroComandaContr = totalComandas.toString();
                             String mensajeAControlador = numeroComandaContr;
                             numeroComandaController.text = mensajeAControlador;
 
                             String cantidad = cantidadController.text;
+                            String datoAdicional1 =
+                                datoAdicionalController.text;
+                            if (datoAdicional1.isEmpty) {
+                              datoAdicional1 = "//";
+                            }
                             String item = _selectedVal ?? "";
                             final precio = await getPrecioOfAProductos(
                                 globals.agenciaSeleccionada, item);
@@ -308,12 +349,14 @@ class _DashboardState extends State<Dashboard> {
                               setState(() {
                                 itemController.text = '';
                                 cantidadController.text = '';
+                                datoAdicionalController.text = '';
                                 precioController.text = '';
                                 globals.comandaLista = [];
                                 pedido.add(Pedido(
                                     item: item,
                                     cantidad: cantidad,
-                                    precio: globals.precioo.toString()));
+                                    precio: globals.precioo.toString(),
+                                    datoAdicional: datoAdicional1));
                                 globals.comandaLista = pedido;
                                 globals.sucursal = globals.agenciaSeleccionada;
                                 if (mesaController.text.isEmpty) {
@@ -340,7 +383,7 @@ class _DashboardState extends State<Dashboard> {
                           }
                         },
                         child: Text('Armar la Comanda',
-                            style: TextStyle(fontSize: 10))),
+                            style: TextStyle(fontSize: 15))),
                   ) //)
                 ],
               ),
@@ -365,8 +408,11 @@ class _DashboardState extends State<Dashboard> {
           FloatingActionButton(
             child: Icon(Icons.add),
             tooltip: 'Grabar Comanda',
-            onPressed: () {
+            onPressed: () async {
+              _isPressed == false ? _myCallback : null;
               if (globals.comandaLista.isNotEmpty) {
+                globals.countComandas = await collectionSumValue();
+                globals.numeroComanda = globals.countComandas;
                 collectionSum();
                 addComanda(
                     globals.comandaLista,
@@ -400,6 +446,7 @@ class _DashboardState extends State<Dashboard> {
               globals.bandera = 1;
               itemController.text = '';
               cantidadController.text = '';
+              datoAdicionalController.text = '';
               mesaController.text = '';
               nombreclienteController.text = '';
               numeroComandaController.text = '';
@@ -439,6 +486,7 @@ class _DashboardState extends State<Dashboard> {
                             globals.bandera = 1;
                             itemController.text = '';
                             cantidadController.text = '';
+                            datoAdicionalController.text = '';
                             mesaController.text = '';
                             nombreclienteController.text = '';
                             numeroComandaController.text = '';
@@ -538,6 +586,7 @@ class _DashboardState extends State<Dashboard> {
                 globals.bandera = 1;
                 itemController.text = '';
                 cantidadController.text = '';
+                datoAdicionalController.text = '';
                 mesaController.text = '';
                 nombreclienteController.text = '';
                 numeroComandaController.text = '';
@@ -625,6 +674,7 @@ class _DashboardState extends State<Dashboard> {
               globals.bandera = 1;
               itemController.text = '';
               cantidadController.text = '';
+              datoAdicionalController.text = '';
               mesaController.text = '';
               nombreclienteController.text = '';
               numeroComandaController.text = '';
@@ -705,6 +755,7 @@ class _DashboardState extends State<Dashboard> {
               globals.bandera = 1;
               itemController.text = '';
               cantidadController.text = '';
+              datoAdicionalController.text = '';
               mesaController.text = '';
               nombreclienteController.text = '';
               numeroComandaController.text = '';
@@ -728,7 +779,7 @@ class _DashboardState extends State<Dashboard> {
           foregroundColor: Colors.white,
           child: Text(
             pedido[index].item[0],
-            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
         ),
         title: Column(
@@ -736,14 +787,14 @@ class _DashboardState extends State<Dashboard> {
           children: [
             Text(
               pedido[index].item,
-              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
             Text(
-                style: TextStyle(fontSize: 10),
+                style: TextStyle(fontSize: 15),
                 'Cantidad: ${pedido[index].cantidad}  -->  Precio Unitario: ${pedido[index].precio} Bs.'),
             Text(
               'Total del Item: ${(int.parse(pedido[index].cantidad) * double.parse(pedido[index].precio)).toStringAsFixed(2)} Bs.',
-              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
           ],
         ),
@@ -763,6 +814,7 @@ class _DashboardState extends State<Dashboard> {
                       _totalConsumo = _totalConsumo -
                           int.parse(pedido[index].cantidad) *
                               double.parse(pedido[index].precio);
+                      globals.totalConsumo = _totalConsumo;
                       pedido.removeAt(index);
                     });
                   }),

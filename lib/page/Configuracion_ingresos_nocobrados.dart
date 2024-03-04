@@ -28,12 +28,12 @@ class Agencia {
   Map<String, dynamic> toJson() => {"agencia": agencia};
 }
 
-class Configuracion extends StatefulWidget {
+class Configuracion1 extends StatefulWidget {
   @override
-  _ConfiguracionState createState() => _ConfiguracionState();
+  _Configuracion1State createState() => _Configuracion1State();
 }
 
-class _ConfiguracionState extends State<Configuracion> {
+class _Configuracion1State extends State<Configuracion1> {
   List<Agencia> agencia = List.empty(growable: true);
   List newAgenciaList = [];
   TextEditingController dateInputFinal = TextEditingController();
@@ -70,7 +70,7 @@ class _ConfiguracionState extends State<Configuracion> {
       days.add(formattedDate);
 
       ventas =
-          await getComandasForADay(agenciaParaVer, formattedDate, 'Cobrado');
+          await getComandasForADay(agenciaParaVer, formattedDate, 'No Cobrado');
 
       totalPrices = 0;
       ventas.forEach((element) {
@@ -79,7 +79,7 @@ class _ConfiguracionState extends State<Configuracion> {
       });
       days.add(totalPrices);
     }
-    globals.dayss = days;
+    globals.dayss1 = days;
 
     return days;
   }
@@ -91,7 +91,7 @@ class _ConfiguracionState extends State<Configuracion> {
         DateTime.now().add(const Duration(days: 1));
     dateInputFinal.text = "";
     dateInputInicial.text = ""; //set the initial value of text field
-    globals.dayss = [];
+    globals.dayss1 = [];
     // lazyValue = "ss";
     super.initState();
   }
@@ -104,7 +104,7 @@ class _ConfiguracionState extends State<Configuracion> {
           preferredSize: Size.fromHeight(30.0),
           child: AppBar(
               title: Text(
-            'Estadisticas  -  Coffeina',
+            'Estadisticas No Cobradas  -  Coffeina',
             style: TextStyle(color: Colors.black, fontSize: 20),
           )),
         ),
@@ -265,7 +265,9 @@ class _ConfiguracionState extends State<Configuracion> {
                               ),
                             ))))
               ]),
-              Text("Ingresos-> " + globals.agenciaSeleccionadaParaVer1,
+              Text(
+                  "Ingresos No Cobrados-> " +
+                      globals.agenciaSeleccionadaParaVer1,
                   style: TextStyle(fontSize: 18)),
               (globals.formattedDateGlobalFinal.day ==
                           DateTime.now().add(const Duration(days: 1)).day) ||
@@ -299,7 +301,7 @@ class _ConfiguracionState extends State<Configuracion> {
                             ventas = await getComandasForADayForTotalIngresos(
                                 globals.agenciaSeleccionadaParaVer1,
                                 day.toString().split(' ')[0],
-                                'Cobrado');
+                                'No Cobrado');
                             //                    await Future.delayed(const Duration(seconds: 1));
                             totalPrice = 0;
 
@@ -325,7 +327,7 @@ class _ConfiguracionState extends State<Configuracion> {
                               )
                             : Expanded(
                                 child: ListView.builder(
-                                itemCount: globals.dayss.length,
+                                itemCount: globals.dayss1.length,
                                 itemBuilder: (context, index) =>
                                     getRowInventario(index),
                               ));
@@ -358,13 +360,13 @@ class _ConfiguracionState extends State<Configuracion> {
             tooltip: 'Impresion',
             child: Icon(Icons.print),
             onPressed: () {
-              if (globals.dayss.isNotEmpty) {
+              if (globals.dayss1.isNotEmpty) {
                 double total = 0;
-                for (var i = 0; i < globals.dayss.length; i = i + 2) {
-                  total = total + globals.dayss[i + 1];
+                for (var i = 0; i < globals.dayss1.length; i = i + 2) {
+                  total = total + globals.dayss1[i + 1];
                 }
-                printDoc6(globals.agenciaSeleccionadaParaVer1, DateTime.now(),
-                    globals.dayss, total);
+                printDoc9(globals.agenciaSeleccionadaParaVer1, DateTime.now(),
+                    globals.dayss1, total);
               } else {
                 showAlert(QuickAlertType.warning);
               }
@@ -386,7 +388,7 @@ class _ConfiguracionState extends State<Configuracion> {
                     index % 2 == 0 ? Colors.deepPurpleAccent : Colors.purple,
                 foregroundColor: Colors.white,
                 child: Text(
-                  globals.dayss[index][8] + globals.dayss[index][9],
+                  globals.dayss1[index][8] + globals.dayss1[index][9],
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                 ),
               ),
@@ -394,12 +396,12 @@ class _ConfiguracionState extends State<Configuracion> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Fecha: ' + globals.dayss[index].toString(), //.item,
+                    'Fecha: ' + globals.dayss1[index].toString(), //.item,
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                      'Total Ingreso: ' +
-                          globals.dayss[index + 1].toStringAsFixed(2) +
+                      'Total Ingreso No Cobrado: ' +
+                          globals.dayss1[index + 1].toStringAsFixed(2) +
                           ' Bs.',
                       style: TextStyle(
                         fontSize: 15,
@@ -410,7 +412,7 @@ class _ConfiguracionState extends State<Configuracion> {
           )
         : Center();
   }
-
+/*
   List<FlSpot> getData() {
     days = getDaysInBetween(
         globals.formattedDateGlobalInicial, globals.formattedDateGlobalFinal);
@@ -422,7 +424,7 @@ class _ConfiguracionState extends State<Configuracion> {
     days.forEach((day) async {
       //   print(day.toString().split(' ')[0]);
       ventas = await getComandasForADay(
-          "central", day.toString().split(' ')[0], 'Cobrado');
+          "central", day.toString().split(' ')[0], 'No Cobrado');
       totalPrice = 0;
       ventas.forEach((element) {
         totalPrice = totalPrice + element['totalConsumo'];
@@ -443,7 +445,7 @@ class _ConfiguracionState extends State<Configuracion> {
       return FlSpot(e.key.toDouble(), e.value);
     }).toList();
     return example;
-  }
+  }*/
 
   Widget grafica() {
     return Container(

@@ -11,11 +11,13 @@ import 'package:flutter_application_1/page/listAll.dart';
 import 'package:flutter_application_1/page/modif.dart';
 import 'package:quickalert/models/quickalert_type.dart';
 import 'package:quickalert/widgets/quickalert_dialog.dart';
+import 'page/Configuracion_ingresos_nocobrados.dart';
 import 'page/dashboard.dart';
 import 'page/ListadoDeComandas.dart';
 import 'page/chat.dart';
 import 'page/gastos.dart';
 import 'page/globals.dart' as globals;
+import 'page/listAll1.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -219,13 +221,13 @@ class _HomeState extends State<Home> {
                     minWidth: 40,
                     onPressed: () {
                       setState(() {
-                        if (globals.password == 'patitoalejo') {
-                          currentScreen = Gastos();
-                          currentTab = 5;
-                        } else {
+                        //        if (globals.password == 'patitoalejo') {
+                        currentScreen = Gastos();
+                        currentTab = 5;
+                        /*          } else {
                           showAlert(
                               QuickAlertType.warning, 'No tiene autorizacion');
-                        }
+                        }*/
                       });
                     },
                     child: Column(
@@ -367,8 +369,82 @@ class _HomeState extends State<Home> {
                     minWidth: 40,
                     onPressed: () {
                       setState(() {
+                        if (globals.password == 'patitoalejo') {
+                          currentScreen = Configuracion1();
+                          currentTab = 9;
+                        } else {
+                          showAlert(
+                              QuickAlertType.warning, 'No tiene autorizacion');
+                        }
+                      });
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.date_range,
+                          color: currentTab == 9 ? Colors.blue : Colors.grey,
+                        ),
+                        Text(
+                          'Listado',
+                          style: TextStyle(
+                              fontSize: 8,
+                              color:
+                                  currentTab == 9 ? Colors.blue : Colors.grey),
+                        ),
+                        Text(
+                          'No Cobrados',
+                          style: TextStyle(
+                              fontSize: 8,
+                              color:
+                                  currentTab == 9 ? Colors.blue : Colors.grey),
+                        )
+                      ],
+                    ),
+                  ),
+                  MaterialButton(
+                    minWidth: 40,
+                    onPressed: () {
+                      setState(() {
+                        if (globals.password == 'patitoalejo') {
+                          currentScreen = ListadoAll1();
+                          currentTab = 10;
+                        } else {
+                          showAlert(
+                              QuickAlertType.warning, 'No tiene autorizacion');
+                        }
+                      });
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.line_style_rounded,
+                          color: currentTab == 10 ? Colors.blue : Colors.grey,
+                        ),
+                        Text(
+                          'Faltante',
+                          style: TextStyle(
+                              fontSize: 8,
+                              color:
+                                  currentTab == 10 ? Colors.blue : Colors.grey),
+                        ),
+                        Text(
+                          'Items',
+                          style: TextStyle(
+                              fontSize: 8,
+                              color:
+                                  currentTab == 10 ? Colors.blue : Colors.grey),
+                        )
+                      ],
+                    ),
+                  ),
+                  MaterialButton(
+                    minWidth: 40,
+                    onPressed: () {
+                      setState(() {
                         currentScreen = Config();
-                        currentTab = 9;
+                        currentTab = 11;
                       });
                     },
                     child: Column(
@@ -376,14 +452,14 @@ class _HomeState extends State<Home> {
                       children: [
                         Icon(
                           Icons.password,
-                          color: currentTab == 9 ? Colors.blue : Colors.grey,
+                          color: currentTab == 11 ? Colors.blue : Colors.grey,
                         ),
                         Text(
                           'Config.',
                           style: TextStyle(
                               fontSize: 8,
                               color:
-                                  currentTab == 9 ? Colors.blue : Colors.grey),
+                                  currentTab == 11 ? Colors.blue : Colors.grey),
                         )
                       ],
                     ),
